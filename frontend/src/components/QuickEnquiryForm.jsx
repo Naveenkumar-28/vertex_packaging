@@ -40,12 +40,12 @@ export default function QuickEnquiryForm({ variant = "glass", productId, product
   };
 
   const inputCls =
-    "w-full bg-[#050816]/50 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-[#ff6b00] focus:outline-none focus:ring-1 focus:ring-[#ff6b00]/40 transition-colors";
+    "w-full bg-[#050816]/50 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/40 transition-colors";
 
   return (
     <div className={variant === "glass" ? "glass-strong p-6 md:p-8" : "p-0"} data-testid="quick-enquiry-form">
       <div className="flex items-center gap-3 mb-5">
-        <div className="w-10 h-10 grid place-items-center bg-[#ff6b00] text-white">
+        <div className="w-10 h-10 grid place-items-center bg-primary text-white">
           <Send className="w-4 h-4" />
         </div>
         <div>

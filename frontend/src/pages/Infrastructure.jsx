@@ -32,9 +32,9 @@ export default function Infrastructure() {
         <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&q=80&w=2200" alt="factory" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#050816]/40 to-[#050816]" />
         <div className="container-pad relative">
-          <div className="text-xs uppercase tracking-[0.3em] text-[#ff6b00] mb-4">Infrastructure</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Infrastructure</div>
           <h1 className="display text-5xl md:text-7xl font-bold leading-[1.05] max-w-3xl">
-            A facility engineered for <span className="text-[#ff6b00]">scale</span>.
+            A facility engineered for <span className="text-primary">scale</span>.
           </h1>
         </div>
       </section>
@@ -50,7 +50,7 @@ export default function Infrastructure() {
               className="glass p-6"
               data-testid={`infra-stat-${i}`}
             >
-              <div className="display text-4xl font-bold text-[#ff6b00]">{s.value}</div>
+              <div className="display text-4xl font-bold text-primary">{s.value}</div>
               {s.suffix && <div className="text-sm text-white/50 mt-1">{s.suffix}</div>}
               <div className="text-xs uppercase tracking-widest text-white/50 mt-3">{s.label}</div>
             </motion.div>
@@ -67,10 +67,10 @@ export default function Infrastructure() {
               key={u.name}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.07 }}
-              className="glass p-6 group hover:border-[#ff6b00]/40"
+              className="glass p-6 group hover:border-primary/40"
               data-testid={`unit-${u.name.toLowerCase()}`}
             >
-              <div className="w-12 h-12 grid place-items-center bg-[#ff6b00]/10 text-[#ff6b00] mb-5 border border-[#ff6b00]/20 group-hover:bg-[#ff6b00] group-hover:text-white transition-colors">
+              <div className="w-12 h-12 grid place-items-center bg-primary/10 text-primary mb-5 border border-primary/20 group-hover:bg-primary group-hover:text-white transition-colors">
                 <u.icon className="w-5 h-5" />
               </div>
               <h3 className="display text-lg font-bold mb-2">{u.name}</h3>
@@ -108,11 +108,11 @@ export default function Infrastructure() {
           <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2200" alt="video" className="absolute inset-0 w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 grid place-items-center">
             <div className="text-center">
-              <span className="w-20 h-20 mx-auto rounded-full bg-[#ff6b00] grid place-items-center group-hover:scale-110 transition-transform shadow-2xl shadow-[#ff6b00]/40 mb-6">
+              <span className="w-20 h-20 mx-auto rounded-full bg-primary grid place-items-center group-hover:scale-110 transition-transform shadow-2xl shadow-primary/40 mb-6">
                 <Play className="w-7 h-7 text-white ml-1" />
               </span>
               <div className="display text-2xl md:text-3xl font-bold">Take a virtual tour</div>
-              <div className="text-sm text-white/55 mt-2">3 minutes inside Lombodaran</div>
+              <div className="text-sm text-white/55 mt-2">3 minutes inside Vertex</div>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function Infrastructure() {
             >
               <iframe
                 src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
-                title="Lombodaran Facility Tour"
+                title="Vertex Facility Tour"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"

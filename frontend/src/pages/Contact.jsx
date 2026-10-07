@@ -28,7 +28,7 @@ export default function Contact() {
     }
   };
 
-  const inputCls = "w-full bg-[#0a0f25]/60 border border-white/10 px-4 py-3 text-sm placeholder:text-white/30 focus:border-[#ff6b00] focus:outline-none focus:ring-1 focus:ring-[#ff6b00]/40 transition-colors";
+  const inputCls = "w-full bg-[#0a0f25]/60 border border-white/10 px-4 py-3 text-sm placeholder:text-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/40 transition-colors";
 
   return (
     <div data-testid="contact-page" className="pt-24 pb-24">
@@ -47,7 +47,7 @@ export default function Contact() {
             <InfoBox icon={Mail} title="Email us" desc={SITE.email} testid="contact-email" link={`mailto:${SITE.email}`} />
             <InfoBox icon={Clock} title="Working hours" desc={SITE.hours} testid="contact-hours" />
 
-            <div className="aspect-[16/10] overflow-hidden border border-white/10 mt-6" data-testid="contact-map">
+            {/* <div className="aspect-[16/10] overflow-hidden border border-white/10 mt-6" data-testid="contact-map">
               <iframe
                 title="map"
                 src={SITE.map}
@@ -56,7 +56,7 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-            </div>
+            </div> */}
           </div>
 
           {/* Form */}
@@ -102,8 +102,8 @@ function InfoBox({ icon: Icon, title, desc, link, testid }) {
   const Wrap = link ? "a" : "div";
   const props = link ? { href: link } : {};
   return (
-    <Wrap {...props} className="glass p-5 flex items-start gap-4 group hover:border-[#ff6b00]/40 transition-colors" data-testid={testid}>
-      <div className="w-11 h-11 grid place-items-center bg-[#ff6b00]/10 text-[#ff6b00] border border-[#ff6b00]/20 shrink-0">
+    <Wrap {...props} className="glass p-5 flex items-start gap-4 group hover:border-primary/40 transition-colors" data-testid={testid}>
+      <div className="w-11 h-11 grid place-items-center bg-primary/10 text-primary border border-primary/20 shrink-0">
         <Icon className="w-4 h-4" />
       </div>
       <div>

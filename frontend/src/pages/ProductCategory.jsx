@@ -72,7 +72,7 @@ export default function ProductCategory() {
               <ChevronRight className="w-3 h-3" />
               <Link to="/products" className="hover:text-white">Products</Link>
               <ChevronRight className="w-3 h-3" />
-              <span className="text-[#ff6b00]">{cat.name}</span>
+              <span className="text-primary">{cat.name}</span>
             </nav>
 
             <motion.h1
@@ -80,7 +80,7 @@ export default function ProductCategory() {
               className="display text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight"
             >
               {cat.name.split(" ").slice(0, -1).join(" ")}{" "}
-              <span className="text-[#ff6b00]">{cat.name.split(" ").slice(-1)}</span>.
+              <span className="text-primary">{cat.name.split(" ").slice(-1)}</span>.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
@@ -133,10 +133,10 @@ export default function ProductCategory() {
                 key={b}
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="glass p-4 flex flex-col items-center text-center group hover:border-[#ff6b00]/50 transition-colors"
+                className="glass p-4 flex flex-col items-center text-center group hover:border-primary/50 transition-colors"
                 data-testid={`benefit-${i}`}
               >
-                <div className="w-10 h-10 grid place-items-center bg-[#ff6b00]/10 text-[#ff6b00] border border-[#ff6b00]/20 mb-3 group-hover:bg-[#ff6b00] group-hover:text-white transition-colors">
+                <div className="w-10 h-10 grid place-items-center bg-primary/10 text-primary border border-primary/20 mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
                   <Icon className="w-4 h-4" />
                 </div>
                 <div className="text-xs font-semibold leading-tight">{b}</div>
@@ -174,7 +174,7 @@ export default function ProductCategory() {
             <button
               onClick={() => { setApps([]); setMats([]); setFeats([]); setPage(1); }}
               data-testid="filters-reset"
-              className="text-xs text-white/50 hover:text-[#ff6b00] mt-4"
+              className="text-xs text-white/50 hover:text-primary mt-4"
             >
               Reset all filters
             </button>
@@ -188,7 +188,7 @@ export default function ProductCategory() {
                 value={sort}
                 onChange={(e) => setSort(e.target.value)}
                 data-testid="sort-select"
-                className="bg-[#0a0f25]/60 border border-white/10 px-4 py-2 text-sm focus:border-[#ff6b00] focus:outline-none"
+                className="bg-[#0a0f25]/60 border border-white/10 px-4 py-2 text-sm focus:border-primary focus:outline-none"
               >
                 <option value="popular">Popular</option>
                 <option value="latest">Latest</option>
@@ -207,16 +207,16 @@ export default function ProductCategory() {
                     key={p.id}
                     initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }}
                     transition={{ delay: (i % 3) * 0.06 }}
-                    className="group bg-white/[0.02] border border-white/[0.06] hover:border-[#ff6b00]/50 transition-colors"
+                    className="group bg-white/[0.02] border border-white/[0.06] hover:border-primary/50 transition-colors"
                     data-testid={`pcat-card-${p.id}`}
                   >
                     <div className="aspect-square overflow-hidden bg-[#0a0f25]">
                       <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <div className="p-5">
-                      <div className="text-[10px] uppercase tracking-widest text-[#ff6b00] mb-2">{p.type}</div>
-                      <h3 className="display text-lg font-bold mb-3 group-hover:text-[#ff6b00] transition-colors line-clamp-1">{p.name}</h3>
-                      <Link to={`/products/${cat.id}/${p.id}`} data-testid={`pcat-view-${p.id}`} className="inline-flex items-center gap-1.5 text-sm font-semibold border-b border-[#ff6b00] pb-1">
+                      <div className="text-[10px] uppercase tracking-widest text-primary mb-2">{p.type}</div>
+                      <h3 className="display text-lg font-bold mb-3 group-hover:text-primary transition-colors line-clamp-1">{p.name}</h3>
+                      <Link to={`/products/${cat.id}/${p.id}`} data-testid={`pcat-view-${p.id}`} className="inline-flex items-center gap-1.5 text-sm font-semibold border-b border-primary pb-1">
                         View details <ArrowUpRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
@@ -232,7 +232,7 @@ export default function ProductCategory() {
                     key={i}
                     onClick={() => setPage(i + 1)}
                     data-testid={`page-${i + 1}`}
-                    className={`w-10 h-10 border text-sm font-semibold ${page === i + 1 ? "bg-[#ff6b00] border-[#ff6b00] text-white" : "border-white/10 text-white/70 hover:border-[#ff6b00]"}`}
+                    className={`w-10 h-10 border text-sm font-semibold ${page === i + 1 ? "bg-primary border-primary text-white" : "border-white/10 text-white/70 hover:border-primary"}`}
                   >
                     {i + 1}
                   </button>
@@ -249,7 +249,7 @@ export default function ProductCategory() {
           <div className="absolute inset-0 bg-radial-orange opacity-50" />
           <div className="relative grid md:grid-cols-2 gap-6 items-center">
             <h3 className="display text-3xl md:text-4xl font-bold leading-tight">
-              Need a custom <span className="text-[#ff6b00]">{cat.name.toLowerCase()}?</span>
+              Need a custom <span className="text-primary">{cat.name.toLowerCase()}?</span>
             </h3>
             <div className="flex md:justify-end">
               <Link to="/quote" className="btn-primary" data-testid="category-cta-quote">
@@ -278,7 +278,7 @@ function Accordion({ title, open, onToggle, children, testid }) {
 function CheckboxRow({ label, checked, onChange, testid }) {
   return (
     <label className="flex items-center gap-2 text-sm cursor-pointer text-white/75 hover:text-white" data-testid={testid}>
-      <input type="checkbox" checked={checked} onChange={onChange} className="accent-[#ff6b00] w-4 h-4" />
+      <input type="checkbox" checked={checked} onChange={onChange} className="accent-primary w-4 h-4" />
       <span>{label}</span>
     </label>
   );

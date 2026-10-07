@@ -1,5 +1,5 @@
 {
-  "project_name": "Lombodaran - Premium Packaging Corporate Website",
+  "project_name": "Vertex Packaging",
   "theme": "dark",
   "archetype": "Swiss & High-Contrast mixed with Luxury",
   "design_rationale": "Deep navy/near-black background (#050816) combined with vibrant orange (#ff6b00) establishes an industrial, high-tech manufacturing vibe. Glassmorphism is used sparingly for premium emphasis (hero cards, mega menu, stat cards).",
@@ -20,13 +20,21 @@
     "headings": {
       "family": "Cabinet Grotesk",
       "import": "@import url('https://fonts.cdnfonts.com/css/cabinet-grotesk');",
-      "weights": ["400", "700", "900"],
+      "weights": [
+        "400",
+        "700",
+        "900"
+      ],
       "usage": "Use for all H1, H2, H3, major stat figures. Must use tracking-tight."
     },
     "body": {
       "family": "Manrope",
       "import": "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');",
-      "weights": ["400", "500", "600"],
+      "weights": [
+        "400",
+        "500",
+        "600"
+      ],
       "usage": "Use for all paragraphs, labels, and small text. High legibility."
     }
   },
@@ -70,41 +78,95 @@
   },
   "motion": {
     "framer_defaults": {
-      "initial": { "opacity": 0, "y": 20 },
-      "whileInView": { "opacity": 1, "y": 0 },
-      "viewport": { "once": true, "margin": "-100px" },
-      "transition": { "duration": 0.6, "ease": [0.22, 1, 0.36, 1] }
+      "initial": {
+        "opacity": 0,
+        "y": 20
+      },
+      "whileInView": {
+        "opacity": 1,
+        "y": 0
+      },
+      "viewport": {
+        "once": true,
+        "margin": "-100px"
+      },
+      "transition": {
+        "duration": 0.6,
+        "ease": [
+          0.22,
+          1,
+          0.36,
+          1
+        ]
+      }
     },
     "stagger_children": {
-      "transition": { "staggerChildren": 0.1 }
+      "transition": {
+        "staggerChildren": 0.1
+      }
     }
   },
   "pages": {
     "navigation": {
       "layout": "Sticky glassmorphism header (z-50, backdrop-blur-xl bg-[#050816]/70, border-b border-white/10).",
-      "components": ["Mega Menu (Products, Industries)", "Mobile Drawer", "Get Quote CTA"]
+      "components": [
+        "Mega Menu (Products, Industries)",
+        "Mobile Drawer",
+        "Get Quote CTA"
+      ]
     },
     "home": {
       "hero": {
         "layout": "Grid 12-col. Left 7-cols for Headings + Stats. Right 5-cols for Glassmorphic Quick Enquiry Form. Overlay bg-[#050816]/60 on background image.",
-        "components": ["H1 text-5xl md:text-6xl tracking-tight text-white", "Stats counters (Framer Motion)", "Quick Enquiry Form (Card glass)"]
+        "components": [
+          "H1 text-5xl md:text-6xl tracking-tight text-white",
+          "Stats counters (Framer Motion)",
+          "Quick Enquiry Form (Card glass)"
+        ]
       },
       "industries_preview": {
         "layout": "Bento Grid (Control Room Mode). 4 Columns. Hover reveals image background + detail text.",
-        "items": ["Food", "Pharma", "Personal Care", "Home Care", "Textile", "Industrial"]
+        "items": [
+          "Food",
+          "Pharma",
+          "Personal Care",
+          "Home Care",
+          "Textile",
+          "Industrial"
+        ]
       },
       "featured_products": {
         "layout": "Full width section with Swiper slider. Cards have dark glass background.",
-        "items": ["Printed Rolls", "Stand Up Pouches", "Center Seal Pouches", "Three Side Seal Pouches", "Spout Pouches", "Laminates", "Zip Lock Pouches"]
+        "items": [
+          "Printed Rolls",
+          "Stand Up Pouches",
+          "Center Seal Pouches",
+          "Three Side Seal Pouches",
+          "Spout Pouches",
+          "Laminates",
+          "Zip Lock Pouches"
+        ]
       },
       "process_timeline": {
         "layout": "Vertical staggered timeline with active state glow.",
-        "items": ["Consultation", "Design", "Printing", "Lamination", "Pouch Making", "Quality Check", "Dispatch"]
+        "items": [
+          "Consultation",
+          "Design",
+          "Printing",
+          "Lamination",
+          "Pouch Making",
+          "Quality Check",
+          "Dispatch"
+        ]
       }
     },
     "product_details": {
       "layout": "2-Column Layout. Left: Sticky vertical thumbnail gallery + main image + lightbox zoom. Right: Title, Specs, Features, Sticky Enquiry Form.",
-      "components": ["Gallery Slider (Swiper)", "Tabs for Specs/Features", "Sticky Glass Form"]
+      "components": [
+        "Gallery Slider (Swiper)",
+        "Tabs for Specs/Features",
+        "Sticky Glass Form"
+      ]
     },
     "infrastructure": {
       "layout": "Masonry grid for factory images, large video modal trigger, wide stats bento boxes."
@@ -117,7 +179,11 @@
     },
     "footer": {
       "layout": "Premium multi-column dark footer. py-24. Large 'Lombodaran' brand text at bottom.",
-      "components": ["Newsletter Form", "Sitemap Links", "Social Icons"]
+      "components": [
+        "Newsletter Form",
+        "Sitemap Links",
+        "Social Icons"
+      ]
     }
   },
   "media_urls": {

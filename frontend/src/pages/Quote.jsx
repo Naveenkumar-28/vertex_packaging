@@ -48,7 +48,7 @@ export default function Quote() {
     }
   };
 
-  const inputCls = "w-full bg-[#0a0f25]/60 border border-white/10 px-4 py-3.5 text-sm placeholder:text-white/30 focus:border-[#ff6b00] focus:outline-none focus:ring-1 focus:ring-[#ff6b00]/40 transition-colors";
+  const inputCls = "w-full bg-[#0a0f25]/60 border border-white/10 px-4 py-3.5 text-sm placeholder:text-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/40 transition-colors";
 
   return (
     <div data-testid="quote-page" className="pt-24 pb-24">
@@ -63,9 +63,8 @@ export default function Quote() {
         <div className="flex items-center gap-4 mb-10" data-testid="quote-progress">
           {STEPS.map((s, i) => (
             <div key={s.id} className="flex-1 flex items-center gap-3">
-              <div className={`w-9 h-9 grid place-items-center text-sm font-semibold border ${
-                i <= step ? "bg-[#ff6b00] border-[#ff6b00] text-white" : "border-white/15 text-white/40"
-              }`}>
+              <div className={`w-9 h-9 grid place-items-center text-sm font-semibold border ${i <= step ? "bg-primary border-primary text-white" : "border-white/15 text-white/40"
+                }`}>
                 {i < step ? <CheckCircle2 className="w-4 h-4" /> : s.id}
               </div>
               <div className="hidden md:block">
@@ -166,7 +165,7 @@ export default function Quote() {
               <button onClick={() => setSuccess(false)} className="absolute top-4 right-4 w-9 h-9 grid place-items-center text-white/60 hover:text-white" data-testid="success-close">
                 <X className="w-5 h-5" />
               </button>
-              <div className="w-16 h-16 mx-auto rounded-full bg-[#ff6b00] grid place-items-center mb-5">
+              <div className="w-16 h-16 mx-auto rounded-full bg-primary grid place-items-center mb-5">
                 <CheckCircle2 className="w-7 h-7 text-white" />
               </div>
               <h3 className="display text-2xl font-bold mb-3">Quote request received!</h3>

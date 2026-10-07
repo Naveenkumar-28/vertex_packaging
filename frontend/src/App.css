@@ -2,3 +2,8 @@
   text-align: left;
   min-height: 100vh;
 }
+
+.brand-gradient-text {
+  color: transparent;
+  background: linear-gradient(90deg, rgb(27, 94, 32) 0%, rgb(46, 125, 50) 50%, rgb(67, 160, 71) 100%) text;
+}

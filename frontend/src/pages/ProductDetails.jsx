@@ -48,7 +48,7 @@ export default function ProductDetails() {
           <ChevronRight className="w-3 h-3" />
           <Link to={`/products/${product.category}`} className="hover:text-white">{cat?.name}</Link>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-[#ff6b00]">{product.name}</span>
+          <span className="text-primary">{product.name}</span>
         </nav>
       </div>
 
@@ -63,7 +63,7 @@ export default function ProductDetails() {
                     key={i}
                     onClick={() => setActiveImg(i)}
                     data-testid={`thumb-${i}`}
-                    className={`aspect-square overflow-hidden border-2 transition-colors ${activeImg === i ? "border-[#ff6b00]" : "border-white/10 hover:border-white/30"}`}
+                    className={`aspect-square overflow-hidden border-2 transition-colors ${activeImg === i ? "border-primary" : "border-white/10 hover:border-white/30"}`}
                   >
                     <img src={img} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
                   </button>
@@ -89,14 +89,14 @@ export default function ProductDetails() {
 
           {/* INFO */}
           <div>
-            <div className="text-xs uppercase tracking-widest text-[#ff6b00] mb-3">{product.type}</div>
+            <div className="text-xs uppercase tracking-widest text-primary mb-3">{product.type}</div>
             <h1 className="display text-4xl md:text-5xl font-bold mb-5 leading-tight">{product.name}</h1>
             <p className="text-white/65 text-lg leading-relaxed mb-6">{product.description}</p>
 
             <ul className="space-y-2.5 mb-8" data-testid="bullet-features">
               {product.features.slice(0, 4).map((f) => (
                 <li key={f} className="flex items-start gap-3 text-white/85 text-sm">
-                  <Check className="w-4 h-4 text-[#ff6b00] mt-0.5 shrink-0" /> {f}
+                  <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" /> {f}
                 </li>
               ))}
             </ul>
@@ -115,7 +115,7 @@ export default function ProductDetails() {
         {/* SPECIFICATIONS */}
         <div className="mt-16">
           <h3 className="display text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-8 h-px bg-[#ff6b00]" /> Specifications
+            <span className="w-8 h-px bg-primary" /> Specifications
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3" data-testid="specs-grid">
             {Object.entries(product.specs).map(([k, v]) => (
@@ -130,12 +130,12 @@ export default function ProductDetails() {
         {/* APPLICATIONS */}
         <div className="mt-16">
           <h3 className="display text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-8 h-px bg-[#ff6b00]" /> Applications
+            <span className="w-8 h-px bg-primary" /> Applications
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3" data-testid="applications-grid">
             {product.applications.map((a) => (
-              <div key={a} className="glass p-5 flex flex-col items-center text-center group hover:border-[#ff6b00]/50 transition-colors">
-                <div className="w-10 h-10 grid place-items-center bg-[#ff6b00]/10 text-[#ff6b00] border border-[#ff6b00]/20 mb-3 group-hover:bg-[#ff6b00] group-hover:text-white transition-colors">
+              <div key={a} className="glass p-5 flex flex-col items-center text-center group hover:border-primary/50 transition-colors">
+                <div className="w-10 h-10 grid place-items-center bg-primary/10 text-primary border border-primary/20 mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
                   <Package2 className="w-4 h-4" />
                 </div>
                 <div className="text-xs font-semibold">{a}</div>
@@ -147,14 +147,14 @@ export default function ProductDetails() {
         {/* KEY FEATURES */}
         <div className="mt-16">
           <h3 className="display text-2xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-8 h-px bg-[#ff6b00]" /> Key Features
+            <span className="w-8 h-px bg-primary" /> Key Features
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3" data-testid="key-features-grid">
             {product.features.map((f) => {
               const Icon = FEATURE_ICONS[f] || Sparkles;
               return (
-                <div key={f} className="glass p-5 group hover:border-[#ff6b00]/50 transition-colors">
-                  <div className="w-10 h-10 grid place-items-center bg-[#ff6b00]/10 text-[#ff6b00] border border-[#ff6b00]/20 mb-3 group-hover:bg-[#ff6b00] group-hover:text-white transition-colors">
+                <div key={f} className="glass p-5 group hover:border-primary/50 transition-colors">
+                  <div className="w-10 h-10 grid place-items-center bg-primary/10 text-primary border border-primary/20 mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
                     <Icon className="w-4 h-4" />
                   </div>
                   <div className="text-sm font-semibold">{f}</div>
@@ -201,13 +201,13 @@ export default function ProductDetails() {
           >
             {related.map((p) => (
               <SwiperSlide key={p.id}>
-                <Link to={`/products/${p.category}/${p.id}`} className="group block bg-white/[0.02] border border-white/[0.06] hover:border-[#ff6b00]/50 transition-colors" data-testid={`related-${p.id}`}>
+                <Link to={`/products/${p.category}/${p.id}`} className="group block bg-white/[0.02] border border-white/[0.06] hover:border-primary/50 transition-colors" data-testid={`related-${p.id}`}>
                   <div className="aspect-square overflow-hidden">
                     <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   <div className="p-5">
-                    <div className="text-[10px] uppercase tracking-widest text-[#ff6b00] mb-2">{p.type}</div>
-                    <div className="display text-base font-bold group-hover:text-[#ff6b00] transition-colors">{p.name}</div>
+                    <div className="text-[10px] uppercase tracking-widest text-primary mb-2">{p.type}</div>
+                    <div className="display text-base font-bold group-hover:text-primary transition-colors">{p.name}</div>
                   </div>
                 </Link>
               </SwiperSlide>
@@ -221,10 +221,10 @@ export default function ProductDetails() {
         <div className="glass-strong p-10 md:p-16 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-radial-orange opacity-40" />
           <div className="relative">
-            <div className="text-xs uppercase tracking-widest text-[#ff6b00] mb-4">Final word</div>
+            <div className="text-xs uppercase tracking-widest text-primary mb-4">Final word</div>
             <h2 className="display text-3xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">
               Let's create packaging that <br />
-              <span className="text-[#ff6b00]">elevates your brand.</span>
+              <span className="text-primary">elevates your brand.</span>
             </h2>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
               <Link to="/contact" className="btn-primary" data-testid="final-cta-experts">

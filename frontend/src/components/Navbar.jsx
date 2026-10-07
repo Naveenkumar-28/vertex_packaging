@@ -5,7 +5,7 @@ import { Menu, X, ChevronDown, Package, ArrowUpRight } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
 import { CATEGORIES } from "@/data/categories";
 import { INDUSTRIES } from "@/data/industries";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
@@ -39,12 +39,13 @@ export default function Navbar() {
     >
       <div className="container-pad flex items-center justify-between gap-4 h-[72px]">
         <Link to="/" data-testid="nav-logo" className="flex items-center gap-2 group shrink-0">
-          <span className="w-9 h-9 grid place-items-center bg-[#ff6b00] text-white">
-            <Package className="w-5 h-5" />
+          <span className="w-9 h-9 grid place-items-center">
+            <img className="h-full w-full object-cover" src="/logo.png" alt="logo" />
           </span>
-          <span className="display text-xl font-bold tracking-tight">
-            lombo<span className="text-[#ff6b00]">daran</span>
-          </span>
+          <div className='leading-tight'>
+            <div className='text-base font-extrabold tracking-wider'>Vertex</div>
+            <div className='text-[0.675rem] font-medium text-neutral-400 -mt-0.5'>Packaging</div>
+          </div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-0 xl:gap-1" onMouseLeave={() => setOpenMega(null)}>
@@ -58,7 +59,7 @@ export default function Navbar() {
                 to={l.to}
                 data-testid={`nav-link-${l.label.toLowerCase()}`}
                 className={({ isActive }) =>
-                  `px-2.5 xl:px-4 py-2 text-[13px] xl:text-sm font-medium tracking-wide flex items-center gap-1 transition-colors whitespace-nowrap ${isActive ? "text-[#ff6b00]" : "text-white/80 hover:text-white"
+                  `px-2.5 xl:px-4 py-2 text-[13px] xl:text-sm  tracking-wide flex items-center gap-1 transition-colors whitespace-nowrap ${isActive ? "text-primary font-bold" : "text-white/80 hover:text-white font-medium"
                   }`
                 }
               >
@@ -73,7 +74,7 @@ export default function Navbar() {
           <Link
             to="/quote"
             data-testid="nav-get-quote-btn"
-            className="inline-flex items-center gap-1.5 bg-[#ff6b00] hover:bg-[#e65a00] text-white font-semibold text-[13px] xl:text-sm px-4 xl:px-5 py-2.5 transition-all whitespace-nowrap shadow-[0_8px_24px_rgba(255,107,0,0.25)] hover:-translate-y-0.5"
+            className="inline-flex items-center gap-1.5 bg-primary hover:bg-[rgb(38,136,43)] text-white font-semibold text-[13px] xl:text-sm px-4 xl:px-5 py-2.5 transition-all whitespace-nowrap shadow-[0_8px_24px_rgba(38,136,43,0.25)] hover:-translate-y-0.5"
           >
             Get Quote <ArrowUpRight className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
           </Link>
@@ -93,6 +94,15 @@ export default function Navbar() {
             side="right"
             className="bg-[#050816] border-l border-white/10 text-white w-[300px]"
           >
+            <SheetHeader>
+              <SheetTitle className="text-white">
+                Menu
+              </SheetTitle>
+
+              <SheetDescription className="sr-only">
+                Mobile navigation menu for Vertex Packaging website
+              </SheetDescription>
+            </SheetHeader>
             <div className="flex flex-col gap-1 mt-8" data-testid="mobile-menu">
               {NAV_LINKS.map((l) => (
                 <NavLink
@@ -102,7 +112,7 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className={({ isActive }) =>
                     `px-4 py-3 text-sm font-medium border-l-2 ${isActive
-                      ? "border-[#ff6b00] text-[#ff6b00] bg-white/[0.03]"
+                      ? "border-primary text-primary bg-white/[0.03]"
                       : "border-transparent text-white/80"
                     }`
                   }
@@ -172,7 +182,7 @@ export default function Navbar() {
                       <Link
                         to="/products"
                         onClick={() => setOpenMega(null)}
-                        className="text-xs text-[#ff6b00] mt-3 inline-flex items-center gap-1"
+                        className="text-xs text-primary mt-3 inline-flex items-center gap-1"
                       >
                         View all categories <ArrowUpRight className="w-3 h-3" />
                       </Link>

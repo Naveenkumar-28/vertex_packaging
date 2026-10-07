@@ -21,15 +21,23 @@ import Contact from "@/pages/Contact";
 import Quote from "@/pages/Quote";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/NotFound";
+import AdminLogin from "@/pages/AdminLogin";
+import ProtectedAdmin from "@/components/ProtectedAdmin";
+
 
 function App() {
   return (
     <div className="App min-h-screen bg-[#050816] text-white">
       <BrowserRouter>
         <Routes>
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route element={<ProtectedAdmin />}>
+            <Route path="/admin" element={<Admin />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/products" element={<Products />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/products/:slug" element={<ProductCategory />} />
             <Route path="/products/:category/:slug" element={<ProductDetails />} />
             <Route path="/industries" element={<Industries />} />
@@ -39,7 +47,6 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/quote" element={<Quote />} />
-            <Route path="/admin" element={<Admin />} /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

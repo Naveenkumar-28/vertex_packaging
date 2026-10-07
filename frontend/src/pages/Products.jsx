@@ -45,7 +45,7 @@ export default function Products() {
         {/* light effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full bg-[#1e3a8a] opacity-20 blur-3xl" />
-          <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#ff6b00] opacity-15 blur-3xl" />
+          <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary opacity-15 blur-3xl" />
           <div className="absolute inset-0 bg-grid opacity-30" />
         </div>
 
@@ -57,7 +57,7 @@ export default function Products() {
               className="inline-flex items-center gap-2 px-4 py-2 border border-white/10 text-xs uppercase tracking-widest text-white/70 mb-8"
               data-testid="products-hero-badge"
             >
-              <Layers className="w-3.5 h-3.5 text-[#ff6b00]" />
+              <Layers className="w-3.5 h-3.5 text-primary" />
               Catalogue 2026 · 6 categories · 60+ SKUs
             </motion.div>
 
@@ -65,7 +65,7 @@ export default function Products() {
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
               className="display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1] tracking-tight"
             >
-              Our <span className="text-[#ff6b00]">Products</span>.
+              Our <span className="text-primary">Products</span>.
             </motion.h1>
 
             <motion.p
@@ -101,12 +101,12 @@ export default function Products() {
               className="absolute inset-0 grid place-items-center"
             >
               <div className="relative w-[80%] aspect-square">
-                <div className="absolute inset-0 rounded-full bg-[#ff6b00] opacity-25 blur-3xl" />
+                <div className="absolute inset-0 rounded-full bg-primary opacity-25 blur-3xl" />
                 <div className="absolute inset-0 rounded-full bg-[#1e3a8a] opacity-20 blur-3xl translate-x-8 translate-y-8" />
                 <img
                   src="https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&q=80&w=1200"
                   alt="packaging roll"
-                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl shadow-[#ff6b00]/30 border border-white/10"
+                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl shadow-primary/30 border border-white/10"
                   style={{ transform: "perspective(900px) rotateY(-12deg) rotateX(8deg)" }}
                 />
               </div>
@@ -123,7 +123,7 @@ export default function Products() {
               className="absolute bottom-12 left-2 glass-strong px-4 py-3 hidden md:block"
             >
               <div className="text-[10px] uppercase tracking-widest text-white/50">Barrier</div>
-              <div className="text-sm font-bold mt-1 text-[#ff6b00]">High OTR + WVTR</div>
+              <div className="text-sm font-bold mt-1 text-primary">High OTR + WVTR</div>
             </motion.div>
           </motion.div>
         </div>
@@ -135,7 +135,7 @@ export default function Products() {
           <SectionHeader
             eyebrow="Categories"
             title="Six categories. Endless possibilities."
-            subtitle="Explore Lombodaran's complete packaging range — engineered for every shelf, every brand and every budget."
+            subtitle="Explore Vertex's complete packaging range — engineered for every shelf, every brand and every budget."
             testid="categories-header"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -145,19 +145,19 @@ export default function Products() {
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.07 }}
                 data-testid={`category-card-${c.id}`}
-                className="group relative bg-white/[0.02] border border-white/[0.06] hover:border-[#ff6b00] transition-all duration-300"
+                className="group relative bg-white/[0.02] border border-white/[0.06] hover:border-primary transition-all duration-300"
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img src={c.image} alt={c.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
                 </div>
                 <div className="p-6">
-                  <h3 className="display text-xl md:text-2xl font-bold mb-2 group-hover:text-[#ff6b00] transition-colors">{c.name}</h3>
+                  <h3 className="display text-xl md:text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{c.name}</h3>
                   <p className="text-sm text-white/55 line-clamp-2 mb-6 min-h-[2.5rem]">{c.short}</p>
                   <Link
                     to={`/products/${c.id}`}
                     data-testid={`category-explore-${c.id}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold border-b border-[#ff6b00] pb-1 hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-sm font-semibold border-b border-primary pb-1 hover:gap-3 transition-all"
                   >
                     Explore <ArrowUpRight className="w-4 h-4" />
                   </Link>
@@ -176,11 +176,11 @@ export default function Products() {
               key={f.title}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="glass p-6 group hover:border-[#ff6b00]/50 transition-colors relative overflow-hidden"
+              className="glass p-6 group hover:border-primary/50 transition-colors relative overflow-hidden"
               data-testid={`feature-bar-${i}`}
             >
-              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#ff6b00] opacity-0 group-hover:opacity-10 blur-2xl transition-opacity" />
-              <div className="w-12 h-12 grid place-items-center bg-[#ff6b00]/10 text-[#ff6b00] border border-[#ff6b00]/30 mb-5 group-hover:bg-[#ff6b00] group-hover:text-white transition-colors shadow-[0_0_24px_rgba(255,107,0,0.25)]">
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-primary opacity-0 group-hover:opacity-10 blur-2xl transition-opacity" />
+              <div className="w-12 h-12 grid place-items-center bg-primary/10 text-primary border border-primary/30 mb-5 group-hover:bg-primary group-hover:text-white transition-colors shadow-[0_0_24px_rgba(38,136,43,0.25)]">
                 <f.icon className="w-5 h-5" />
               </div>
               <h3 className="display text-base font-bold mb-2">{f.title}</h3>
@@ -199,16 +199,16 @@ export default function Products() {
             transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0 opacity-30"
             style={{
-              background: "linear-gradient(120deg, #ff6b00 0%, #1e3a8a 25%, #050816 50%, #1e3a8a 75%, #ff6b00 100%)",
+              background: "linear-gradient(120deg, #43a047 0%, #1e3a8a 25%, #050816 50%, #1e3a8a 75%, #43a047 100%)",
               backgroundSize: "300% 300%",
             }}
           />
           <div className="relative grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <div className="text-xs uppercase tracking-widest text-[#ff6b00] mb-4">Talk to us</div>
+              <div className="text-xs uppercase tracking-widest text-primary mb-4 font-semibold">Talk to us</div>
               <h2 className="display text-3xl md:text-5xl font-bold leading-tight">
                 Looking for the right packaging solution<br />
-                for your <span className="text-[#ff6b00]">brand?</span>
+                for your <span className="text-primary">brand?</span>
               </h2>
             </div>
             <div className="flex md:justify-end">

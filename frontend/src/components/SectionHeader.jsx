@@ -10,10 +10,10 @@ export default function SectionHeader({ eyebrow, title, subtitle, align = "left"
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-xs uppercase tracking-[0.3em] text-[#ff6b00] mb-4 flex items-center gap-3"
+          className="text-xs font-semibold uppercase tracking-[0.3em] text-primary mb-4 flex items-center gap-3"
           style={{ justifyContent: align === "center" ? "center" : "flex-start" }}
         >
-          <span className="w-8 h-px bg-[#ff6b00]" />
+          <span className="w-8 h-px bg-primary" />
           {eyebrow}
         </motion.div>
       )}

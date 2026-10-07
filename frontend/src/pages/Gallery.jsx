@@ -18,7 +18,7 @@ export default function Gallery() {
       <section className="container-pad pt-12">
         <SectionHeader
           eyebrow="Gallery"
-          title="Inside Lombodaran."
+          title="Inside Vertex Packaging."
           subtitle="Behind-the-scenes — our products, factory floor, machines and people."
         />
 
@@ -28,11 +28,10 @@ export default function Gallery() {
               key={c}
               onClick={() => setCat(c)}
               data-testid={`gallery-filter-${c.toLowerCase()}`}
-              className={`text-sm px-5 py-2 border transition-colors ${
-                cat === c
-                  ? "bg-[#ff6b00] border-[#ff6b00] text-white"
-                  : "border-white/10 text-white/75 hover:border-white/30"
-              }`}
+              className={`text-sm px-5 py-2 border transition-colors ${cat === c
+                ? "bg-primary border-primary text-white"
+                : "border-white/10 text-white/75 hover:border-white/30"
+                }`}
             >
               {c}
             </button>

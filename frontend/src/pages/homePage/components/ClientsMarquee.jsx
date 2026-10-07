@@ -1,6 +1,7 @@
 import {
   Coffee, Leaf, Sparkles, Heart, Pill, Crown, Flame, Apple, Droplets, Sun, Gem, Snowflake,
 } from "lucide-react";
+import SectionHeader from "../../../components/SectionHeader";
 
 const CLIENTS = [
   { name: "AromaBrew", icon: Coffee },
@@ -35,9 +36,9 @@ function Row({ reverse = false }) {
             <div
               key={`${c.name}-${i}`}
               data-testid={`client-${c.name.toLowerCase().replace(/\s+/g, "-")}-${i}`}
-              className="shrink-0 flex items-center gap-3 px-6 md:px-8 py-5 border border-white/[0.06] bg-white/[0.02] hover:border-[#ff6b00]/40 hover:bg-white/[0.04] transition-colors min-w-[200px] md:min-w-[240px]"
+              className="shrink-0 flex items-center gap-3 px-6 md:px-8 py-5 border border-white/[0.06] bg-white/[0.02] hover:border-primary/40 hover:bg-white/[0.04] transition-colors min-w-[200px] md:min-w-[240px]"
             >
-              <span className="w-9 h-9 grid place-items-center bg-[#ff6b00]/10 text-[#ff6b00] border border-[#ff6b00]/20 shrink-0">
+              <span className="w-9 h-9 grid place-items-center bg-primary/10 text-primary border border-primary/20 shrink-0">
                 <Icon className="w-4 h-4" />
                 {/* <img className="h-full w-full" src="https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&q=80&w=1400" alt="logo" /> */}
               </span>
@@ -52,22 +53,16 @@ function Row({ reverse = false }) {
   );
 }
 
-export default function ClientsMarquee() {
+export function ClientsMarquee() {
   return (
     <section className="section-pad relative" data-testid="clients-section">
       <div className="container-pad mb-12">
-        <div className="text-xs uppercase tracking-[0.3em] text-[#ff6b00] mb-4 flex items-center gap-3">
-          <span className="w-8 h-px bg-[#ff6b00]" />
-          Our Clients
-        </div>
-        <div className="flex flex-col justify-between gap-4">
-          <h2 className="display text-4xl md:text-5xl font-bold leading-[1.05]">
-            Trusted by <span className="text-[#ff6b00]">100+ brands</span> across India.
-          </h2>
-          <p className="text-white/55 text-sm md:text-base max-w-md">
-            From homegrown startups to global FMCG giants — Lombodaran packages it all.
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow="Our Clients"
+          title="Trusted by 100+ brands across India."
+          subtitle=" From homegrown startups to global FMCG giants — Vertex packages it all."
+          testid="industries-header"
+        />
       </div>
       <div className="space-y-4">
         <Row />

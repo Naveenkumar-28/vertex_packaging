@@ -10,27 +10,28 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-5">
-              <span className="w-9 h-9 grid place-items-center bg-[#ff6b00] text-white">
-                <Package className="w-5 h-5" />
+              <span className="w-9 h-9 grid place-items-center">
+                <img className="h-full w-full object-cover" src="/logo.png" alt="logo" />
               </span>
-              <span className="display text-xl font-bold">
-                lombo<span className="text-[#ff6b00]">daran</span>
-              </span>
+              <div className='leading-tight'>
+                <div className='text-base font-extrabold tracking-wide'>Vertex</div>
+                <div className='text-[0.675rem] font-medium text-neutral-400 -mt-0.5'>Packaging</div>
+              </div>
             </Link>
             <p className="text-white/55 text-sm leading-relaxed mb-5">
               Premium flexible packaging solutions engineered for brands across food, pharma, personal care and industrial sectors.
             </p>
             <div className="flex gap-2">
-              <a href={SITE.social.linkedin} target="_blank" rel="noreferrer" data-testid="social-linkedin" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-[#ff6b00] hover:text-[#ff6b00] transition-colors">
+              <a href={SITE.social.linkedin} target="_blank" rel="noreferrer" data-testid="social-linkedin" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-primary hover:text-primary transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href={SITE.social.instagram} target="_blank" rel="noreferrer" data-testid="social-instagram" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-[#ff6b00] hover:text-[#ff6b00] transition-colors">
+              <a href={SITE.social.instagram} target="_blank" rel="noreferrer" data-testid="social-instagram" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-primary hover:text-primary transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href={SITE.social.facebook} target="_blank" rel="noreferrer" data-testid="social-facebook" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-[#ff6b00] hover:text-[#ff6b00] transition-colors">
+              <a href={SITE.social.facebook} target="_blank" rel="noreferrer" data-testid="social-facebook" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-primary hover:text-primary transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href={SITE.social.youtube} target="_blank" rel="noreferrer" data-testid="social-youtube" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-[#ff6b00] hover:text-[#ff6b00] transition-colors">
+              <a href={SITE.social.youtube} target="_blank" rel="noreferrer" data-testid="social-youtube" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-primary hover:text-primary transition-colors">
                 <Youtube className="w-4 h-4" />
               </a>
             </div>
@@ -47,7 +48,7 @@ export default function Footer() {
                 ["/contact", "Contact"],
               ].map(([to, l]) => (
                 <li key={to}>
-                  <Link to={to} className="text-white/70 hover:text-[#ff6b00] transition-colors" data-testid={`footer-link-${l.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <Link to={to} className="text-white/70 hover:text-primary transition-colors" data-testid={`footer-link-${l.toLowerCase().replace(/\s+/g, "-")}`}>
                     {l}
                   </Link>
                 </li>
@@ -60,7 +61,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {CATEGORIES.slice(0, 6).map((c) => (
                 <li key={c.id}>
-                  <Link to={`/products/${c.id}`} className="text-white/70 hover:text-[#ff6b00] transition-colors" data-testid={`footer-product-${c.id}`}>
+                  <Link to={`/products/${c.id}`} className="text-white/70 hover:text-primary transition-colors" data-testid={`footer-product-${c.id}`}>
                     {c.name}
                   </Link>
                 </li>
@@ -72,19 +73,19 @@ export default function Footer() {
             <h4 className="text-xs uppercase tracking-widest text-white/40 mb-5">Get in touch</h4>
             <ul className="space-y-4 text-sm text-white/70">
               <li className="flex gap-3">
-                <MapPin className="w-4 h-4 mt-0.5 text-[#ff6b00] shrink-0" />
+                <MapPin className="w-4 h-4 mt-0.5 text-primary shrink-0" />
                 <span>{SITE.address}</span>
               </li>
               <li className="flex gap-3">
-                <Phone className="w-4 h-4 mt-0.5 text-[#ff6b00] shrink-0" />
+                <Phone className="w-4 h-4 mt-0.5 text-primary shrink-0" />
                 <a href={`tel:${SITE.phone}`} className="hover:text-white">{SITE.phone}</a>
               </li>
               <li className="flex gap-3">
-                <Mail className="w-4 h-4 mt-0.5 text-[#ff6b00] shrink-0" />
+                <Mail className="w-4 h-4 mt-0.5 text-primary shrink-0" />
                 <a href={`mailto:${SITE.email}`} className="hover:text-white">{SITE.email}</a>
               </li>
             </ul>
-            <Link to="/quote" data-testid="footer-quote-cta" className="inline-flex items-center gap-2 mt-6 text-[#ff6b00] text-sm font-semibold">
+            <Link to="/quote" data-testid="footer-quote-cta" className="inline-flex items-center gap-2 mt-6 text-primary text-sm font-semibold">
               Request a quote <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
@@ -93,15 +94,10 @@ export default function Footer() {
 
       <div className="border-t border-white/[0.06]">
         <div className="container-pad py-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-xs text-white/40">
-          <div>© {new Date().getFullYear()} Lombodaran Packaging Pvt Ltd. All rights reserved.</div>
-          {/* <div className="flex gap-6">
-            <span>Privacy</span>
-            <span>Terms</span>
-            <span>Compliance</span>
-          </div> */}
+          <div>© {new Date().getFullYear()} Vertex Packaging Pvt Ltd. All rights reserved.</div>
           <div className="flex gap-2">
             <span>Designed By :</span>
-            <span className="text-[#ff6b00]">Vertex Creative Studio</span>
+            <span className="text-primary font-semibold">Vertex Creative Studio</span>
 
           </div>
         </div>

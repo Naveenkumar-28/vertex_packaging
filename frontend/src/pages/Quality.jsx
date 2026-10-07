@@ -10,9 +10,9 @@ export default function Quality() {
         <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2200" alt="lab" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-[#050816]/50 to-[#050816]" />
         <div className="container-pad relative">
-          <div className="text-xs uppercase tracking-[0.3em] text-[#ff6b00] mb-4">Quality Assurance</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">Quality Assurance</div>
           <h1 className="display text-5xl md:text-7xl font-bold leading-[1.05] max-w-3xl">
-            Tested. Verified. <span className="text-[#ff6b00]">Trusted.</span>
+            Tested. Verified. <span className="text-primary">Trusted.</span>
           </h1>
         </div>
       </section>
@@ -32,7 +32,7 @@ export default function Quality() {
                 data-testid={`quality-step-${i}`}
               >
                 <div className={`glass p-6 ${i % 2 === 0 ? "md:mr-12" : "md:ml-12"} ${i > 0 ? "md:-mt-10" : ""}`}>
-                  <div className="display text-3xl font-bold text-[#ff6b00] mb-2">0{i + 1}</div>
+                  <div className="display text-3xl font-bold text-primary mb-2">0{i + 1}</div>
                   <h4 className="display text-xl font-bold mb-2">{q.step}</h4>
                   <p className="text-sm text-white/60">{q.desc}</p>
                 </div>
@@ -55,7 +55,7 @@ export default function Quality() {
               className="glass p-6 flex items-start gap-4"
               data-testid={`cert-${i}`}
             >
-              <div className="w-12 h-12 grid place-items-center bg-[#ff6b00]/10 text-[#ff6b00] border border-[#ff6b00]/20 shrink-0">
+              <div className="w-12 h-12 grid place-items-center bg-primary/10 text-primary border border-primary/20 shrink-0">
                 <Award className="w-5 h-5" />
               </div>
               <div>
@@ -78,7 +78,7 @@ export default function Quality() {
             <ul className="space-y-3" data-testid="lab-tests">
               {["OTR (Oxygen Transmission Rate)", "WVTR (Water Vapour Transmission Rate)", "Seal & Bond Strength Test", "Migration & Pull Test", "COF & Tear Resistance"].map((t) => (
                 <li key={t} className="flex items-start gap-3 text-white/70 text-sm">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff6b00] mt-0.5 shrink-0" /> {t}
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" /> {t}
                 </li>
               ))}
             </ul>

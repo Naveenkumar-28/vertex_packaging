@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Target, Eye, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeader from "@/components/SectionHeader";
-import { TIMELINE_JOURNEY, CORE_VALUES } from "@/data/site";
+import { CORE_VALUES } from "@/data/site";
 
 const TEAM = [
   { name: "Rajat Kulkarni", role: "Managing Director", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" },
@@ -17,13 +17,13 @@ export default function About() {
       {/* Intro */}
       <section className="container-pad pt-12 pb-20 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div className="text-xs uppercase tracking-[0.3em] text-[#ff6b00] mb-4">About Lombodaran</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4 font-semibold">About Vertex Packaging</div>
           <h1 className="display text-5xl md:text-6xl font-bold leading-[1.05] mb-6">
             Packaging is more than a product. <br />
-            It's a <span className="text-[#ff6b00]">promise.</span>
+            It's a <span className="text-primary">promise.</span>
           </h1>
           <p className="text-white/65 text-lg leading-relaxed mb-5">
-            Since 2017, Lombodaran has manufactured premium flexible packaging from Pune for India's most exciting consumer brands. Today we operate a 50,000 sq ft facility with 10+ production machines, an in-house QA lab and a 70+ strong team.
+            Since 2017, Vertex has manufactured premium flexible packaging from Pune for India's most exciting consumer brands. Today we operate a 50,000 sq ft facility with 10+ production machines, an in-house QA lab and a 70+ strong team.
           </p>
           <p className="text-white/65 leading-relaxed">
             We obsess over barrier, finish and shelf appeal — so your brand looks and performs at its best, every single time.
@@ -43,14 +43,14 @@ export default function About() {
       <section className="container-pad py-16">
         <div className="grid md:grid-cols-2 gap-5">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass p-8" data-testid="mission-card">
-            <Target className="w-8 h-8 text-[#ff6b00] mb-4" />
+            <Target className="w-8 h-8 text-primary mb-4" />
             <h3 className="display text-2xl font-bold mb-3">Our Mission</h3>
             <p className="text-white/60 leading-relaxed">
               To engineer flexible packaging that protects products, elevates brands and reduces environmental impact — while delivering on time, every time.
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass p-8" data-testid="vision-card">
-            <Eye className="w-8 h-8 text-[#ff6b00] mb-4" />
+            <Eye className="w-8 h-8 text-primary mb-4" />
             <h3 className="display text-2xl font-bold mb-3">Our Vision</h3>
             <p className="text-white/60 leading-relaxed">
               To be India's most trusted flexible packaging partner — recognized for premium quality, design and sustainability leadership.
@@ -60,7 +60,7 @@ export default function About() {
       </section>
 
       {/* Journey */}
-      <section className="container-pad py-16">
+      {/* <section className="container-pad py-16">
         <SectionHeader eyebrow="Our journey" title="Eight years. One obsession: packaging." />
         <div className="relative pl-8 md:pl-0">
           <div className="absolute md:left-1/2 left-3 top-2 bottom-2 w-px bg-white/10" />
@@ -73,15 +73,15 @@ export default function About() {
               data-testid={`journey-${t.year}`}
             >
               <div className={`glass p-6 md:max-w-md ${i % 2 === 0 ? "md:ml-auto" : ""}`}>
-                <div className="display text-3xl font-bold text-[#ff6b00] mb-1">{t.year}</div>
+                <div className="display text-3xl font-bold text-primary mb-1">{t.year}</div>
                 <div className="display text-lg font-bold mb-2">{t.title}</div>
                 <div className="text-sm text-white/60">{t.desc}</div>
               </div>
-              <span className="absolute md:left-1/2 left-3 top-6 -translate-x-1/2 w-3 h-3 bg-[#ff6b00] rounded-full ring-4 ring-[#050816]" />
+              <span className="absolute md:left-1/2 left-3 top-6 -translate-x-1/2 w-3 h-3 bg-primary rounded-full ring-4 ring-[#050816]" />
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Values */}
       <section className="container-pad py-16">
@@ -92,10 +92,10 @@ export default function About() {
               key={v.title}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
-              className="border-t border-white/10 pt-5 hover:border-[#ff6b00] transition-colors"
+              className="border-t border-white/10 pt-5 hover:border-primary transition-colors"
               data-testid={`value-${v.title.toLowerCase()}`}
             >
-              <div className="display text-xs uppercase tracking-widest text-[#ff6b00] mb-3">0{i + 1}</div>
+              <div className="display text-xs uppercase tracking-widest text-primary mb-3">0{i + 1}</div>
               <div className="display text-lg font-bold mb-2">{v.title}</div>
               <div className="text-xs text-white/55">{v.desc}</div>
             </motion.div>
@@ -105,7 +105,7 @@ export default function About() {
 
       {/* Team */}
       <section className="container-pad py-16">
-        <SectionHeader eyebrow="Leadership" title="The team behind Lombodaran." />
+        <SectionHeader eyebrow="Leadership" title="The team behind Vertex." />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {TEAM.map((t, i) => (
             <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="group" data-testid={`team-${i}`}>

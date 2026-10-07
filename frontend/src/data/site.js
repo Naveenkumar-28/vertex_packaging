@@ -1,6 +1,6 @@
 export const SITE = {
-  brand: "lombodaran",
-  brandFull: "Lombodaran Packaging",
+  brand: "Vertex",
+  brandFull: "Vertex Packaging",
   tagline: "Premium Flexible Packaging. Engineered in India.",
   phone: "+91 98202 14567",
   email: "hello@lombodaran.in",
@@ -19,7 +19,7 @@ export const STATS = [
   { value: "5+", label: "Years Experience" },
   { value: "1000+", label: "Projects Delivered" },
   { value: "500+", label: "Happy Clients" },
-  { value: "Pan India", label: "Service Reach" },
+  { value: "India", label: "Service Reach" },
 ];
 
 export const INFRA_STATS = [
