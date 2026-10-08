@@ -12,33 +12,37 @@ export default function ProductCard({ product, index = 0 }) {
       data-testid={`product-card-${product.id}`}
       className="group relative bg-white/[0.02] border border-white/[0.06] hover:border-primary/50 transition-all duration-300"
     >
-      <div className="aspect-[4/5] overflow-hidden bg-[#0a0f25]">
-        <img
-          src={product.image || product.images?.[0]}
-          alt={product.name}
-          loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
-        <div className="absolute top-4 left-4 px-2.5 py-1 bg-[#050816]/80 backdrop-blur text-[10px] uppercase tracking-widest text-white/80 border border-white/10">
-          {product.type || product.category}
+      <Link
+        to={`/products/${product.category}/${product.id}`}
+        data-testid={`product-view-${product.id}`}
+      >
+        <div className="aspect-[4/5] overflow-hidden bg-[#0a0f25]">
+          <img
+            src={product.image || product.images?.[0]}
+            alt={product.name}
+            loading="lazy"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute top-4 left-4 px-2.5 py-1 bg-[#050816]/80 backdrop-blur text-[10px] uppercase tracking-widest text-white/80 border border-white/10">
+            {product.type || product.category}
+          </div>
         </div>
-      </div>
-      <div className="p-5 md:p-6">
-        <h3 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-          {product.name}
-        </h3>
-        <p className="text-sm text-white/55 line-clamp-2 mb-5 min-h-[2.5rem]">
-          {product.short}
-        </p>
-        <Link
-          to={`/products/${product.category}/${product.id}`}
-          data-testid={`product-view-${product.id}`}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:text-primary transition-colors"
-        >
-          View details
-          <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </Link>
-      </div>
+        <div className="p-5 md:p-6">
+          <h3 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-1">
+            {product.name}
+          </h3>
+          <p className="text-sm text-white/55 line-clamp-2 mb-5 min-h-[2.5rem]">
+            {product.short}
+          </p>
+          <div
+
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:text-primary transition-colors"
+          >
+            View details
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </div>
+        </div>
+      </Link>
     </motion.div>
   );
 }

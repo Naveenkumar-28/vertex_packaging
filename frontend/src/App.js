@@ -41,7 +41,7 @@ function App() {
             <Route path="/products/:slug" element={<ProductCategory />} />
             <Route path="/products/:category/:slug" element={<ProductDetails />} />
             <Route path="/industries" element={<Industries />} />
-            <Route path="/infrastructure" element={<Infrastructure />} />
+            {/* <Route path="/infrastructure" element={<Infrastructure />} /> */}
             <Route path="/quality" element={<Quality />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />

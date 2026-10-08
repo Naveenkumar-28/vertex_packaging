@@ -26,6 +26,8 @@ const FEATURE_ICONS = {
 
 export default function ProductDetails() {
   const { category: catSlug, slug } = useParams();
+  console.log(catSlug, slug);
+
   const product = productBySlug(slug);
   const cat = product ? categoryBySlug(product.category) : null;
 
@@ -48,7 +50,7 @@ export default function ProductDetails() {
           <ChevronRight className="w-3 h-3" />
           <Link to={`/products/${product.category}`} className="hover:text-white">{cat?.name}</Link>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-primary">{product.name}</span>
+          <span className="text-primary font-semibold">{product.name}</span>
         </nav>
       </div>
 
@@ -80,16 +82,16 @@ export default function ProductDetails() {
                 <button className="absolute top-4 right-4 w-10 h-10 grid place-items-center bg-[#050816]/70 backdrop-blur border border-white/10">
                   <ZoomIn className="w-4 h-4" />
                 </button>
-                <button className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-3 py-2 bg-[#050816]/70 backdrop-blur border border-white/10 text-xs" data-testid="view-360-btn">
+                {/* <button className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-3 py-2 bg-[#050816]/70 backdrop-blur border border-white/10 text-xs" data-testid="view-360-btn">
                   <RotateCw className="w-3.5 h-3.5" /> 360° View
-                </button>
+                </button> */}
               </motion.div>
             </div>
           </div>
 
           {/* INFO */}
           <div>
-            <div className="text-xs uppercase tracking-widest text-primary mb-3">{product.type}</div>
+            <div className="text-xs uppercase tracking-widest text-primary mb-3 font-semibold">{product.type}</div>
             <h1 className="display text-4xl md:text-5xl font-bold mb-5 leading-tight">{product.name}</h1>
             <p className="text-white/65 text-lg leading-relaxed mb-6">{product.description}</p>
 
@@ -105,9 +107,9 @@ export default function ProductDetails() {
               <Link to="/quote" className="btn-primary" data-testid="info-quote-btn">
                 Request Quote <ArrowUpRight className="w-4 h-4" />
               </Link>
-              <button className="btn-secondary" data-testid="info-datasheet-btn">
+              {/* <button className="btn-secondary" data-testid="info-datasheet-btn">
                 Download Datasheet <FileDown className="w-4 h-4" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -206,7 +208,7 @@ export default function ProductDetails() {
                     <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   <div className="p-5">
-                    <div className="text-[10px] uppercase tracking-widest text-primary mb-2">{p.type}</div>
+                    <div className="text-[10px] uppercase tracking-widest text-primary mb-2 font-semibold">{p.type}</div>
                     <div className="display text-base font-bold group-hover:text-primary transition-colors">{p.name}</div>
                   </div>
                 </Link>
@@ -221,7 +223,7 @@ export default function ProductDetails() {
         <div className="glass-strong p-10 md:p-16 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-radial-orange opacity-40" />
           <div className="relative">
-            <div className="text-xs uppercase tracking-widest text-primary mb-4">Final word</div>
+            <div className="text-xs uppercase tracking-widest text-primary mb-4 font-semibold">Final word</div>
             <h2 className="display text-3xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">
               Let's create packaging that <br />
               <span className="text-primary">elevates your brand.</span>
