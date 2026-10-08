@@ -47,7 +47,7 @@ export default function Contact() {
             <InfoBox icon={Mail} title="Email us" desc={SITE.email} testid="contact-email" link={`mailto:${SITE.email}`} />
             <InfoBox icon={Clock} title="Working hours" desc={SITE.hours} testid="contact-hours" />
 
-            {/* <div className="aspect-[16/10] overflow-hidden border border-white/10 mt-6" data-testid="contact-map">
+            <div className="aspect-[16/10] overflow-hidden border border-white/10 mt-6" data-testid="contact-map">
               <iframe
                 title="map"
                 src={SITE.map}
@@ -56,7 +56,7 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-            </div> */}
+            </div>
           </div>
 
           {/* Form */}
