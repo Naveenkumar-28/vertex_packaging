@@ -5,7 +5,6 @@ import SectionHeader from "@/components/SectionHeader";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import Pagination from "@/components/Pagination";
-import { Button } from "@/components/ui/button";
 
 const TYPES = ["all", "quote", "contact", "enquiry"];
 
@@ -96,6 +95,10 @@ export default function Admin() {
   const handleLogout = async () => {
     try {
       await logoutAdmin();
+    }
+    catch (error) {
+      console.error("Logout error:", error);
+      toast.error("Network error - try again later");
     } finally {
       navigate("/admin/login", {
         replace: true,
@@ -108,9 +111,10 @@ export default function Admin() {
       <section className="container-pad pt-12">
         <div className="flex items-center justify-between ">
           <SectionHeader eyebrow="Vertex Packaging · Admin" title="Submissions inbox." subtitle="All quote requests, contact messages and enquiries — in one place." />
-          <div onClick={handleLogout} data-testid="admin-logout-btn" className="btn-primary cursor-pointer">
-            Logout <ArrowUpRight className="w-4 h-4" />
-          </div>
+          <button disabled={loading} onClick={handleLogout} data-testid="admin-logout-btn" className="btn-primary cursor-pointer">
+            {!loading && <ArrowUpRight className="w-4 h-4" />}
+            {loading ? "Logout..." : "Logout"}
+          </button>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">

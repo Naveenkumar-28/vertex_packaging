@@ -147,21 +147,25 @@ export default function Products() {
                 data-testid={`category-card-${c.id}`}
                 className="group relative bg-white/[0.02] border border-white/[0.06] hover:border-primary transition-all duration-300"
               >
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <img src={c.image} alt={c.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
-                </div>
-                <div className="p-6">
-                  <h3 className="display text-xl md:text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{c.name}</h3>
-                  <p className="text-sm text-white/55 line-clamp-2 mb-6 min-h-[2.5rem]">{c.short}</p>
-                  <Link
-                    to={`/products/${c.id}`}
-                    data-testid={`category-explore-${c.id}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold border-b border-primary pb-1 hover:gap-3 transition-all"
-                  >
-                    Explore <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                </div>
+                <Link
+                  to={`/products/${c.id}`}
+                  data-testid={`category-explore-${c.id}`}
+                  className="cursor-pointer group">
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img src={c.image} alt={c.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="display text-xl md:text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{c.name}</h3>
+                    <p className="text-sm text-white/55 line-clamp-2 mb-6 min-h-[2.5rem]">{c.short}</p>
+                    <button
+
+                      className="inline-flex items-center gap-2 text-sm font-semibold group-hover:text-primary hover:gap-3 transition-all"
+                    >
+                      Explore <ArrowUpRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>

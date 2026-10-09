@@ -210,16 +210,18 @@ export default function ProductCategory() {
                     className="group bg-white/[0.02] border border-white/[0.06] hover:border-primary/50 transition-colors"
                     data-testid={`pcat-card-${p.id}`}
                   >
-                    <div className="aspect-square overflow-hidden bg-[#0a0f25]">
-                      <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    </div>
-                    <div className="p-5">
-                      <div className="text-[10px] uppercase tracking-widest text-primary mb-2">{p.type}</div>
-                      <h3 className="display text-lg font-bold mb-3 group-hover:text-primary transition-colors line-clamp-1">{p.name}</h3>
-                      <Link to={`/products/${cat.id}/${p.id}`} data-testid={`pcat-view-${p.id}`} className="inline-flex items-center gap-1.5 text-sm font-semibold border-b border-primary pb-1">
-                        View details <ArrowUpRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
+                    <Link to={`/products/${cat.id}/${p.id}`} data-testid={`pcat-view-${p.id}`} className="cursor-pointer group">
+                      <div className="aspect-square overflow-hidden bg-[#0a0f25]">
+                        <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      </div>
+                      <div className="p-5">
+                        <div className="text-[10px] uppercase tracking-widest text-primary mb-2">{p.type}</div>
+                        <h3 className="display text-lg font-bold mb-3 group-hover:text-primary transition-colors line-clamp-1">{p.name}</h3>
+                        <Link className="inline-flex items-center gap-1.5 text-sm font-semibold group-hover:border-b group-hover:border-primary pb-1">
+                          View details <ArrowUpRight className="w-3.5 h-3.5 group-hover:ml-1 transition-all" />
+                        </Link>
+                      </div>
+                    </Link>
                   </motion.div>
                 ))}
               </div>

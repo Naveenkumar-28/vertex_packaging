@@ -32,7 +32,7 @@ connectDB();
 app.use(
     cors({
         origin: process.env.CORS_ORIGINS
-            ? process.env.CORS_ORIGINS.split(",")
+            ? process.env.CORS_ORIGINS
             : "*",
 
         credentials: true,

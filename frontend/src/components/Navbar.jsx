@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/products", label: "Products", mega: "products" },
   { to: "/industries", label: "Industries" },
-  { to: "/infrastructure", label: "Infrastructure" },
+  // { to: "/infrastructure", label: "Infrastructure" },
   { to: "/quality", label: "Quality" },
   { to: "/gallery", label: "Gallery" },
   { to: "/about", label: "About" },
