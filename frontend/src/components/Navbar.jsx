@@ -49,37 +49,38 @@ export default function Navbar() {
             <div className='text-[0.675rem] font-medium text-neutral-400 -mt-0.5'>Packaging</div>
           </div>
         </Link>
-
-        <nav className="hidden lg:flex items-center gap-0 xl:gap-1" onMouseLeave={() => setOpenMega(null)}>
-          {NAV_LINKS.map((l) => (
-            <div
-              key={l.to}
-              className="relative"
-              onMouseEnter={() => setOpenMega(l.mega || null)}
-            >
-              <NavLink
-                to={l.to}
-                data-testid={`nav-link-${l.label.toLowerCase()}`}
-                className={({ isActive }) =>
-                  `px-2.5 xl:px-4 py-2 text-[13px] xl:text-sm  tracking-wide flex items-center gap-1 transition-colors whitespace-nowrap ${isActive ? "text-primary font-bold" : "text-white/80 hover:text-white font-medium"
-                  }`
-                }
+        <div className=" hidden lg:flex gap-0 lg:gap-3 xl:gap-5 items-center">
+          <nav className="hidden lg:flex items-center gap-0 xl:gap-1" onMouseLeave={() => setOpenMega(null)}>
+            {NAV_LINKS.map((l) => (
+              <div
+                key={l.to}
+                className="relative"
+                onMouseEnter={() => setOpenMega(l.mega || null)}
               >
-                {l.label}
-                {l.mega && <ChevronDown className="w-3.5 h-3.5 opacity-60" />}
-              </NavLink>
-            </div>
-          ))}
-        </nav>
+                <NavLink
+                  to={l.to}
+                  data-testid={`nav-link-${l.label.toLowerCase()}`}
+                  className={({ isActive }) =>
+                    `px-2.5 xl:px-4 py-2 text-[13px] xl:text-sm  tracking-wide flex items-center gap-1 transition-colors whitespace-nowrap ${isActive ? "text-primary font-bold" : "text-white/80 hover:text-white font-medium"
+                    }`
+                  }
+                >
+                  {l.label}
+                  {l.mega && <ChevronDown className="w-3.5 h-3.5 opacity-60" />}
+                </NavLink>
+              </div>
+            ))}
+          </nav>
 
-        <div className="hidden lg:flex items-center shrink-0">
-          <Link
-            to="/quote"
-            data-testid="nav-get-quote-btn"
-            className="inline-flex items-center gap-1.5 bg-primary hover:bg-[rgb(38,136,43)] text-white font-semibold text-[13px] xl:text-sm px-4 xl:px-5 py-2.5 transition-all whitespace-nowrap shadow-[0_8px_24px_rgba(38,136,43,0.25)] hover:-translate-y-0.5"
-          >
-            Get Quote <ArrowUpRight className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
-          </Link>
+          <div className="hidden lg:flex items-center shrink-0">
+            <Link
+              to="/quote"
+              data-testid="nav-get-quote-btn"
+              className="inline-flex items-center gap-1.5 bg-primary hover:bg-[rgb(38,136,43)] text-white font-semibold text-[13px] xl:text-sm px-4 xl:px-5 py-2.5 transition-all whitespace-nowrap shadow-[0_8px_24px_rgba(38,136,43,0.25)] hover:-translate-y-0.5"
+            >
+              Get Quote <ArrowUpRight className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
+            </Link>
+          </div>
         </div>
 
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
