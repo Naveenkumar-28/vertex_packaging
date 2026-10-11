@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Package, ArrowUpRight } from "lucide-react";
-import { PRODUCTS } from "@/data/products";
+import { Menu, X, ChevronDown, Package, ArrowUpRight, ChevronRight, ArrowRight } from "lucide-react";
+import { PRODUCTS, productsByCategory } from "@/data/products";
 import { CATEGORIES } from "@/data/categories";
 import { INDUSTRIES } from "@/data/industries";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -22,6 +22,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [openMega, setOpenMega] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openSub, setOpenSub] = useState(null); // which parent is expanded
+  // const [products,setProducts]=useState([])
   const nav = useNavigate();
 
   useEffect(() => {
@@ -144,13 +146,125 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
             onMouseEnter={() => setOpenMega(openMega)}
-            onMouseLeave={() => setOpenMega(null)}
+            onMouseLeave={() => {
+              setOpenSub(null)
+              setOpenMega(null)
+            }}
             className="absolute left-0 right-0 top-full hidden lg:block"
             data-testid={`mega-${openMega}`}
           >
-            <div className="container-pad pt-2">
+
+            <div className="container-pad">
               <div className="glass-strong p-8 grid grid-cols-3 gap-8">
                 {openMega === "products" && (
+                  <>
+                    <div className="col-span-2 grid grid-cols-2 gap-2">
+                      {CATEGORIES.map((c) => {
+                        const products = productsByCategory(c.id)
+                        const hasChildren = Array.isArray(products) && products.length > 0;
+
+                        // 👉 Category WITH children → renders a button that toggles submenu
+                        if (hasChildren) {
+                          return (
+                            <div key={c.id} className="relative">
+                              <Link
+                                key={c.id}
+                                to={`/products/${c.id}`}
+                                onClick={() => {
+                                  setOpenSub(openSub === c.id ? null : c.id)
+                                  setOpenMega(null)
+                                }}
+                                data-testid={`mega-product-${c.id}`}
+                              >
+
+                                <button
+                                  type="button"
+                                  onMouseEnter={() => setOpenSub(c.id)}
+                                  data-testid={`mega-product-${c.id}`}
+                                  className={`w-full group flex items-center gap-3 p-3 border border-transparent ${openSub === c.id && "border-white/10 bg-white/[0.03]"}  hover:border-white/10 hover:bg-white/[0.03] transition-colors text-left`}
+                                >
+                                  <div className="w-12 h-12 overflow-hidden bg-white/[0.04] shrink-0">
+                                    <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
+                                  </div>
+                                  <div className="flex-1">
+                                    <div className="text-sm font-semibold">{c.name}</div>
+                                    <div className="text-xs text-white/50 line-clamp-1">{c.short}</div>
+                                  </div>
+                                  <ChevronRight
+                                    className={`w-4 h-4 text-white/40 transition-transform ${openSub === c.id ? "rotate-90" : ""
+                                      }`}
+                                  />
+                                </button>
+                              </Link>
+
+                              {/* 👇 Submenu dropdown */}
+                              {openSub === c.id && (
+                                <div
+                                  onMouseLeave={() => setOpenSub(null)}
+                                  className="absolute left-full top-0 ml-2 w-56 glass-strong border border-white/10 shadow-xl z-50"
+                                >
+                                  {products.map((sub, index) => (
+                                    <Link
+                                      key={index}
+                                      to={`/products/${c.id}/${sub.id}`}
+                                      onClick={() => {
+                                        setOpenMega(null);
+                                        setOpenSub(null);
+                                      }}
+                                      className="block group px-4 py-3 text-sm hover:bg-white/[0.05] border-b border-white/5 last:border-b-0"
+                                    >
+                                      <div className="flex gap-2 items-center justify-between">
+                                        <div className="font-medium">{sub.name}</div>
+                                        <ArrowRight className="w-3 h-3" />
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        }
+
+                        // 👉 Category WITHOUT children → normal link
+                        return (
+                          <Link
+                            key={c.id}
+                            to={`/products/${c.id}`}
+                            onClick={() => setOpenMega(null)}
+                            data-testid={`mega-product-${c.id}`}
+                            className="group flex items-center gap-3 p-3 border border-transparent hover:border-white/10 hover:bg-white/[0.03] transition-colors"
+                          >
+                            <div className="w-12 h-12 overflow-hidden bg-white/[0.04] shrink-0">
+                              <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                              <div className="text-sm font-semibold">{c.name}</div>
+                              <div className="text-xs text-white/50 line-clamp-1">{c.short}</div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+
+                    <div className="border-l border-white/10 pl-6">
+                      <div className="text-xs uppercase tracking-widest text-white/40 mb-4">Featured</div>
+                      <img
+                        src={CATEGORIES[1].image}
+                        alt="featured"
+                        className="w-full h-32 object-cover mb-4"
+                      />
+                      <div className="text-sm font-semibold">{CATEGORIES[1].name}</div>
+                      <Link
+                        to="/products"
+                        onClick={() => setOpenMega(null)}
+                        className="text-xs text-primary mt-3 inline-flex items-center gap-1 font-semibold"
+                      >
+                        View all categories <ArrowUpRight className="w-3 h-3" />
+                      </Link>
+                    </div>
+                  </>
+                )}
+                {/* {openMega === "products" && (
                   <>
                     <div className="col-span-2 grid grid-cols-2 gap-2">
                       {CATEGORIES.map((c) => (
@@ -171,6 +285,7 @@ export default function Navbar() {
                         </Link>
                       ))}
                     </div>
+               
                     <div className="border-l border-white/10 pl-6">
                       <div className="text-xs uppercase tracking-widest text-white/40 mb-4">Featured</div>
                       <img
@@ -182,13 +297,13 @@ export default function Navbar() {
                       <Link
                         to="/products"
                         onClick={() => setOpenMega(null)}
-                        className="text-xs text-primary mt-3 inline-flex items-center gap-1"
+                        className="text-xs text-primary mt-3 inline-flex items-center gap-1 font-semibold"
                       >
                         View all categories <ArrowUpRight className="w-3 h-3" />
                       </Link>
                     </div>
                   </>
-                )}
+                )} */}
                 {/* {openMega === "industries" && (
                   <>
                     {INDUSTRIES.slice(0, 6).map((ind) => (
@@ -210,6 +325,7 @@ export default function Navbar() {
                 )} */}
               </div>
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {
   ArrowUpRight, ArrowRight, ShieldCheck, Cog, Sparkles, Truck,
   FileDown, Download, Layers,
+  Send,
 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import { CATEGORIES } from "@/data/categories";
@@ -16,7 +17,7 @@ const FEATURES = [
 
 export default function Products() {
   return (
-    <div data-testid="products-page" className="pt-[72px]">
+    <div data-testid="products-page" className="">
       {/* HERO */}
       <section className="relative min-h-[88vh] flex items-center overflow-hidden">
         {/* particles */}
@@ -80,11 +81,11 @@ export default function Products() {
               className="flex flex-col sm:flex-row gap-4 mt-10"
             >
               <Link to="/quote" className="btn-primary" data-testid="hero-request-catalogue-btn">
-                Request Catalogue <FileDown className="w-4 h-4" />
+                Request Catalogue <Send className="w-4 h-4" />
               </Link>
-              <Link to="/contact" className="btn-secondary" data-testid="hero-download-brochure-btn">
+              {/* <Link to="/contact" className="btn-secondary" data-testid="hero-download-brochure-btn">
                 Download Brochure <Download className="w-4 h-4" />
-              </Link>
+              </Link> */}
             </motion.div>
           </div>
 
