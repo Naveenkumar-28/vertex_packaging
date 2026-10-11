@@ -27,15 +27,25 @@ const PORT = process.env.PORT || 5000;
 // Database
 connectDB();
 
-
 // Middleware
+// Define allowed origins from environment variable or fallback to defaults
+const allowedOrigins = process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim())
+    : ["http://localhost:3000", "http://localhost:5173", "https://vertex-packaging-25yx.vercel.app"];
+
 app.use(
     cors({
-        origin: process.env.CORS_ORIGINS
-            ? process.env.CORS_ORIGINS
-            : "*",
+        origin: function (origin, callback) {
+            // Allow requests with no origin (like mobile apps, Postman, or server-to-server requests)
+            if (!origin) return callback(null, true);
 
-        credentials: true,
+            if (allowedOrigins.indexOf(origin) !== -1) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        credentials: true, // Required if you are sending cookies or authorization headers
     })
 );
 
