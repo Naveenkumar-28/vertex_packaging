@@ -26,7 +26,7 @@ const errorMiddleware = (
     console.error("ERROR:", err);
 
     let statusCode = err.statusCode || 500;
-    let message = err.message || "Internal Server Error";
+    let message = err || "Internal Server Error";
 
     // MongoDB duplicate key error
     if (err.code === 11000) {
