@@ -1,11 +1,6 @@
-// Flat list of all products. Each product belongs to a category (`category` field).
-// export const PRODUCTS = [
-//   // ---- Stand-Up Pouches ----
-
-
 // Helpers
 
-export const PRODUCTS = [
+const PRODUCT_DATA = [
   // ---- Printed Rolls ----
   {
     num: 1,
@@ -1329,6 +1324,63 @@ export const PRODUCTS = [
     ]
   }
 ];
+
+
+const KEY_INDUSTRIES_BY_PRODUCT = {
+  "snack-printed-roll": ["food-beverage", "snacks"],
+  "confectionery-printed-roll": ["food-beverage", "confectionery"],
+  "sachet-printed-roll": ["personal-care", "pharmaceuticals"],
+  "rotogravure-printed-roll": ["food-beverage", "consumer-goods"],
+  "aluminium-foil-laminated-roll": ["food-beverage", "pharmaceuticals"],
+
+  "coffee-stand-up-pouch": ["food-beverage", "coffee-tea"],
+  "tea-stand-up-pouch": ["food-beverage", "coffee-tea"],
+  "dry-fruits-stand-up-pouch": ["food-beverage", "agriculture"],
+  "snacks-stand-up-pouch": ["food-beverage", "snacks"],
+  "pet-food-stand-up-pouch": ["pet-care"],
+  "pharma-stand-up-pouch": ["pharmaceuticals"],
+  "wafer-center-seal-pouch": ["food-beverage", "confectionery"],
+  "chocolate-center-seal-pouch": ["food-beverage", "confectionery"],
+  "namkeen-center-seal-pouch": ["food-beverage", "snacks"],
+  "shampoo-three-side-seal": ["personal-care"],
+  "sauce-three-side-seal": ["food-beverage"],
+  "pharma-three-side-seal": ["pharmaceuticals"],
+  "juice-spout-pouch": ["food-beverage"],
+  "soap-spout-pouch": ["personal-care"],
+  "sanitizer-spout-pouch": ["personal-care", "healthcare"],
+  "coffee-zip-lock-pouch": ["food-beverage", "coffee-tea"],
+  "dryfruit-zip-lock-pouch": ["food-beverage", "agriculture"],
+  "frozen-zip-lock-pouch": ["food-beverage"],
+  "three-side-seal-sachet": ["personal-care", "pharmaceuticals"],
+
+  "pp-woven-rice-bag": ["agriculture", "food-beverage"],
+  "bopp-laminated-woven-bag": ["agriculture", "industrial"],
+  "shipping-corrugated-box": ["logistics", "e-commerce"],
+  "heavy-duty-export-box": ["logistics", "industrial"],
+  "printed-mono-carton": ["retail", "consumer-goods"],
+  "pharmaceutical-carton": ["pharmaceuticals", "healthcare"],
+  "kraft-shopping-bag": ["retail", "food-beverage"],
+  "printed-food-paper-bag": ["food-beverage", "retail"],
+  "industrial-stretch-film": ["logistics", "industrial"],
+  "shrink-packaging-film": ["logistics", "consumer-goods"],
+  "industrial-ldpe-liner": ["industrial", "logistics"],
+  "woven-sack-inner-liner": ["agriculture", "industrial"],
+};
+
+export const PRODUCTS = [
+  ...new Map(
+    PRODUCT_DATA.map((product) => [
+      product.id,
+      {
+        ...product,
+        keyIndustries:
+          KEY_INDUSTRIES_BY_PRODUCT[product.id] || [],
+      },
+    ])
+  ).values(),
+];
+
+
 
 export const productsByCategory = (catId) => PRODUCTS.filter((p) => p.category === catId);
 export const productBySlug = (slug) => PRODUCTS.find((p) => p.id === slug);

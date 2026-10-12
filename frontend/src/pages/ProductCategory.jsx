@@ -8,6 +8,23 @@ import { categoryBySlug } from "@/data/categories";
 import { productsByCategory } from "@/data/products";
 import { ProductsHeroSection } from "./productCategoryPage/components/ProductsHeroSection";
 import { BenefitsStrip } from "./productCategoryPage/components/BenefitsStrip";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"; //
+
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+
 
 
 
@@ -101,16 +118,20 @@ export default function ProductCategory() {
           <div>
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <div className="text-sm text-white/55" data-testid="results-count">{filtered.length} products</div>
-              <select
-                value={sort}
-                onChange={(e) => setSort(e.target.value)}
-                data-testid="sort-select"
-                className="bg-[#0a0f25]/60 border border-white/10 px-4 py-2 text-sm focus:border-primary focus:outline-none"
-              >
-                <option value="popular">Popular</option>
-                <option value="latest">Latest</option>
-                <option value="az">A–Z</option>
-              </select>
+              <Select value={sort} onValueChange={setSort}>
+                <SelectTrigger
+                  data-testid="sort-select"
+                  className="w-[160px] bg-[#0a0f25]/60 border border-white/10 px-4 py-2 text-sm text-white focus:border-primary focus:ring-0 focus:outline-none"
+                >
+                  <SelectValue placeholder="Sort by" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#0a0f25] border-white/10 text-white">
+                  <SelectItem value="popular">Popular</SelectItem>
+                  <SelectItem value="latest">Latest</SelectItem>
+                  <SelectItem value="az">A–Z</SelectItem>
+                </SelectContent>
+              </Select>
+
             </div>
 
             {current.length === 0 ? (
@@ -144,19 +165,49 @@ export default function ProductCategory() {
               </div>
             )}
 
+
             {pages > 1 && (
-              <div className="flex justify-center gap-2 mt-10" data-testid="pagination">
-                {Array.from({ length: pages }).map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setPage(i + 1)}
-                    data-testid={`page-${i + 1}`}
-                    className={`w-10 h-10 border text-sm font-semibold ${page === i + 1 ? "bg-primary border-primary text-white" : "border-white/10 text-white/70 hover:border-primary"}`}
-                  >
-                    {i + 1}
-                  </button>
-                ))}
-              </div>
+              <Pagination className="mt-10" data-testid="pagination">
+                <PaginationContent className="gap-2">
+                  {/* Optional: Previous button */}
+                  <PaginationItem>
+                    <PaginationPrevious
+                      onClick={() => setPage((p) => Math.max(p - 1, 1))}
+                      className={`${page === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"} border border-white/10 text-white/70 hover:border-primary hover:text-white bg-transparent`}
+                    />
+                  </PaginationItem>
+
+                  {/* Page Numbers */}
+                  {Array.from({ length: pages }).map((_, i) => {
+                    const pageNumber = i + 1;
+                    const isActive = page === pageNumber;
+
+                    return (
+                      <PaginationItem key={i}>
+                        <PaginationLink
+                          isActive={isActive}
+                          onClick={() => setPage(pageNumber)}
+                          data-testid={`page-${pageNumber}`}
+                          className={`w-10 h-10 border text-sm font-semibold cursor-pointer ${isActive
+                            ? "bg-primary border-primary text-white hover:bg-primary/90"
+                            : "border-white/10 text-white/70 hover:border-primary hover:text-white bg-transparent"
+                            }`}
+                        >
+                          {pageNumber}
+                        </PaginationLink>
+                      </PaginationItem>
+                    );
+                  })}
+
+                  {/* Optional: Next button */}
+                  <PaginationItem>
+                    <PaginationNext
+                      onClick={() => setPage((p) => Math.min(p + 1, pages))}
+                      className={`${page === pages ? "pointer-events-none opacity-50" : "cursor-pointer"} border border-white/10 text-white/70 hover:border-primary hover:text-white bg-transparent`}
+                    />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
             )}
           </div>
         </div>

@@ -19,7 +19,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/55 text-sm leading-relaxed mb-5">
-              Premium flexible packaging solutions engineered for brands across food, pharma, personal care and industrial sectors.
+              Premium flexible packaging solutions engineered for brands across food, fertilizers, pharmaceuticals, personal care, agriculture, textile, retail and industrial sectors.
             </p>
             <div className="flex gap-2">
               <a href={SITE.social.linkedin} target="_blank" rel="noreferrer" data-testid="social-linkedin" className="w-9 h-9 grid place-items-center border border-white/10 hover:border-primary hover:text-primary transition-colors">

@@ -10,7 +10,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/products", label: "Products", mega: "products" },
-  { to: "/industries", label: "Industries" },
+  { to: "/industries", label: "Industries", mega: "industries" },
   // { to: "/infrastructure", label: "Infrastructure" },
   { to: "/quality", label: "Quality" },
   { to: "/gallery", label: "Gallery" },
@@ -32,6 +32,8 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  console.log({ INDUSTRIES })
 
   return (
     <header
@@ -265,65 +267,25 @@ export default function Navbar() {
                     </div>
                   </>
                 )}
-                {/* {openMega === "products" && (
-                  <>
-                    <div className="col-span-2 grid grid-cols-2 gap-2">
-                      {CATEGORIES.map((c) => (
-                        <Link
-                          key={c.id}
-                          to={`/products/${c.id}`}
-                          onClick={() => setOpenMega(null)}
-                          data-testid={`mega-product-${c.id}`}
-                          className="group flex items-center gap-3 p-3 border border-transparent hover:border-white/10 hover:bg-white/[0.03] transition-colors"
-                        >
-                          <div className="w-12 h-12 overflow-hidden bg-white/[0.04] shrink-0">
-                            <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
-                          </div>
-                          <div>
-                            <div className="text-sm font-semibold">{c.name}</div>
-                            <div className="text-xs text-white/50 line-clamp-1">{c.short}</div>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-               
-                    <div className="border-l border-white/10 pl-6">
-                      <div className="text-xs uppercase tracking-widest text-white/40 mb-4">Featured</div>
-                      <img
-                        src={CATEGORIES[1].image}
-                        alt="featured"
-                        className="w-full h-32 object-cover mb-4"
-                      />
-                      <div className="text-sm font-semibold">{CATEGORIES[1].name}</div>
-                      <Link
-                        to="/products"
-                        onClick={() => setOpenMega(null)}
-                        className="text-xs text-primary mt-3 inline-flex items-center gap-1 font-semibold"
-                      >
-                        View all categories <ArrowUpRight className="w-3 h-3" />
-                      </Link>
-                    </div>
-                  </>
-                )} */}
-                {/* {openMega === "industries" && (
+                {openMega === "industries" && (
                   <>
                     {INDUSTRIES.slice(0, 6).map((ind) => (
                       <Link
                         key={ind.id}
-                        to="/industries"
+                        to={`/industries/${ind.id}`}
                         onClick={() => setOpenMega(null)}
                         data-testid={`mega-industry-${ind.id}`}
-                        className="group block border border-transparent hover:border-white/10 transition-colors"
+                        className="group block border border-transparent hover:border-white/10 transition-colors p-2"
                       >
-                        <div className="aspect-[16/9] overflow-hidden mb-3">
+                        <div className="aspect-[8/3] overflow-hidden mb-3">
                           <img src={ind.image} alt={ind.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <div className="text-sm font-semibold">{ind.name}</div>
                         <div className="text-xs text-white/50 line-clamp-2 mt-1">{ind.short}</div>
-                      </Link>
-                    ))}
+                      </Link>)
+                    )}
                   </>
-                )} */}
+                )}
               </div>
             </div>
 

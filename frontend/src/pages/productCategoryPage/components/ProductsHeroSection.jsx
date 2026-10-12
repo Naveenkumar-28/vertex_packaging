@@ -21,9 +21,8 @@ export function ProductsHeroSection({ cat, allProducts }) {
                         <ChevronRight className="w-3 h-3" />
                         <Link to="/products" className="hover:text-white">Products</Link>
                         <ChevronRight className="w-3 h-3" />
-                        <span className="text-primary">{cat.name}</span>
+                        <span className="text-primary font-semibold">{cat.name}</span>
                     </nav>
-
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
                         className="display text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight"
@@ -36,6 +35,12 @@ export function ProductsHeroSection({ cat, allProducts }) {
                         className="text-white/65 text-lg mt-6 max-w-lg leading-relaxed"
                     >
                         {cat.short}
+                    </motion.p>
+                    <motion.p
+                        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+                        className="text-white/65 text-lg mt-6 max-w-lg leading-relaxed"
+                    >
+                        {cat.description}
                     </motion.p>
 
                     <div className="flex flex-col sm:flex-row gap-3 mt-8">

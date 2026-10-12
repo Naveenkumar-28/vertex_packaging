@@ -23,6 +23,7 @@ import Admin from "@/pages/Admin";
 import NotFound from "@/pages/NotFound";
 import AdminLogin from "@/pages/AdminLogin";
 import ProtectedAdmin from "@/components/ProtectedAdmin";
+import IndustryDetails from "./pages/IndustryDetails";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="/products/:slug" element={<ProductCategory />} />
             <Route path="/products/:category/:slug" element={<ProductDetails />} />
             <Route path="/industries" element={<Industries />} />
+            <Route path="/industries/:slug" element={<IndustryDetails />} />
             {/* <Route path="/infrastructure" element={<Infrastructure />} /> */}
             <Route path="/quality" element={<Quality />} />
             <Route path="/gallery" element={<Gallery />} />
