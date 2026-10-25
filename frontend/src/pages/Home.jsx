@@ -1,4 +1,4 @@
-import { CTA, FeaturedProductsSection, ClientsMarquee, GalleryPreview, HeroSection, IndustriesSection, InfrastructurePreview, ProcessTimeline, WhyChooseUs } from "./homePage/components";
+import { CTA, FeaturedProductsSection, ClientsMarquee, GalleryPreview, HeroSection, IndustriesSection, InfrastructurePreview, ProcessTimeline, WhyChooseUs, ProductsMarquee } from "./homePage/components";
 
 export default function Home() {
   return (
@@ -10,7 +10,10 @@ export default function Home() {
       <IndustriesSection />
 
       {/* OUR CLIENTS */}
-      <ClientsMarquee />
+      {/* <ClientsMarquee /> */}
+
+      {/*OUR PRODUCTS*/}
+      <ProductsMarquee />
 
       {/* FEATURED PRODUCTS */}
       <FeaturedProductsSection />

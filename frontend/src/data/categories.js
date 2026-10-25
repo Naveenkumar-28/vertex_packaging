@@ -141,8 +141,8 @@ export const CATEGORIES =
         "Edible oil",
         "Detergent"
       ],
-      "image": "https://images.unsplash.com/photo-1706881812145-61f38a1d431c?auto=format&fit=crop&w=800&q=80",
-      "heroImage": "https://images.unsplash.com/photo-1706881812145-61f38a1d431c?auto=format&fit=crop&w=1800&q=85"
+      "image": "snack-printed-roll",
+      "heroImage": "snack-printed-roll"
     },
     {
       "id": "pouches",
@@ -183,8 +183,8 @@ export const CATEGORIES =
         "Personal care",
         "Pharmaceutical products"
       ],
-      "image": "https://images.unsplash.com/photo-1708746333840-22560480297b?auto=format&fit=crop&w=800&q=80",
-      "heroImage": "https://images.unsplash.com/photo-1708746333840-22560480297b?auto=format&fit=crop&w=1800&q=85"
+      "image": "coffee-stand-up-pouch",
+      "heroImage": "coffee-stand-up-pouch"
     },
     {
       "id": "woven-bags",
@@ -224,8 +224,8 @@ export const CATEGORIES =
         "Chemicals",
         "Sand and minerals"
       ],
-      "image": "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=800&q=80",
-      "heroImage": "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1800&q=85"
+      "image": "pp-woven-rice-bag",
+      "heroImage": "pp-woven-rice-bag"
     },
     {
       "id": "corrugated-boxes",
@@ -264,8 +264,8 @@ export const CATEGORIES =
         "Consumer goods",
         "Export packaging"
       ],
-      "image": "https://images.unsplash.com/photo-1769355104335-acef3aa4c9b6?auto=format&fit=crop&w=800&q=80",
-      "heroImage": "https://images.unsplash.com/photo-1769355104335-acef3aa4c9b6?auto=format&fit=crop&w=1800&q=85"
+      "image": "shipping-corrugated-box",
+      "heroImage": "shipping-corrugated-box"
     },
     {
       "id": "carton-boxes",
@@ -371,8 +371,8 @@ export const CATEGORIES =
         "Palletized goods",
         "Industrial shipping"
       ],
-      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-      "heroImage": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=85"
+      "image": "shrink-packaging-film",
+      "heroImage": "shrink-packaging-film"
     },
     {
       "id": "plastic-liners",
@@ -406,8 +406,8 @@ export const CATEGORIES =
         "Warehousing",
         "Manufacturing"
       ],
-      "image": "https://images.unsplash.com/photo-1706881812145-61f38a1d431c?auto=format&fit=crop&w=800&q=80",
-      "heroImage": "https://images.unsplash.com/photo-1706881812145-61f38a1d431c?auto=format&fit=crop&w=1800&q=85"
+      "image": "industrial-ldpe-liner",
+      "heroImage": "industrial-ldpe-liner"
     }
   ]
 

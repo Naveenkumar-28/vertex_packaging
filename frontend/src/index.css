@@ -32,6 +32,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    /* fallback for old browsers */
+    overflow-x: clip;
+    /* modern browsers override this */
 }
 
 h1,
@@ -210,8 +213,12 @@ h6,
     background-size: 60px 60px;
 }
 
-.bg-radial-orange {
+.bg-radial-green {
     background: radial-gradient(800px circle at top right, rgba(0, 255, 0, 0.12), transparent 50%);
+}
+
+.card-bg-radial-green {
+    background: radial-gradient(800px circle at bottom left, rgba(0, 255, 0, 0.12), transparent 50%);
 }
 
 /* Swiper custom */
@@ -292,4 +299,88 @@ h6,
     [data-debug-wrapper="true"] {
         display: contents !important;
     }
+}
+
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-rev {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-rev {
+    animation: marquee-rev 35s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .animate-marquee,
+    .animate-marquee-rev {
+        animation: none;
+    }
+}
+
+.accordion-content[data-state="open"] {
+    animation: slideDown 200ms ease-out;
+}
+
+.accordion-content[data-state="closed"] {
+    animation: slideUp 200ms ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: var(--radix-accordion-content-height);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        height: var(--radix-accordion-content-height);
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+html body[data-scroll-locked] {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    --removed-body-scroll-bar-size: 0px !important;
+}
+
+/* fixed/sticky elements (e.g. navbars) also get shifted by Radix */
+.right-scroll-bar-position {
+    right: 0 !important;
+}
+
+.width-before-scroll-bar {
+    margin-right: 0 !important;
 }

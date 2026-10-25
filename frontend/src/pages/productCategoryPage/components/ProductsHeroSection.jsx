@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {
     ArrowUpRight, ArrowRight, Home as HomeIcon, ChevronRight
 } from "lucide-react";
+import { generateImageURL } from "@/lib/utils";
 
 export function ProductsHeroSection({ cat, allProducts }) {
     return (
@@ -67,10 +68,10 @@ export function ProductsHeroSection({ cat, allProducts }) {
                                 right: `${i * 60}px`,
                                 zIndex: 10 - i,
                                 transform: `perspective(900px) rotateY(${-8 - i * 3}deg) rotateX(${4}deg)`,
-                                boxShadow: "0 30px 60px rgba(0,0,0,0.5), 0 0 60px rgba(255,107,0,0.15)",
+                                boxShadow: "0 30px 60px rgba(0,0,0,0.5), 0 0 60px rgba(23, 203, 44, 0.25)",
                             }}
                         >
-                            <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                            <img src={generateImageURL(p.image, 400)} alt={p.name} className="w-full h-full object-cover" />
                         </motion.div>
                     ))}
                 </div>

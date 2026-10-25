@@ -10,10 +10,10 @@ const PRODUCT_DATA = [
     type: "Printed Roll · Snacks",
     short: "Rotogravure printed multi-layer rolls for FFS snack lines.",
     description: "High-resolution rotogravure printed multi-layer rolls for FFS snack lines.",
-    image: "https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&q=80&w=1200",
+    image: "snack-printed-roll",
     images: [
-      "https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&q=80&w=1600",
-      "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?auto=format&fit=crop&q=80&w=1600",
+      "snack-printed-roll",
+      "snack-printed-roll-1",
     ],
     application: "Snacks",
     material: "BOPP / PE",
@@ -39,9 +39,9 @@ const PRODUCT_DATA = [
     type: "Printed Roll · Confectionery",
     short: "High-speed confectionery wrappers with vibrant rotogravure print.",
     description: "Premium confectionery wrappers for high-speed wrapping lines.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+    image: "confectionery-printed-roll",
     images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600",
+      "confectionery-printed-roll",
     ],
     application: "Confectionery",
     material: "BOPP / PE",
@@ -65,9 +65,9 @@ const PRODUCT_DATA = [
     type: "Printed Roll · Sachets",
     short: "High-barrier rolls for sachet packing — shampoo, sauces, masala.",
     description: "Narrow-width high-barrier rolls for sachet packing machines.",
-    image: "https://images.unsplash.com/photo-1572177812156-58036aae439c?auto=format&fit=crop&q=80&w=1200",
+    image: "sachet-printed-roll",
     images: [
-      "https://images.unsplash.com/photo-1572177812156-58036aae439c?auto=format&fit=crop&q=80&w=1600",
+      "sachet-printed-roll",
     ],
     application: "Sachets",
     material: "PET / PE",
@@ -92,10 +92,10 @@ const PRODUCT_DATA = [
     type: "Printed Roll · Snacks",
     short: "Rotogravure printed multi-layer rolls for FFS snack lines.",
     description: "High-resolution rotogravure printed multi-layer rolls for FFS snack lines.",
-    image: "https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&q=80&w=1200",
+    image: "snack-printed-roll",
     images: [
-      "https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&q=80&w=1600",
-      "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?auto=format&fit=crop&q=80&w=1600",
+      "snack-printed-roll",
+      "snack-printed-roll-1",
     ],
     application: "Snacks",
     material: "BOPP / PE",
@@ -122,11 +122,11 @@ const PRODUCT_DATA = [
     short: "High-quality printed film rolls for automatic packaging machines.",
     description:
       "Custom rotogravure printed laminate rolls designed for high-speed packaging lines, delivering sharp graphics and reliable sealing performance.",
-    image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1200&q=80",
+    image: "rotogravure-printed-roll",
     images: [
-      "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1600&q=80"
+      "rotogravure-printed-roll",
+      "rotogravure-printed-roll-1",
+      "rotogravure-printed-roll-2"
     ],
     application: "Food Packaging",
     material: "PET / MET PET / PE",
@@ -167,11 +167,10 @@ const PRODUCT_DATA = [
     short: "Barrier packaging film for products requiring additional protection.",
     description:
       "Laminated packaging rolls incorporating aluminium foil for applications requiring protection against moisture, light and oxygen.",
-    image: "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1200&q=80",
+    image: "aluminium-foil-laminated-roll",
     images: [
-      "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1600&q=80"
+      "aluminium-foil-laminated-roll",
+      "aluminium-foil-laminated-roll-2"
     ],
     application: "High-Barrier Packaging",
     material: "PET / Aluminium Foil / PE",
@@ -214,11 +213,11 @@ const PRODUCT_DATA = [
     short: "Premium stand-up pouch for coffee packaging with excellent barrier protection.",
     description:
       "Premium stand-up pouch for coffee packaging with excellent barrier protection. Engineered to preserve freshness, aroma and shelf life.",
-    image: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&q=80&w=1200",
+    image: "coffee-stand-up-pouch",
     images: [
-      "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&q=80&w=1600",
-      "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&q=80&w=1600",
-      "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&q=80&w=1600",
+      "coffee-stand-up-pouch",
+      "coffee-stand-up-pouch-1",
+      "coffee-stand-up-pouch-2",
     ],
     application: "Coffee",
     material: "PET / MET PET / PE",
@@ -244,10 +243,10 @@ const PRODUCT_DATA = [
     type: "Stand-Up Pouch · Tea",
     short: "Aroma-locked stand-up pouches for premium tea blends.",
     description: "Aroma-locked stand-up pouches engineered for premium tea blends, preserving fragrance and color.",
-    image: "https://images.unsplash.com/photo-1606471191009-63994c53433b?auto=format&fit=crop&q=80&w=1200",
+    image: "tea-stand-up-pouch",
     images: [
-      "https://images.unsplash.com/photo-1606471191009-63994c53433b?auto=format&fit=crop&q=80&w=1600",
-      "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&q=80&w=1600",
+      "tea-stand-up-pouch",
+      "tea-stand-up-pouch-1",
     ],
     application: "Tea",
     material: "BOPP / PE",
@@ -273,10 +272,10 @@ const PRODUCT_DATA = [
     type: "Stand-Up Pouch · Dry Fruits",
     short: "High-clarity window pouches for premium dry fruits packaging.",
     description: "High-clarity window pouches with zip lock for premium dry fruits and nuts.",
-    image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&q=80&w=1200",
+    image: "dry-fruits-stand-up-pouch",
     images: [
-      "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&q=80&w=1600",
-      "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&q=80&w=1600",
+      "dry-fruits-stand-up-pouch",
+      "dry-fruits-stand-up-pouch-1",
     ],
     application: "Dry Fruits",
     material: "PET / PE",
@@ -302,10 +301,10 @@ const PRODUCT_DATA = [
     type: "Stand-Up Pouch · Snacks",
     short: "High-volume snack stand-up pouches with shelf-ready aesthetics.",
     description: "Vibrant, high-volume snack pouches optimised for retail shelf presence.",
-    image: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&q=80&w=1200",
+    image: "snacks-stand-up-pouch",
     images: [
-      "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&q=80&w=1600",
-      "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&q=80&w=1600",
+      "snacks-stand-up-pouch",
+      "snacks-stand-up-pouch-1",
     ],
     application: "Snacks",
     material: "BOPP / PE",
@@ -331,10 +330,10 @@ const PRODUCT_DATA = [
     type: "Stand-Up Pouch · Pet Food",
     short: "Heavy-duty pet food pouches with high-barrier protection.",
     description: "Heavy-duty stand-up pouches with high-barrier laminates engineered for pet food and treats.",
-    image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&q=80&w=1200",
+    image: "pet-food-stand-up-pouch",
     images: [
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&q=80&w=1600",
-      "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&q=80&w=1600",
+      "pet-food-stand-up-pouch",
+      "pet-food-stand-up-pouch-1",
     ],
     application: "Pet Food",
     material: "PET / MET PET / PE",
@@ -360,9 +359,9 @@ const PRODUCT_DATA = [
     type: "Stand-Up Pouch · Pharma",
     short: "Tamper-evident pharma pouches with high-barrier laminate.",
     description: "Pharma-grade stand-up pouches with tamper-evident features and high-barrier laminates.",
-    image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=1200",
+    image: "pharma-stand-up-pouch",
     images: [
-      "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=1600",
+      "pharma-stand-up-pouch",
     ],
     application: "Pharma",
     material: "Kraft",
@@ -390,9 +389,9 @@ const PRODUCT_DATA = [
     type: "Center Seal Pouch · Wafers",
     short: "Pillow style center seal pouches for high-speed wafer lines.",
     description: "Economical pillow-style center seal pouches for wafer and biscuit lines.",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=1200",
+    image: "wafer-center-seal-pouch",
     images: [
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=1600",
+      "wafer-center-seal-pouch",
     ],
     application: "Wafers",
     material: "BOPP / PE",
@@ -416,9 +415,9 @@ const PRODUCT_DATA = [
     type: "Center Seal Pouch · Chocolate",
     short: "Premium chocolate wrappers with vibrant print and seal integrity.",
     description: "Premium center seal pouches engineered for chocolate brands.",
-    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&q=80&w=1200",
+    image: "chocolate-center-seal-pouch",
     images: [
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&q=80&w=1600",
+      "chocolate-center-seal-pouch",
     ],
     application: "Chocolate",
     material: "PET / PE",
@@ -441,9 +440,9 @@ const PRODUCT_DATA = [
     type: "Center Seal Pouch · Namkeen",
     short: "High-volume namkeen pouches with crisp print and strong seals.",
     description: "Crisp printed center seal pouches for namkeen and savoury snacks.",
-    image: "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&q=80&w=1200",
+    image: "namkeen-center-seal-pouch",
     images: [
-      "https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&q=80&w=1600",
+      "namkeen-center-seal-pouch",
     ],
     application: "Namkeen",
     material: "BOPP / PE",
@@ -466,9 +465,9 @@ const PRODUCT_DATA = [
     type: "Three Side Seal · Shampoo",
     short: "High-barrier three side seal sachets for shampoo and gels.",
     description: "Three-side seal sachets engineered for shampoo, conditioner and personal care liquids.",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=1200",
+    image: "shampoo-three-side-seal",
     images: [
-      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=1600",
+      "shampoo-three-side-seal",
     ],
     application: "Personal Care",
     material: "PET / PE",
@@ -491,9 +490,9 @@ const PRODUCT_DATA = [
     type: "Three Side Seal · Sauce",
     short: "Food-safe sauce sachets with leak-proof seals.",
     description: "Food-safe sauce sachets with tamper-evident leak-proof seals for QSR and retail.",
-    image: "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&q=80&w=1200",
+    image: "sauce-three-side-seal",
     images: [
-      "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&q=80&w=1600",
+      "sauce-three-side-seal",
     ],
     application: "Food",
     material: "PET / PE",
@@ -516,9 +515,9 @@ const PRODUCT_DATA = [
     type: "Three Side Seal · Pharma",
     short: "Tamper-evident pharma strip pouches with foil barrier.",
     description: "Tamper-evident pharma strip pouches with high-barrier foil laminate.",
-    image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=1200",
+    image: "pharma-three-side-seal",
     images: [
-      "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=1600",
+      "pharma-three-side-seal",
     ],
     application: "Pharma",
     material: "PET / MET PET / PE",
@@ -541,9 +540,9 @@ const PRODUCT_DATA = [
     type: "Spout Pouch · Juice",
     short: "Stand-up spout pouches for juices, beverages and liquids.",
     description: "Premium stand-up spout pouches for juices, smoothies and beverages.",
-    image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&q=80&w=1200",
+    image: "juice-spout-pouch",
     images: [
-      "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&q=80&w=1600",
+      "juice-spout-pouch",
     ],
     application: "Beverages",
     material: "PET / PE",
@@ -566,9 +565,9 @@ const PRODUCT_DATA = [
     type: "Spout Pouch · Liquid Soap",
     short: "Refill spout pouches for liquid soap, handwash and detergents.",
     description: "Eco-friendly refill spout pouches for handwash, liquid soap and detergents.",
-    image: "https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&q=80&w=1200",
+    image: "soap-spout-pouch",
     images: [
-      "https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&q=80&w=1600",
+      "soap-spout-pouch",
     ],
     application: "Personal Care",
     material: "PET / PE",
@@ -591,9 +590,9 @@ const PRODUCT_DATA = [
     type: "Spout Pouch · Sanitizer",
     short: "Spout pouches engineered for sanitizers and alcohol-based liquids.",
     description: "Spout pouches engineered with alcohol-resistant laminates.",
-    image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&q=80&w=1200",
+    image: "sanitizer-spout-pouch",
     images: [
-      "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&q=80&w=1600",
+      "sanitizer-spout-pouch",
     ],
     application: "Personal Care",
     material: "PET / MET PET / PE",
@@ -616,9 +615,9 @@ const PRODUCT_DATA = [
     type: "Zip Lock Pouch · Coffee",
     short: "Reusable zip lock pouches for premium coffee brands.",
     description: "Premium re-closable zip lock pouches engineered for coffee freshness.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
+    image: "coffee-zip-lock-pouch",
     images: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1600",
+      "coffee-zip-lock-pouch",
     ],
     application: "Coffee",
     material: "PET / PE",
@@ -641,9 +640,9 @@ const PRODUCT_DATA = [
     type: "Zip Lock Pouch · Dry Fruits",
     short: "Window zip lock pouches for dry fruits and nuts.",
     description: "High-clarity window pouches with zip lock for premium dry fruits and nuts.",
-    image: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&q=80&w=1200",
+    image: "dryfruit-zip-lock-pouch",
     images: [
-      "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&q=80&w=1600",
+      "dryfruit-zip-lock-pouch",
     ],
     application: "Dry Fruits",
     material: "PET / PE",
@@ -666,9 +665,9 @@ const PRODUCT_DATA = [
     type: "Zip Lock Pouch · Frozen Food",
     short: "Freeze-resistant zip lock pouches for frozen food retail.",
     description: "Freeze-resistant zip lock pouches engineered for frozen food retail.",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200",
+    image: "frozen-zip-lock-pouch",
     images: [
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1600",
+      "frozen-zip-lock-pouch",
     ],
     application: "Frozen Food",
     material: "PET / PE",
@@ -692,11 +691,11 @@ const PRODUCT_DATA = [
     short: "Premium stand-up pouch for coffee packaging with barrier protection.",
     description:
       "Custom stand-up coffee pouch designed to protect aroma and freshness. Optional zipper, tear notch and degassing valve can be specified.",
-    image: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=1200&q=80",
+    image: "coffee-stand-up-pouch",
     images: [
-      "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=1600&q=80"
+      "coffee-stand-up-pouch",
+      "coffee-stand-up-pouch-1",
+      "coffee-stand-up-pouch-2"
     ],
     application: "Coffee",
     material: "PET / MET PET / PE",
@@ -736,11 +735,10 @@ const PRODUCT_DATA = [
     short: "Compact sealed sachets for single-use and sample packaging.",
     description:
       "Three-side seal sachets designed for small product quantities, promotional samples and single-use packaging formats.",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80",
+    image: "three-side-seal-sachet",
     images: [
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&w=1600&q=80"
+      "three-side-seal-sachet",
+      "three-side-seal-sachet-1",
     ],
     application: "Single-Use Packaging",
     material: "PET / PE or Custom Laminate",
@@ -783,11 +781,11 @@ const PRODUCT_DATA = [
     short: "Durable polypropylene woven bags for grain and rice packaging.",
     description:
       "Woven polypropylene bags manufactured for bulk agricultural packaging, with customizable dimensions, weight capacity and printing.",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
+    image: "pp-woven-rice-bag",
     images: [
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1589927986089-35812388d1f4?auto=format&fit=crop&w=1600&q=80"
+      "pp-woven-rice-bag",
+      "pp-woven-rice-bag-1",
+      "pp-woven-rice-bag-2"
     ],
     application: "Rice and Grains",
     material: "Polypropylene (PP)",
@@ -828,11 +826,10 @@ const PRODUCT_DATA = [
     short: "Printed woven bags combining product branding and durable construction.",
     description:
       "BOPP laminated woven bags offer a printable outer surface and strong woven construction for branded agricultural and industrial packaging.",
-    image: "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1200&q=80",
+    image: "bopp-laminated-woven-bag",
     images: [
-      "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80"
+      "bopp-laminated-woven-bag",
+      "bopp-laminated-woven-bag-1"
     ],
     application: "Branded Bulk Packaging",
     material: "PP Woven Fabric / BOPP Film",
@@ -875,11 +872,9 @@ const PRODUCT_DATA = [
     short: "Protective corrugated cartons for shipping, storage and distribution.",
     description:
       "Custom corrugated shipping boxes made for product handling and transport, with board strength and dimensions selected to suit the application.",
-    image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1200&q=80",
+    image: "shipping-corrugated-box",
     images: [
-      "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80"
+      "shipping-corrugated-box"
     ],
     application: "Shipping and Distribution",
     material: "Corrugated Paperboard",
@@ -920,11 +915,10 @@ const PRODUCT_DATA = [
     short: "Heavy-duty corrugated packaging for industrial shipping and export.",
     description:
       "Custom-engineered corrugated cartons for heavier products and demanding shipping conditions. Board grade, construction and dimensions are selected according to load requirements.",
-    image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1200&q=80",
+    image: "heavy-duty-export-box",
     images: [
-      "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1600&q=80"
+      "heavy-duty-export-box",
+      "heavy-duty-export-box-1"
     ],
     application: "Industrial Export Packaging",
     material: "Heavy-Duty Corrugated Board",
@@ -967,11 +961,11 @@ const PRODUCT_DATA = [
     short: "Custom printed paperboard cartons for retail product presentation.",
     description:
       "Folding mono cartons with custom printing and finishing options for consumer products, designed to support shelf presentation and product identification.",
-    image: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1200&q=80",
+    image: "printed-mono-carton",
     images: [
-      "https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1600&q=80"
+      "printed-mono-carton",
+      "printed-mono-carton-1",
+      "printed-mono-carton-2"
     ],
     application: "Retail Packaging",
     material: "Paperboard",
@@ -1012,11 +1006,9 @@ const PRODUCT_DATA = [
     short: "Printed paperboard cartons for pharmaceutical and healthcare packaging.",
     description:
       "Custom paperboard cartons designed for pharmaceutical and healthcare product packaging, with print layouts and dimensions tailored to product requirements.",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=1200&q=80",
+    image: "pharmaceutical-carton",
     images: [
-      "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1600&q=80"
+      "pharmaceutical-carton"
     ],
     application: "Pharmaceutical Packaging",
     material: "Pharmaceutical-Grade Paperboard, as Specified",
@@ -1058,11 +1050,11 @@ const PRODUCT_DATA = [
     short: "Custom kraft paper shopping bags for retail and takeaway use.",
     description:
       "Paper shopping bags available with custom dimensions, handle styles and branding for retail stores, boutiques and food businesses.",
-    image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1200&q=80",
+    image: "kraft-shopping-bag",
     images: [
-      "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1600&q=80"
+      "kraft-shopping-bag",
+      "kraft-shopping-bag-1",
+      "kraft-shopping-bag-2"
     ],
     application: "Retail Shopping",
     material: "Kraft Paper",
@@ -1103,11 +1095,11 @@ const PRODUCT_DATA = [
     short: "Custom paper bags for bakeries, takeaway and food service.",
     description:
       "Paper bags for bakery and food-service packaging, available in multiple sizes and print options. Food-contact suitability depends on the selected material and intended use.",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
+    image: "printed-food-paper-bag",
     images: [
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1600&q=80"
+      "printed-food-paper-bag",
+      "printed-food-paper-bag-1",
+      "printed-food-paper-bag-2"
     ],
     application: "Food Service",
     material: "Kraft Paper / Food-Suitable Paper, as Required",
@@ -1150,11 +1142,9 @@ const PRODUCT_DATA = [
     short: "Stretch film for securing palletized products during storage and transport.",
     description:
       "Stretch wrapping film for bundling and stabilizing pallet loads, available in different widths, thicknesses and roll formats.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    image: "industrial-stretch-film",
     images: [
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1600&q=80"
+      "industrial-stretch-film",
     ],
     application: "Pallet Wrapping",
     material: "LLDPE",
@@ -1195,11 +1185,10 @@ const PRODUCT_DATA = [
     short: "Shrink film for bundling products and creating a close-fitting outer wrap.",
     description:
       "Packaging shrink film selected according to product shape, packaging equipment and required shrink performance.",
-    image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1200&q=80",
+    image: "shrink-packaging-film",
     images: [
-      "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1600&q=80"
+      "shrink-packaging-film",
+      "shrink-packaging-film-1"
     ],
     application: "Product Bundling",
     material: "PE / POF / PVC, Depending on Application",
@@ -1242,11 +1231,9 @@ const PRODUCT_DATA = [
     short: "Polyethylene liners for containers, cartons and industrial materials.",
     description:
       "Custom LDPE liners designed to fit containers, cartons and bulk packaging systems, with dimensions and thickness tailored to the application.",
-    image: "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1200&q=80",
+    image: "industrial-ldpe-liner",
     images: [
-      "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1600&q=80"
+      "industrial-ldpe-liner",
     ],
     application: "Industrial Inner Packaging",
     material: "LDPE",
@@ -1287,11 +1274,11 @@ const PRODUCT_DATA = [
     short: "Inner liners for woven sacks requiring an additional packaging layer.",
     description:
       "Custom polyethylene inner liners for woven sacks to provide an additional barrier against moisture and contamination, depending on the selected film and closure.",
-    image: "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1200&q=80",
+    image: "woven-sack-inner-liner",
     images: [
-      "https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1600&q=80"
+      "woven-sack-inner-liner",
+      "woven-sack-inner-liner-1",
+      "woven-sack-inner-liner-2"
     ],
     application: "Woven Sack Inner Packaging",
     material: "LDPE / HDPE",
@@ -1332,7 +1319,6 @@ const KEY_INDUSTRIES_BY_PRODUCT = {
   "sachet-printed-roll": ["personal-care", "pharmaceuticals"],
   "rotogravure-printed-roll": ["food-beverage", "consumer-goods"],
   "aluminium-foil-laminated-roll": ["food-beverage", "pharmaceuticals"],
-
   "coffee-stand-up-pouch": ["food-beverage", "coffee-tea"],
   "tea-stand-up-pouch": ["food-beverage", "coffee-tea"],
   "dry-fruits-stand-up-pouch": ["food-beverage", "agriculture"],
@@ -1352,7 +1338,6 @@ const KEY_INDUSTRIES_BY_PRODUCT = {
   "dryfruit-zip-lock-pouch": ["food-beverage", "agriculture"],
   "frozen-zip-lock-pouch": ["food-beverage"],
   "three-side-seal-sachet": ["personal-care", "pharmaceuticals"],
-
   "pp-woven-rice-bag": ["agriculture", "food-beverage"],
   "bopp-laminated-woven-bag": ["agriculture", "industrial"],
   "shipping-corrugated-box": ["logistics", "e-commerce"],

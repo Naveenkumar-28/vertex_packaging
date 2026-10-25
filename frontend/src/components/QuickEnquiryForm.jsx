@@ -22,6 +22,8 @@ export default function QuickEnquiryForm({ variant = "glass", productId, product
     formState: { errors, isSubmitting },
   } = useForm({ resolver: zodResolver(schema) });
 
+
+
   const onSubmit = async (data) => {
     try {
       await submitForm({

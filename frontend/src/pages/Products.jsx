@@ -7,6 +7,8 @@ import {
 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import { CATEGORIES } from "@/data/categories";
+import { BACKEND_URL } from "@/constants";
+import { generateImageURL } from "@/lib/utils";
 
 const FEATURES = [
   { icon: ShieldCheck, title: "Premium Quality Assured", desc: "ISO 9001 + FSSAI compliant testing at every stage." },
@@ -153,7 +155,7 @@ export default function Products() {
                   data-testid={`category-explore-${c.id}`}
                   className="cursor-pointer group">
                   <div className="aspect-[4/3] overflow-hidden relative">
-                    <img src={c.image} alt={c.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src={generateImageURL(c.image, 800)} alt={c.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
                   </div>
                   <div className="p-6">

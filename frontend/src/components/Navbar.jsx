@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Package, ArrowUpRight, ChevronRight, ArrowRight } from "lucide-react";
-import { PRODUCTS, productsByCategory } from "@/data/products";
+import { Menu, ChevronDown, ArrowUpRight, ChevronRight, ArrowRight } from "lucide-react";
+import { productsByCategory } from "@/data/products";
 import { CATEGORIES } from "@/data/categories";
 import { INDUSTRIES } from "@/data/industries";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { generateImageURL } from "@/lib/utils";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
@@ -33,14 +34,39 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  console.log({ INDUSTRIES })
+  const closeTimer = useRef(null);
+
+  const openMenu = (key) => {
+    clearTimeout(closeTimer.current);
+    setOpenMega(key);
+    if (!key) setOpenSub(null);
+  };
+
+  const closeMenu = () => {
+    clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => {
+      setOpenMega(null);
+      setOpenSub(null);
+    }, 120);
+  };
+
+  useEffect(() => () => clearTimeout(closeTimer.current), []);
 
   return (
     <header
       data-testid="site-navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#050816]/85 backdrop-blur-xl border-b border-white/[0.06]" : "bg-transparent"
+      onMouseLeave={closeMenu}
+      className={`fixed top-0 left-0 right-0 z-50
         }`}
     >
+      {/* Background layer: blur lives here, not on the header */}
+      <div
+        aria-hidden="true"
+        className={`absolute inset-x-0 top-0 h-[72px] -z-10 transition-all duration-300 ${scrolled
+          ? "bg-[#050816]/85 backdrop-blur-xl border-b border-white/[0.06]"
+          : "bg-transparent"
+          }`}
+      />
       <div className="container-pad flex items-center justify-between gap-4 h-[72px]">
         <Link to="/" data-testid="nav-logo" className="flex items-center gap-2 group shrink-0">
           <span className="w-9 h-9 grid place-items-center">
@@ -52,12 +78,12 @@ export default function Navbar() {
           </div>
         </Link>
         <div className=" hidden lg:flex gap-0 lg:gap-3 xl:gap-5 items-center">
-          <nav className="hidden lg:flex items-center gap-0 xl:gap-1" onMouseLeave={() => setOpenMega(null)}>
+          <nav className="hidden lg:flex items-center gap-0 xl:gap-1" >
             {NAV_LINKS.map((l) => (
               <div
                 key={l.to}
                 className="relative"
-                onMouseEnter={() => setOpenMega(l.mega || null)}
+                onMouseEnter={() => openMenu(l.mega)}
               >
                 <NavLink
                   to={l.to}
@@ -148,11 +174,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            onMouseEnter={() => setOpenMega(openMega)}
-            onMouseLeave={() => {
-              setOpenSub(null)
-              setOpenMega(null)
-            }}
+            onMouseEnter={() => clearTimeout(closeTimer.current)}
             className="absolute left-0 right-0 top-full hidden lg:block"
             data-testid={`mega-${openMega}`}
           >
@@ -169,59 +191,54 @@ export default function Navbar() {
                         // 👉 Category WITH children → renders a button that toggles submenu
                         if (hasChildren) {
                           return (
-                            <div key={c.id} className="relative">
+                            <div
+                              key={c.id}
+                              className="relative"
+                              onMouseEnter={() => setOpenSub(c.id)}
+                              onMouseLeave={() => setOpenSub(null)}
+                            >
                               <Link
-                                key={c.id}
                                 to={`/products/${c.id}`}
                                 onClick={() => {
-                                  setOpenSub(openSub === c.id ? null : c.id)
-                                  setOpenMega(null)
+                                  setOpenSub(null);
+                                  setOpenMega(null);
                                 }}
                                 data-testid={`mega-product-${c.id}`}
+                                className={`w-full group flex items-center gap-3 p-3 border transition-colors text-left hover:border-white/10 hover:bg-white/[0.03] ${openSub === c.id ? "border-white/10 bg-white/[0.03]" : "border-transparent"
+                                  }`}
                               >
-
-                                <button
-                                  type="button"
-                                  onMouseEnter={() => setOpenSub(c.id)}
-                                  data-testid={`mega-product-${c.id}`}
-                                  className={`w-full group flex items-center gap-3 p-3 border border-transparent ${openSub === c.id && "border-white/10 bg-white/[0.03]"}  hover:border-white/10 hover:bg-white/[0.03] transition-colors text-left`}
-                                >
-                                  <div className="w-12 h-12 overflow-hidden bg-white/[0.04] shrink-0">
-                                    <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
-                                  </div>
-                                  <div className="flex-1">
-                                    <div className="text-sm font-semibold">{c.name}</div>
-                                    <div className="text-xs text-white/50 line-clamp-1">{c.short}</div>
-                                  </div>
-                                  <ChevronRight
-                                    className={`w-4 h-4 text-white/40 transition-transform ${openSub === c.id ? "rotate-90" : ""
-                                      }`}
-                                  />
-                                </button>
+                                <div className="w-12 h-12 overflow-hidden bg-white/[0.04] shrink-0">
+                                  <img src={generateImageURL(c.image, 400)} alt={c.name} className="w-full h-full object-cover" />
+                                </div>
+                                <div className="flex-1">
+                                  <div className="text-sm font-semibold">{c.name}</div>
+                                  <div className="text-xs text-white/50 line-clamp-1">{c.short}</div>
+                                </div>
+                                <ChevronRight
+                                  className={`w-4 h-4 text-white/40 transition-transform ${openSub === c.id ? "rotate-90" : ""}`}
+                                />
                               </Link>
 
-                              {/* 👇 Submenu dropdown */}
                               {openSub === c.id && (
-                                <div
-                                  onMouseLeave={() => setOpenSub(null)}
-                                  className="absolute left-full top-0 ml-2 w-56 glass-strong border border-white/10 shadow-xl z-50"
-                                >
-                                  {products.map((sub, index) => (
-                                    <Link
-                                      key={index}
-                                      to={`/products/${c.id}/${sub.id}`}
-                                      onClick={() => {
-                                        setOpenMega(null);
-                                        setOpenSub(null);
-                                      }}
-                                      className="block group px-4 py-3 text-sm hover:bg-white/[0.05] border-b border-white/5 last:border-b-0"
-                                    >
-                                      <div className="flex gap-2 items-center justify-between">
-                                        <div className="font-medium">{sub.name}</div>
-                                        <ArrowRight className="w-3 h-3" />
-                                      </div>
-                                    </Link>
-                                  ))}
+                                <div className="absolute left-full top-0 pl-2 w-56 z-50">
+                                  <div className="glass-strong border border-white/10 shadow-xl max-h-[calc(100vh-200px)] overflow-y-auto overscroll-contain">
+                                    {products.map((sub) => (
+                                      <Link
+                                        key={sub.id}
+                                        to={`/products/${c.id}/${sub.id}`}
+                                        onClick={() => {
+                                          setOpenMega(null);
+                                          setOpenSub(null);
+                                        }}
+                                        className="block group px-4 py-3 text-sm hover:bg-white/[0.05] border-b border-white/5 last:border-b-0"
+                                      >
+                                        <div className="flex gap-2 items-center justify-between">
+                                          <div className="font-medium">{sub.name}</div>
+                                          <ArrowRight className="w-3 h-3" />
+                                        </div>
+                                      </Link>
+                                    ))}
+                                  </div>
                                 </div>
                               )}
                             </div>
@@ -252,7 +269,7 @@ export default function Navbar() {
                     <div className="border-l border-white/10 pl-6">
                       <div className="text-xs uppercase tracking-widest text-white/40 mb-4">Featured</div>
                       <img
-                        src={CATEGORIES[1].image}
+                        src={generateImageURL(CATEGORIES[1].image, 800)}
                         alt="featured"
                         className="w-full h-32 object-cover mb-4"
                       />

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { BACKEND_URL } from "@/constants";
+import { generateImageURL } from "@/lib/utils";
 
 export default function ProductCard({ product, index = 0 }) {
   return (
@@ -18,7 +20,8 @@ export default function ProductCard({ product, index = 0 }) {
       >
         <div className="aspect-[4/5] overflow-hidden bg-[#0a0f25]">
           <img
-            src={product.image || product.images?.[0]}
+            // src={product.image || product.images?.[0]}
+            src={generateImageURL(product.image, 1200)}
             alt={product.name}
             loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

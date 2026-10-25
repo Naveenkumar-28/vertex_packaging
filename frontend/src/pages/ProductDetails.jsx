@@ -4,29 +4,29 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import {
-  ArrowUpRight, ArrowRight, X, ZoomIn, Check, RotateCw, Home as HomeIcon, ChevronRight,
-  FileDown, ShieldCheck, Droplets, Wind, Lock, Sparkles, Package2,
+  ArrowUpRight, ArrowRight, X, ZoomIn, Check, Home as HomeIcon, ChevronRight, ShieldCheck, Droplets, Wind, Lock, Sparkles, Package2,
 } from "lucide-react";
 import { productBySlug, productsByCategory } from "@/data/products";
 import { categoryBySlug } from "@/data/categories";
 import SectionHeader from "@/components/SectionHeader";
 import QuickEnquiryForm from "@/components/QuickEnquiryForm";
+import { getFeatureIcon } from "@/data/featureIcons";
+import { generateImageURL } from "@/lib/utils";
 
-const FEATURE_ICONS = {
-  "High Barrier": ShieldCheck,
-  "Moisture Resistant": Droplets,
-  "Oxygen Barrier": Wind,
-  "Puncture Resistant": Lock,
-  "Leak Proof": Droplets,
-  "Food Safe": Check,
-  "Tamper Evident": Lock,
-  "Zip Lock": Lock,
-  "Re-closable": Lock,
-};
+// const FEATURE_ICONS = {
+//   "High Barrier": ShieldCheck,
+//   "Moisture Resistant": Droplets,
+//   "Oxygen Barrier": Wind,
+//   "Puncture Resistant": Lock,
+//   "Leak Proof": Droplets,
+//   "Food Safe": Check,
+//   "Tamper Evident": Lock,
+//   "Zip Lock": Lock,
+//   "Re-closable": Lock,
+// };
 
 export default function ProductDetails() {
   const { category: catSlug, slug } = useParams();
-  console.log(catSlug, slug);
 
   const product = productBySlug(slug);
   const cat = product ? categoryBySlug(product.category) : null;
@@ -67,19 +67,20 @@ export default function ProductDetails() {
                     data-testid={`thumb-${i}`}
                     className={`aspect-square overflow-hidden border-2 transition-colors ${activeImg === i ? "border-primary" : "border-white/10 hover:border-white/30"}`}
                   >
-                    <img src={img} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
+                    <img src={generateImageURL(img, 400)} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
               <motion.div
                 key={activeImg}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}
-                className="relative aspect-[4/5] overflow-hidden bg-[#0a0f25] group cursor-zoom-in"
-                onClick={() => setLightbox(true)}
+                className="relative aspect-[4/5] overflow-hidden bg-[#0a0f25] group"
                 data-testid="main-image"
               >
-                <img src={product.images[activeImg]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <button className="absolute top-4 right-4 w-10 h-10 grid place-items-center bg-[#050816]/70 backdrop-blur border border-white/10">
+                <img src={generateImageURL(product.images[activeImg], 1200)} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <button
+                  className="absolute top-4 right-4 w-10 h-10 grid place-items-center bg-[#050816]/70 backdrop-blur border border-white/10"
+                  onClick={() => setLightbox(true)}>
                   <ZoomIn className="w-4 h-4" />
                 </button>
                 {/* <button className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-3 py-2 bg-[#050816]/70 backdrop-blur border border-white/10 text-xs" data-testid="view-360-btn">
@@ -153,9 +154,9 @@ export default function ProductDetails() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3" data-testid="key-features-grid">
             {product.features.map((f) => {
-              const Icon = FEATURE_ICONS[f] || Sparkles;
+              const Icon = getFeatureIcon(f);
               return (
-                <div key={f} className="glass p-5 group hover:border-primary/50 transition-colors">
+                <div key={f} className="glass p-5 group hover:border-primary/50 transition-colors flex flex-col items-center">
                   <div className="w-10 h-10 grid place-items-center bg-primary/10 text-primary border border-primary/20 mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
                     <Icon className="w-4 h-4" />
                   </div>
@@ -205,7 +206,7 @@ export default function ProductDetails() {
               <SwiperSlide key={p.id}>
                 <Link to={`/products/${p.category}/${p.id}`} className="group block bg-white/[0.02] border border-white/[0.06] hover:border-primary/50 transition-colors" data-testid={`related-${p.id}`}>
                   <div className="aspect-square overflow-hidden">
-                    <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <img src={generateImageURL(p.image, 800)} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   <div className="p-5">
                     <div className="text-[10px] uppercase tracking-widest text-primary mb-2 font-semibold">{p.type}</div>
@@ -254,7 +255,7 @@ export default function ProductDetails() {
             </button>
             <motion.img
               initial={{ scale: 0.92 }} animate={{ scale: 1 }}
-              src={product.images[activeImg]} alt={product.name}
+              src={generateImageURL(product.images[activeImg], 1200)} alt={product.name}
               className="max-w-[92vw] max-h-[88vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />

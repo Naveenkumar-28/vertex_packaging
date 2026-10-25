@@ -13,12 +13,12 @@ export function HeroSection() {
             <div className="absolute inset-0">
                 <img
                     src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2400"
-                    alt="hero bg"
+                    alt="hero_bg"
                     className="w-full h-full object-cover opacity-30"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#050816]/85 via-[#050816]/60 to-[#050816]" />
                 <div className="absolute inset-0 bg-grid opacity-30" />
-                <div className="absolute inset-0 bg-radial-orange" />
+                <div className="absolute inset-0 bg-radial-green" />
             </div>
 
             <div className="container-pad relative grid lg:grid-cols-12 gap-12 py-20">
@@ -82,6 +82,7 @@ export function HeroSection() {
                     transition={{ duration: 0.7, delay: 0.3 }}
                     className="lg:col-span-5"
                 >
+                    {/* Enquiry Form */}
                     <QuickEnquiryForm />
                 </motion.div>
             </div>

@@ -3,7 +3,7 @@ export const SITE = {
   brandFull: "Vertex Packaging",
   tagline: "Premium Flexible Packaging. Engineered in India.",
   phone: "+91 98202 14567",
-  email: "hello@lombodaran.in",
+  email: "info@vertexpackaging.in",
   address: "Plot 47-B, MIDC Industrial Estate, Pune – 411019, Maharashtra, India",
   hours: "Mon – Sat · 9:30 AM – 7:00 PM IST",
   social: {

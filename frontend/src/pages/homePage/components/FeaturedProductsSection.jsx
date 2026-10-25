@@ -35,7 +35,7 @@ export function FeaturedProductsSection() {
                     }}
                     data-testid="featured-products-slider"
                 >
-                    {PRODUCTS.map((p, i) => (
+                    {PRODUCTS.slice(0, 10).map((p, i) => (
                         <SwiperSlide key={p.id}>
                             <ProductCard product={p} index={i} />
                         </SwiperSlide>
