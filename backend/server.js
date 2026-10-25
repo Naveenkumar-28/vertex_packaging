@@ -1,6 +1,5 @@
 const dotenv = require("dotenv");
 const path = require("path");
-// const images = require('./data/images.json');
 dotenv.config();
 
 const express = require("express");
@@ -18,6 +17,7 @@ const {
     errorMiddleware,
 } = require("./middleware/errorHandler");
 const cookieParser = require("cookie-parser");
+const protectAdmin = require("./middleware/authMiddleware");
 
 
 
@@ -31,9 +31,7 @@ connectDB();
 
 // Middleware
 // Define allowed origins from environment variable or fallback to defaults
-const allowedOrigins = process.env.CORS_ORIGINS
-    ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim())
-    : ["http://localhost:3000", "http://localhost:5173", "https://vertex-packaging-25yx.vercel.app"];
+const allowedOrigins = process.env.CORS_ORIGINS.split(',').map(origin => origin.trim())
 
 app.use(
     cors({
@@ -70,24 +68,17 @@ app.use('/images', express.static(path.join(__dirname, 'public/images'), {
     immutable: true,
 }));
 
-// app.get('/api/images', (req, res) => {
-//     const page = parseInt(req.query.page) || 1;
-//     const limit = parseInt(req.query.limit) || 12;
-//     const start = (page - 1) * limit;
-//     res.json({ total: images.length, page, items: images.slice(start, start + limit) });
-// });
-
 // Auth
 app.use("/api/auth", authRoutes);
 
 // Routes
 app.use(
-    "/api/status",
+    "/api/status", protectAdmin,
     statusRoutes
 );
 
 app.use(
-    "/api/submissions",
+    "/api/submissions", protectAdmin,
     submissionRoutes
 );
 

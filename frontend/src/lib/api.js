@@ -10,14 +10,8 @@ export const api = axios.create({
 });
 
 export const submitForm = async (payload) => {
-  try {
-    const { data } = await api.post("/submissions", payload);
-    return data;
-
-  } catch (error) {
-    console.log({ "err": error });
-    return null;
-  }
+  const { data } = await api.post("/submissions", payload);
+  return data;
 };
 
 export const fetchSubmissions = async (type) => {
