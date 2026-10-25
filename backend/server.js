@@ -1,6 +1,6 @@
 const dotenv = require("dotenv");
 const path = require("path");
-const images = require('./data/images.json');
+// const images = require('./data/images.json');
 dotenv.config();
 
 const express = require("express");
@@ -70,12 +70,12 @@ app.use('/images', express.static(path.join(__dirname, 'public/images'), {
     immutable: true,
 }));
 
-app.get('/api/images', (req, res) => {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 12;
-    const start = (page - 1) * limit;
-    res.json({ total: images.length, page, items: images.slice(start, start + limit) });
-});
+// app.get('/api/images', (req, res) => {
+//     const page = parseInt(req.query.page) || 1;
+//     const limit = parseInt(req.query.limit) || 12;
+//     const start = (page - 1) * limit;
+//     res.json({ total: images.length, page, items: images.slice(start, start + limit) });
+// });
 
 // Auth
 app.use("/api/auth", authRoutes);
