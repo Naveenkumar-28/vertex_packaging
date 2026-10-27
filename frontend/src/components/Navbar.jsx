@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, ChevronDown, ArrowUpRight, ChevronRight, ArrowRight } from "lucide-react";
 import { productsByCategory } from "@/data/products";
 import { CATEGORIES } from "@/data/categories";
-import { INDUSTRIES } from "@/data/industries";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { generateImageURL } from "@/lib/utils";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/products", label: "Products", mega: "products" },
-  { to: "/industries", label: "Industries", mega: "industries" },
+  // { to: "/industries", label: "Industries", mega: "industries" },
+  { to: "/industries", label: "Industries" },
   // { to: "/infrastructure", label: "Infrastructure" },
   { to: "/quality", label: "Quality" },
   { to: "/gallery", label: "Gallery" },
@@ -208,7 +208,7 @@ export default function Navbar() {
                                   }`}
                               >
                                 <div className="w-12 h-12 overflow-hidden bg-white/[0.04] shrink-0">
-                                  <img src={generateImageURL(c.image, 400)} alt={c.name} className="w-full h-full object-cover" />
+                                  <img src={generateImageURL(c.image, 200)} alt={c.name} className="w-full h-full object-cover" />
                                 </div>
                                 <div className="flex-1">
                                   <div className="text-sm font-semibold">{c.name}</div>
@@ -268,11 +268,13 @@ export default function Navbar() {
 
                     <div className="border-l border-white/10 pl-6">
                       <div className="text-xs uppercase tracking-widest text-white/40 mb-4">Featured</div>
-                      <img
-                        src={generateImageURL(CATEGORIES[1].image, 800)}
-                        alt="featured"
-                        className="w-full h-32 object-cover mb-4"
-                      />
+                      <div>
+                        <img
+                          src={generateImageURL(CATEGORIES[1].image, 800)}
+                          alt="featured"
+                          className="w-full h-full object-cover mb-4"
+                        />
+                      </div>
                       <div className="text-sm font-semibold">{CATEGORIES[1].name}</div>
                       <Link
                         to="/products"
@@ -284,7 +286,7 @@ export default function Navbar() {
                     </div>
                   </>
                 )}
-                {openMega === "industries" && (
+                {/* {openMega === "industries" && (
                   <>
                     {INDUSTRIES.slice(0, 6).map((ind) => (
                       <Link
@@ -294,15 +296,15 @@ export default function Navbar() {
                         data-testid={`mega-industry-${ind.id}`}
                         className="group block border border-transparent hover:border-white/10 transition-colors p-2"
                       >
-                        <div className="aspect-[8/3] overflow-hidden mb-3">
-                          <img src={ind.image} alt={ind.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div className="aspect-[10/5] overflow-hidden mb-3">
+                          <img src={generateImageURL(ind.id, 800)} alt={ind.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <div className="text-sm font-semibold">{ind.name}</div>
                         <div className="text-xs text-white/50 line-clamp-2 mt-1">{ind.short}</div>
                       </Link>)
                     )}
                   </>
-                )}
+                )} */}
               </div>
             </div>
 

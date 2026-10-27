@@ -4,6 +4,7 @@ import SectionHeader from "@/components/SectionHeader";
 import { INDUSTRIES } from "@/data/industries";
 import ProductsFilterSection from "@/components/ProductsFilterSection";
 import { motion } from 'framer-motion'
+import { generateImageURL } from "@/lib/utils";
 
 const BENEFIT_ICONS = [ShieldCheck, Sparkles, Leaf, Droplets, Recycle, Beaker];
 
@@ -26,12 +27,21 @@ export default function IndustryCategory() {
             {/* INDUSTRY HERO */}
             <section className="container-pad pt-12">
                 <div className="">
-                    <nav className="flex items-center gap-2 text-xs text-white/50" data-testid="breadcrumb">
-                        <Link to="/" className="inline-flex items-center gap-1.5 hover:text-white"><HomeIcon className="w-3 h-3" /> Home</Link>
-                        <ChevronRight className="w-3 h-3" />
-                        <Link to="/industries" className="hover:text-white">Products</Link>
-                        <ChevronRight className="w-3 h-3" />
-                        <Link to={`/products/${slug}`} className="hover:text-white text-primary font-semibold">{industry?.name}</Link>
+                    <nav className="flex items-center flex-wrap gap-2 text-xs text-white/50" data-testid="breadcrumb">
+                        <Link
+                            to="/"
+                            className="inline-flex items-center gap-1.5 leading-none hover:text-white">
+                            <HomeIcon className="h-3 w-3 shrink-0" />
+                            <span>Home</span>
+                        </Link>
+                        <div className="flex gap-2 items-center">
+                            <ChevronRight className="w-3 h-3" />
+                            <Link to="/industries" className="hover:text-white">Industries</Link>
+                        </div>
+                        <div className="flex gap-2 items-center">
+                            <ChevronRight className="w-3 h-3" />
+                            <span className=" text-primary font-semibold">{industry?.name}</span>
+                        </div>
                     </nav>
                 </div>
 
@@ -42,11 +52,16 @@ export default function IndustryCategory() {
                             title={industry.name}
                             subtitle={industry.description}
                         />
-
-                        <p className="text-white/60 leading-relaxed mt-4">
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.6, delay: 0.15 }}
+                            className="text-white/60 text-base md:text-lg max-w-2xl -mt-8 md:-mt-12"
+                        >
                             Explore packaging solutions designed for your
                             industry's product, protection and branding needs.
-                        </p>
+                        </motion.p>
 
                         <a
                             href="#industry-products"
@@ -59,7 +74,7 @@ export default function IndustryCategory() {
 
                     <div className="aspect-[16/10] overflow-hidden border border-white/[0.08]">
                         <img
-                            src={industry.image}
+                            src={generateImageURL(industry.id, 1200)}
                             alt={industry.name}
                             className="w-full h-full object-cover"
                         />

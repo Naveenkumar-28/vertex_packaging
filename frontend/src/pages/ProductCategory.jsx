@@ -62,7 +62,7 @@ export default function ProductCategory() {
 
       {/* PRODUCT LISTING */}
       <section id="products" className="container-pad py-12 pt-28">
-        <div className="grid lg:grid-cols-[260px_1fr] gap-8">
+        <div className="grid lg:grid-cols-[260px_1fr] gap-8 grid-cols-1">
           {/* Sidebar */}
 
           {/* FILTER SIDEBAR */}

@@ -18,18 +18,6 @@ function ProductsFilterSidebar({ resetFilters, setApps, apps, feats, mats, setMa
                 : [...arr, value]
         );
     };
-    useEffect(() => {
-
-        let el = document.querySelector('[data-testid="products-sidebar"]').parentElement;
-        console.log(el);
-
-        while (el) {
-            const o = getComputedStyle(el);
-            if (/(auto|scroll|hidden)/.test(o.overflow + o.overflowX + o.overflowY))
-                console.log(el, o.overflow);
-            el = el.parentElement;
-        }
-    }, [])
 
     return (
         <aside

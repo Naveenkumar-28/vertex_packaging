@@ -1,10 +1,10 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import {
-  ArrowUpRight, ArrowRight, X, ZoomIn, Check, Home as HomeIcon, ChevronRight, ShieldCheck, Droplets, Wind, Lock, Sparkles, Package2,
+  ArrowUpRight, ArrowRight, X, ZoomIn, Check, Home as HomeIcon, ChevronRight, Package2,
 } from "lucide-react";
 import { productBySlug, productsByCategory } from "@/data/products";
 import { categoryBySlug } from "@/data/categories";
@@ -12,55 +12,119 @@ import SectionHeader from "@/components/SectionHeader";
 import QuickEnquiryForm from "@/components/QuickEnquiryForm";
 import { getFeatureIcon } from "@/data/featureIcons";
 import { generateImageURL } from "@/lib/utils";
-
-// const FEATURE_ICONS = {
-//   "High Barrier": ShieldCheck,
-//   "Moisture Resistant": Droplets,
-//   "Oxygen Barrier": Wind,
-//   "Puncture Resistant": Lock,
-//   "Leak Proof": Droplets,
-//   "Food Safe": Check,
-//   "Tamper Evident": Lock,
-//   "Zip Lock": Lock,
-//   "Re-closable": Lock,
-// };
+import { INDUSTRIES } from "@/data/industries";
 
 export default function ProductDetails() {
+  const [activeImg, setActiveImg] = useState(0);
+  const [lightbox, setLightbox] = useState(false);
+
   const { category: catSlug, slug } = useParams();
+
+  useEffect(() => {
+    setActiveImg(0);
+    setLightbox(false);
+    window.scrollTo({ top: 0 });
+  }, [slug]);
+
+  useEffect(() => {
+    if (!lightbox) return;
+
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtml = html.style.overflow;
+    const prevBody = body.style.overflow;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+
+    const onKey = (e) => e.key === "Escape" && setLightbox(false);
+    document.addEventListener("keydown", onKey);
+
+    return () => {
+      html.style.overflow = prevHtml;
+      body.style.overflow = prevBody;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [lightbox]);
+
+
 
   const product = productBySlug(slug);
   const cat = product ? categoryBySlug(product.category) : null;
 
-  const [activeImg, setActiveImg] = useState(0);
-  const [lightbox, setLightbox] = useState(false);
-
   if (!product) return <Navigate to="/products" replace />;
-  if (catSlug && product.category !== catSlug) return <Navigate to={`/products/${product.category}/${product.id}`} replace />;
+
+  const matchIndustries = catSlug
+    ? INDUSTRIES.find((i) => i.id === catSlug.toLowerCase())
+    : null;
+
+  if (!matchIndustries && catSlug && product.category !== catSlug) return <Navigate to={`/products/${product.category}/${product.id}`} replace />;
 
   const related = productsByCategory(product.category).filter((p) => p.id !== product.id).slice(0, 6);
+
+
+  const images = product.images?.length ? product.images : [product.image];
 
   return (
     <div data-testid="product-detail-page" className="pt-[72px]">
       {/* Breadcrumb */}
       <div className="container-pad pt-8">
-        <nav className="flex items-center gap-2 text-xs text-white/50" data-testid="breadcrumb">
-          <Link to="/" className="inline-flex items-center gap-1.5 hover:text-white"><HomeIcon className="w-3 h-3" /> Home</Link>
-          <ChevronRight className="w-3 h-3" />
-          <Link to="/products" className="hover:text-white">Products</Link>
-          <ChevronRight className="w-3 h-3" />
-          <Link to={`/products/${product.category}`} className="hover:text-white">{cat?.name}</Link>
-          <ChevronRight className="w-3 h-3" />
-          <span className="text-primary font-semibold">{product.name}</span>
-        </nav>
+        {matchIndustries ? (
+          <nav className="flex items-center flex-wrap gap-2 text-xs text-white/50" data-testid="breadcrumb">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 leading-none hover:text-white"
+            >
+              <HomeIcon className="h-3 w-3 shrink-0" />
+              <span>Home</span>
+            </Link>
+            <div className="flex items-center gap-2">
+              <ChevronRight className="w-3 h-3" />
+              <Link to="/industries" className="hover:text-white">Industries</Link>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChevronRight className="w-3 h-3" />
+              <Link to={`/industries/${catSlug}`} className="hover:text-white capitalize">{matchIndustries?.name}</Link>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChevronRight className="w-3 h-3" />
+              <span className="text-primary font-semibold">{product.name}</span>
+            </div>
+          </nav>
+
+        ) : (
+
+          <nav className="flex items-center flex-wrap gap-2 text-xs text-white/50" data-testid="breadcrumb">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 leading-none hover:text-white"
+            >
+              <HomeIcon className="h-3 w-3 shrink-0" />
+              <span>Home</span>
+            </Link>
+            <div className="flex gap-2 items-center">
+              <ChevronRight className="w-3 h-3" />
+              <Link to="/products" className="hover:text-white">Products</Link>
+            </div>
+            <div className="flex gap-2 items-center">
+              <ChevronRight className="w-3 h-3" />
+              <Link to={`/products/${product.category}`} className="hover:text-white">{cat?.name}</Link>
+            </div>
+            <div className="flex gap-2 items-center">
+              <ChevronRight className="w-3 h-3" />
+              <span className="text-primary font-semibold">{product.name}</span>
+            </div>
+          </nav>
+        )}
       </div>
 
       <section className="container-pad pt-8 pb-16">
-        <div className="grid lg:grid-cols-[40%_60%] gap-10 lg:gap-12">
+        <div className="grid lg:grid-cols-[40%_60%] md:grid-cols-[50%_50%]  gap-10 lg:gap-12">
           {/* GALLERY */}
-          <div>
+          {/* <div>
             <div className="grid grid-cols-[80px_1fr] gap-4">
-              <div className="flex flex-col gap-3 max-h-[600px] overflow-y-auto" data-testid="thumbnails">
-                {product.images.map((img, i) => (
+              <div className="lg:flex flex-col gap-3 max-h-[600px] overflow-y-auto hidden" data-testid="thumbnails">
+                {images.map((img, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveImg(i)}
@@ -77,16 +141,89 @@ export default function ProductDetails() {
                 className="relative aspect-[4/5] overflow-hidden bg-[#0a0f25] group"
                 data-testid="main-image"
               >
-                <img src={generateImageURL(product.images[activeImg], 1200)} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img src={generateImageURL(images[activeImg], 1200)} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <button
+                  aria-label="Zoom image"
                   className="absolute top-4 right-4 w-10 h-10 grid place-items-center bg-[#050816]/70 backdrop-blur border border-white/10"
                   onClick={() => setLightbox(true)}>
                   <ZoomIn className="w-4 h-4" />
                 </button>
-                {/* <button className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-3 py-2 bg-[#050816]/70 backdrop-blur border border-white/10 text-xs" data-testid="view-360-btn">
-                  <RotateCw className="w-3.5 h-3.5" /> 360° View
-                </button> */}
+                //<button className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-3 py-2 bg-[#050816]/70 backdrop-blur border border-white/10 text-xs" data-testid="view-360-btn">
+                //  <RotateCw className="w-3.5 h-3.5" /> 360° View
+                //</button> 
               </motion.div>
+              <div className="flex gap-3 max-h-[200px] max-w-full" data-testid="thumbnails">
+                {images.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveImg(i)}
+                    data-testid={`thumb-${i}`}
+                    className={`aspect-square overflow-hidden border-2 transition-colors ${activeImg === i ? "border-primary" : "border-white/10 hover:border-white/30"}`}
+                  >
+                    <img src={generateImageURL(img, 400)} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div> */}
+
+
+          {/* GALLERY */}
+          <div className="min-w-0">
+            <div className="flex flex-col gap-4 sm:flex-row md:flex-col xl:flex-row">
+              {/* MAIN IMAGE */}
+              <motion.div
+                key={activeImg}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="relative order-1 sm:order-2 md:order-1 xl:order-2 aspect-[4/5] w-full min-w-0 overflow-hidden bg-[#0a0f25] group"
+                data-testid="main-image"
+              >
+                <img
+                  src={generateImageURL(images[activeImg], 1200)}
+                  alt={product.name}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <button
+                  aria-label="Zoom image"
+                  className="absolute top-4 right-4 grid h-10 w-10 place-items-center border border-white/10 bg-[#050816]/70 backdrop-blur"
+                  onClick={() => setLightbox(true)}
+                >
+                  <ZoomIn className="h-4 w-4" />
+                </button>
+              </motion.div>
+
+              {/* THUMBNAILS */}
+              <div
+                className="
+    thumb-scroll
+    order-2 sm:order-1 md:order-2 xl:order-1
+    flex gap-3 shrink-0
+    flex-row overflow-x-auto overflow-y-hidden pb-2
+    sm:flex-col sm:overflow-y-auto sm:overflow-x-hidden sm:pb-0 sm:max-h-[600px] sm:w-auto
+    md:flex-row md:overflow-x-auto md:overflow-y-hidden md:pb-2 md:max-h-none md:w-full
+    xl:flex-col xl:overflow-y-auto xl:overflow-x-hidden xl:pb-0 xl:max-h-[600px] xl:w-auto
+  "
+                data-testid="thumbnails"
+              >
+                {images.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveImg(i)}
+                    data-testid={`thumb-${i}`}
+                    className={`h-16 w-16 shrink-0 overflow-hidden border-2 transition-colors lg:h-20 lg:w-20 
+        sm:mr-1 md:mr-0 xl:mr-1 ${activeImg === i ? "border-primary" : "border-white/10 hover:border-white/30"
+                      }`}
+                  >
+                    <img
+                      src={generateImageURL(img, 400)}
+                      alt={`${product.name} ${i + 1}`}
+                      className="h-full w-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -121,7 +258,7 @@ export default function ProductDetails() {
             <span className="w-8 h-px bg-primary" /> Specifications
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3" data-testid="specs-grid">
-            {Object.entries(product.specs).map(([k, v]) => (
+            {Object.entries(product.specs ?? {}).map(([k, v]) => (
               <div key={k} className="glass p-5">
                 <div className="text-xs uppercase tracking-widest text-white/40 mb-2">{k.replace(/_/g, " ")}</div>
                 <div className="text-base font-semibold">{v}</div>
@@ -198,7 +335,7 @@ export default function ProductDetails() {
             slidesPerView={1.2}
             spaceBetween={20}
             autoplay={{ delay: 4000, disableOnInteraction: false }}
-            loop={related.length > 3}
+            loop={related.length > 4}
             breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }}
             data-testid="related-slider"
           >
@@ -246,16 +383,16 @@ export default function ProductDetails() {
         {lightbox && (
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] lightbox-overlay grid place-items-center p-6"
+            className="fixed inset-0 z-[100] lightbox-overlay grid place-items-center"
             onClick={() => setLightbox(false)}
             data-testid="lightbox"
           >
-            <button onClick={() => setLightbox(false)} className="absolute top-6 right-6 w-12 h-12 grid place-items-center border border-white/20 text-white" data-testid="lightbox-close">
+            <button onClick={() => setLightbox(false)} className="absolute top-6 right-6 w-12 h-12 grid place-items-center border border-white/20 text-white hover:border-primary transition-colors duration-75" data-testid="lightbox-close">
               <X />
             </button>
             <motion.img
               initial={{ scale: 0.92 }} animate={{ scale: 1 }}
-              src={generateImageURL(product.images[activeImg], 1200)} alt={product.name}
+              src={generateImageURL(product.images[activeImg], 1600)} alt={product.name}
               className="max-w-[92vw] max-h-[88vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />

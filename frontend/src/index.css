@@ -132,6 +132,15 @@ h6,
     backdrop-filter: blur(28px) saturate(180%);
     -webkit-backdrop-filter: blur(28px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    background-clip: padding-box;
+}
+
+.glass-float {
+    background: rgba(10, 15, 37, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: none;
+    isolation: isolate;
 }
 
 .text-gradient {
@@ -383,4 +392,34 @@ html body[data-scroll-locked] {
 
 .width-before-scroll-bar {
     margin-right: 0 !important;
+}
+
+
+
+.thumb-scroll {
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+    scrollbar-gutter: stable;
+}
+
+.thumb-scroll::-webkit-scrollbar {
+    /* Chrome, Safari, Edge */
+    width: 4px;
+    /* vertical scrollbar */
+    height: 4px;
+    /* horizontal scrollbar */
+}
+
+.thumb-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.thumb-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 9999px;
+}
+
+.thumb-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.45);
 }

@@ -1,10 +1,12 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { generateImageURL } from '@/lib/utils';
 
-function FilterProductCard({ product, index }) {
+function FilterProductCard({ product, index, isIndustries }) {
+    const { slug } = useParams()
+
     return (
         <motion.article
             key={product.id}
@@ -21,8 +23,8 @@ function FilterProductCard({ product, index }) {
             data-testid={`industry-product-${product.id}`}
         >
             <Link
-                to={`/products/${product.category}/${product.id}`}
-                className="block"
+                to={isIndustries ? `/industries/${slug}/${product.id}` : `/products/${product.category}/${product.id}`}
+                className="h-full flex flex-col"
             >
                 <div className="aspect-square overflow-hidden bg-[#0a0f25]">
                     <img
@@ -33,7 +35,7 @@ function FilterProductCard({ product, index }) {
                     />
                 </div>
 
-                <div className="p-5">
+                <div className="p-5 flex flex-col flex-1">
                     <div className="text-[10px] uppercase tracking-widest text-primary mb-2 font-semibold">
                         {product.type}
                     </div>
@@ -46,7 +48,7 @@ function FilterProductCard({ product, index }) {
                         {product.short}
                     </p>
 
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold group-hover:text-primary transition-colors">
+                    <span className="inline-flex mt-auto  items-center gap-1.5 text-sm font-semibold group-hover:text-primary transition-colors">
                         View details
                         <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>

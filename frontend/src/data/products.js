@@ -12,8 +12,7 @@ const PRODUCT_DATA = [
     description: "High-resolution rotogravure printed multi-layer rolls for FFS snack lines.",
     image: "snack-printed-roll",
     images: [
-      "snack-printed-roll",
-      "snack-printed-roll-1",
+      "snack-printed-roll"
     ],
     application: "Snacks",
     material: "BOPP / PE",
@@ -83,38 +82,8 @@ const PRODUCT_DATA = [
     },
     applications: ["Shampoo", "Sauces", "Masala", "Salt"],
   },
-
   {
     num: 4,
-    id: "snack-printed-roll",
-    category: "printed-rolls",
-    name: "Snack Printed Roll",
-    type: "Printed Roll · Snacks",
-    short: "Rotogravure printed multi-layer rolls for FFS snack lines.",
-    description: "High-resolution rotogravure printed multi-layer rolls for FFS snack lines.",
-    image: "snack-printed-roll",
-    images: [
-      "snack-printed-roll",
-      "snack-printed-roll-1",
-    ],
-    application: "Snacks",
-    material: "BOPP / PE",
-    features: ["High Barrier", "Multi-layer", "Food Safe"],
-    finishes: ["Gloss Finish"],
-    specs: {
-      Material: "BOPP / PE",
-      Reel_Width: "60 mm – 1000 mm",
-      Reel_Diameter: "Up to 600 mm",
-      Print_Colours: "Up to 10",
-      Core: "3 inch / 6 inch",
-      Treatment: "Corona treated",
-      Finish: "Glossy",
-      MOQ: "Custom",
-    },
-    applications: ["Snacks", "Wafers", "Chips"],
-  },
-  {
-    num: 5,
     id: "rotogravure-printed-roll",
     category: "printed-rolls",
     name: "Rotogravure Printed Roll",
@@ -124,9 +93,7 @@ const PRODUCT_DATA = [
       "Custom rotogravure printed laminate rolls designed for high-speed packaging lines, delivering sharp graphics and reliable sealing performance.",
     image: "rotogravure-printed-roll",
     images: [
-      "rotogravure-printed-roll",
-      "rotogravure-printed-roll-1",
-      "rotogravure-printed-roll-2"
+      "rotogravure-printed-roll"
     ],
     application: "Food Packaging",
     material: "PET / MET PET / PE",
@@ -159,7 +126,7 @@ const PRODUCT_DATA = [
     ]
   },
   {
-    num: 6,
+    num: 5,
     id: "aluminium-foil-laminated-roll",
     category: "printed-rolls",
     name: "Aluminium Foil Laminated Roll",
@@ -169,8 +136,7 @@ const PRODUCT_DATA = [
       "Laminated packaging rolls incorporating aluminium foil for applications requiring protection against moisture, light and oxygen.",
     image: "aluminium-foil-laminated-roll",
     images: [
-      "aluminium-foil-laminated-roll",
-      "aluminium-foil-laminated-roll-2"
+      "aluminium-foil-laminated-roll"
     ],
     application: "High-Barrier Packaging",
     material: "PET / Aluminium Foil / PE",
@@ -205,7 +171,7 @@ const PRODUCT_DATA = [
 
   // ---- Pouches ----
   {
-    num: 7,
+    num: 6,
     id: "coffee-stand-up-pouch",
     category: "pouches",
     name: "Coffee Stand-Up Pouch",
@@ -236,7 +202,7 @@ const PRODUCT_DATA = [
     applications: ["Coffee", "Tea", "Dry Fruits", "Snacks", "Masala", "Pharma"],
   },
   {
-    num: 8,
+    num: 7,
     id: "tea-stand-up-pouch",
     category: "pouches",
     name: "Tea Stand-Up Pouch",
@@ -246,6 +212,17 @@ const PRODUCT_DATA = [
     image: "tea-stand-up-pouch",
     images: [
       "tea-stand-up-pouch",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-1",
       "tea-stand-up-pouch-1",
     ],
     application: "Tea",
@@ -265,7 +242,7 @@ const PRODUCT_DATA = [
     applications: ["Tea", "Herbs", "Coffee"],
   },
   {
-    num: 9,
+    num: 8,
     id: "dry-fruits-stand-up-pouch",
     category: "pouches",
     name: "Dry Fruits Stand-Up Pouch",
@@ -274,8 +251,7 @@ const PRODUCT_DATA = [
     description: "High-clarity window pouches with zip lock for premium dry fruits and nuts.",
     image: "dry-fruits-stand-up-pouch",
     images: [
-      "dry-fruits-stand-up-pouch",
-      "dry-fruits-stand-up-pouch-1",
+      "dry-fruits-stand-up-pouch"
     ],
     application: "Dry Fruits",
     material: "PET / PE",
@@ -294,7 +270,7 @@ const PRODUCT_DATA = [
     applications: ["Dry Fruits", "Nuts", "Snacks"],
   },
   {
-    num: 10,
+    num: 9,
     id: "snacks-stand-up-pouch",
     category: "pouches",
     name: "Snacks Stand-Up Pouch",
@@ -323,7 +299,7 @@ const PRODUCT_DATA = [
     applications: ["Snacks", "Wafers", "Chips"],
   },
   {
-    num: 11,
+    num: 10,
     id: "pet-food-stand-up-pouch",
     category: "pouches",
     name: "Pet Food Stand-Up Pouch",
@@ -352,7 +328,7 @@ const PRODUCT_DATA = [
     applications: ["Pet Food", "Treats"],
   },
   {
-    num: 12,
+    num: 11,
     id: "pharma-stand-up-pouch",
     category: "pouches",
     name: "Pharma Stand-Up Pouch",
@@ -382,7 +358,7 @@ const PRODUCT_DATA = [
 
 
   {
-    num: 13,
+    num: 12,
     id: "wafer-center-seal-pouch",
     category: "pouches",
     name: "Wafer Center Seal Pouch",
@@ -408,7 +384,7 @@ const PRODUCT_DATA = [
     applications: ["Wafers", "Biscuits"],
   },
   {
-    num: 14,
+    num: 13,
     id: "chocolate-center-seal-pouch",
     category: "pouches",
     name: "Chocolate Center Seal Pouch",
@@ -433,7 +409,7 @@ const PRODUCT_DATA = [
     applications: ["Chocolate", "Confectionery"],
   },
   {
-    num: 15,
+    num: 14,
     id: "namkeen-center-seal-pouch",
     category: "pouches",
     name: "Namkeen Center Seal Pouch",
@@ -458,7 +434,7 @@ const PRODUCT_DATA = [
     applications: ["Namkeen", "Snacks"],
   },
   {
-    num: 16,
+    num: 15,
     id: "shampoo-three-side-seal",
     category: "pouches",
     name: "Shampoo Sachet Pouch",
@@ -483,7 +459,7 @@ const PRODUCT_DATA = [
     applications: ["Shampoo", "Conditioner", "Gels"],
   },
   {
-    num: 17,
+    num: 16,
     id: "sauce-three-side-seal",
     category: "pouches",
     name: "Sauce Sachet Pouch",
@@ -508,7 +484,7 @@ const PRODUCT_DATA = [
     applications: ["Ketchup", "Sauces", "Chutney"],
   },
   {
-    num: 18,
+    num: 17,
     id: "pharma-three-side-seal",
     category: "pouches",
     name: "Pharma Strip Pouch",
@@ -518,6 +494,7 @@ const PRODUCT_DATA = [
     image: "pharma-three-side-seal",
     images: [
       "pharma-three-side-seal",
+      "pharma-three-side-seal-1",
     ],
     application: "Pharma",
     material: "PET / MET PET / PE",
@@ -533,7 +510,7 @@ const PRODUCT_DATA = [
     applications: ["Pharma", "Nutraceuticals", "Samples"],
   },
   {
-    num: 19,
+    num: 18,
     id: "juice-spout-pouch",
     category: "pouches",
     name: "Juice Spout Pouch",
@@ -543,6 +520,7 @@ const PRODUCT_DATA = [
     image: "juice-spout-pouch",
     images: [
       "juice-spout-pouch",
+      "juice-spout-pouch-1",
     ],
     application: "Beverages",
     material: "PET / PE",
@@ -558,7 +536,7 @@ const PRODUCT_DATA = [
     applications: ["Juice", "Smoothie", "Beverages"],
   },
   {
-    num: 20,
+    num: 19,
     id: "soap-spout-pouch",
     category: "pouches",
     name: "Liquid Soap Spout Pouch",
@@ -568,6 +546,7 @@ const PRODUCT_DATA = [
     image: "soap-spout-pouch",
     images: [
       "soap-spout-pouch",
+      "soap-spout-pouch-1",
     ],
     application: "Personal Care",
     material: "PET / PE",
@@ -583,7 +562,7 @@ const PRODUCT_DATA = [
     applications: ["Handwash", "Liquid Soap", "Detergent"],
   },
   {
-    num: 21,
+    num: 20,
     id: "sanitizer-spout-pouch",
     category: "pouches",
     name: "Sanitizer Spout Pouch",
@@ -593,6 +572,7 @@ const PRODUCT_DATA = [
     image: "sanitizer-spout-pouch",
     images: [
       "sanitizer-spout-pouch",
+      "sanitizer-spout-pouch-1",
     ],
     application: "Personal Care",
     material: "PET / MET PET / PE",
@@ -608,7 +588,7 @@ const PRODUCT_DATA = [
     applications: ["Sanitizer", "Alcohol Liquids"],
   },
   {
-    num: 22,
+    num: 21,
     id: "coffee-zip-lock-pouch",
     category: "pouches",
     name: "Coffee Zip Lock Pouch",
@@ -633,7 +613,7 @@ const PRODUCT_DATA = [
     applications: ["Coffee", "Tea"],
   },
   {
-    num: 23,
+    num: 22,
     id: "dryfruit-zip-lock-pouch",
     category: "pouches",
     name: "Dry Fruit Zip Lock Pouch",
@@ -658,7 +638,7 @@ const PRODUCT_DATA = [
     applications: ["Dry Fruits", "Nuts"],
   },
   {
-    num: 24,
+    num: 23,
     id: "frozen-zip-lock-pouch",
     category: "pouches",
     name: "Frozen Food Zip Lock Pouch",
@@ -683,51 +663,7 @@ const PRODUCT_DATA = [
     applications: ["Frozen Food", "Seafood"],
   },
   {
-    num: 25,
-    id: "coffee-stand-up-pouch",
-    category: "pouches",
-    name: "Coffee Stand-Up Pouch",
-    type: "Stand-Up Pouch · Coffee",
-    short: "Premium stand-up pouch for coffee packaging with barrier protection.",
-    description:
-      "Custom stand-up coffee pouch designed to protect aroma and freshness. Optional zipper, tear notch and degassing valve can be specified.",
-    image: "coffee-stand-up-pouch",
-    images: [
-      "coffee-stand-up-pouch",
-      "coffee-stand-up-pouch-1",
-      "coffee-stand-up-pouch-2"
-    ],
-    application: "Coffee",
-    material: "PET / MET PET / PE",
-    features: [
-      "High Barrier Options",
-      "Moisture Resistant",
-      "Aroma Protection",
-      "Resealable Zipper Option",
-      "Custom Printing",
-      "Optional Degassing Valve"
-    ],
-    finishes: ["Matte Finish", "Gloss Finish", "Soft Touch, Subject to Availability"],
-    specs: {
-      Material: "PET / MET PET / PE",
-      Thickness: "80–120 Microns, Depending on Requirements",
-      Printing: "Rotogravure / Digital, Subject to Availability",
-      Colors: "Custom",
-      Pouch_Type: "Stand-Up",
-      Finish: "Glossy / Matte",
-      Seal_Type: "Heat Seal",
-      MOQ: "Custom"
-    },
-    applications: [
-      "Coffee",
-      "Tea",
-      "Dry Fruits",
-      "Snacks",
-      "Masala"
-    ]
-  },
-  {
-    num: 26,
+    num: 24,
     id: "three-side-seal-sachet",
     category: "pouches",
     name: "Three-Side Seal Sachet",
@@ -738,7 +674,6 @@ const PRODUCT_DATA = [
     image: "three-side-seal-sachet",
     images: [
       "three-side-seal-sachet",
-      "three-side-seal-sachet-1",
     ],
     application: "Single-Use Packaging",
     material: "PET / PE or Custom Laminate",
@@ -773,7 +708,7 @@ const PRODUCT_DATA = [
 
   // ---- Woven Bags ----
   {
-    num: 27,
+    num: 25,
     id: "pp-woven-rice-bag",
     category: "woven-bags",
     name: "PP Woven Rice Bag",
@@ -784,8 +719,7 @@ const PRODUCT_DATA = [
     image: "pp-woven-rice-bag",
     images: [
       "pp-woven-rice-bag",
-      "pp-woven-rice-bag-1",
-      "pp-woven-rice-bag-2"
+      "pp-woven-rice-bag-1"
     ],
     application: "Rice and Grains",
     material: "Polypropylene (PP)",
@@ -818,7 +752,7 @@ const PRODUCT_DATA = [
     ]
   },
   {
-    num: 28,
+    num: 26,
     id: "bopp-laminated-woven-bag",
     category: "woven-bags",
     name: "BOPP Laminated Woven Bag",
@@ -828,8 +762,7 @@ const PRODUCT_DATA = [
       "BOPP laminated woven bags offer a printable outer surface and strong woven construction for branded agricultural and industrial packaging.",
     image: "bopp-laminated-woven-bag",
     images: [
-      "bopp-laminated-woven-bag",
-      "bopp-laminated-woven-bag-1"
+      "bopp-laminated-woven-bag"
     ],
     application: "Branded Bulk Packaging",
     material: "PP Woven Fabric / BOPP Film",
@@ -864,7 +797,7 @@ const PRODUCT_DATA = [
 
   // ---- Corrugated Boxes ----
   {
-    num: 29,
+    num: 27,
     id: "shipping-corrugated-box",
     category: "corrugated-boxes",
     name: "Shipping Corrugated Box",
@@ -874,7 +807,8 @@ const PRODUCT_DATA = [
       "Custom corrugated shipping boxes made for product handling and transport, with board strength and dimensions selected to suit the application.",
     image: "shipping-corrugated-box",
     images: [
-      "shipping-corrugated-box"
+      "shipping-corrugated-box",
+      "shipping-corrugated-box-1"
     ],
     application: "Shipping and Distribution",
     material: "Corrugated Paperboard",
@@ -907,7 +841,7 @@ const PRODUCT_DATA = [
     ]
   },
   {
-    num: 31,
+    num: 28,
     id: "heavy-duty-export-box",
     category: "corrugated-boxes",
     name: "Heavy-Duty Export Box",
@@ -917,8 +851,7 @@ const PRODUCT_DATA = [
       "Custom-engineered corrugated cartons for heavier products and demanding shipping conditions. Board grade, construction and dimensions are selected according to load requirements.",
     image: "heavy-duty-export-box",
     images: [
-      "heavy-duty-export-box",
-      "heavy-duty-export-box-1"
+      "heavy-duty-export-box"
     ],
     application: "Industrial Export Packaging",
     material: "Heavy-Duty Corrugated Board",
@@ -953,7 +886,7 @@ const PRODUCT_DATA = [
 
   // ---- Carton Boxes ----
   {
-    num: 32,
+    num: 29,
     id: "printed-mono-carton",
     category: "carton-boxes",
     name: "Printed Mono Carton",
@@ -998,7 +931,7 @@ const PRODUCT_DATA = [
     ]
   },
   {
-    num: 33,
+    num: 30,
     id: "pharmaceutical-carton",
     category: "carton-boxes",
     name: "Pharmaceutical Carton",
@@ -1042,7 +975,7 @@ const PRODUCT_DATA = [
 
   // ---- Paper Bags ----
   {
-    num: 34,
+    num: 31,
     id: "kraft-shopping-bag",
     category: "paper-bags",
     name: "Kraft Shopping Bag",
@@ -1087,7 +1020,7 @@ const PRODUCT_DATA = [
     ]
   },
   {
-    num: 35,
+    num: 32,
     id: "printed-food-paper-bag",
     category: "paper-bags",
     name: "Printed Food Paper Bag",
@@ -1098,8 +1031,7 @@ const PRODUCT_DATA = [
     image: "printed-food-paper-bag",
     images: [
       "printed-food-paper-bag",
-      "printed-food-paper-bag-1",
-      "printed-food-paper-bag-2"
+      "printed-food-paper-bag-1"
     ],
     application: "Food Service",
     material: "Kraft Paper / Food-Suitable Paper, as Required",
@@ -1134,7 +1066,7 @@ const PRODUCT_DATA = [
 
   // ---- Stretch and Shrink Films ----
   {
-    num: 36,
+    num: 33,
     id: "industrial-stretch-film",
     category: "stretch-shrink-films",
     name: "Industrial Stretch Film",
@@ -1144,7 +1076,7 @@ const PRODUCT_DATA = [
       "Stretch wrapping film for bundling and stabilizing pallet loads, available in different widths, thicknesses and roll formats.",
     image: "industrial-stretch-film",
     images: [
-      "industrial-stretch-film",
+      "industrial-stretch-film"
     ],
     application: "Pallet Wrapping",
     material: "LLDPE",
@@ -1177,7 +1109,7 @@ const PRODUCT_DATA = [
     ]
   },
   {
-    num: 37,
+    num: 34,
     id: "shrink-packaging-film",
     category: "stretch-shrink-films",
     name: "Shrink Packaging Film",
@@ -1223,7 +1155,7 @@ const PRODUCT_DATA = [
 
   // ---- Plastic Liners ----
   {
-    num: 38,
+    num: 35,
     id: "industrial-ldpe-liner",
     category: "plastic-liners",
     name: "Industrial LDPE Liner",
@@ -1266,7 +1198,7 @@ const PRODUCT_DATA = [
     ]
   },
   {
-    num: 39,
+    num: 36,
     id: "woven-sack-inner-liner",
     category: "plastic-liners",
     name: "Woven Sack Inner Liner",
@@ -1277,8 +1209,7 @@ const PRODUCT_DATA = [
     image: "woven-sack-inner-liner",
     images: [
       "woven-sack-inner-liner",
-      "woven-sack-inner-liner-1",
-      "woven-sack-inner-liner-2"
+      "woven-sack-inner-liner-1"
     ],
     application: "Woven Sack Inner Packaging",
     material: "LDPE / HDPE",
@@ -1309,47 +1240,428 @@ const PRODUCT_DATA = [
       "Chemical Materials",
       "Bulk Ingredients"
     ]
+  },
+  // ───────── Fertilizer & Chemical Packaging ─────────
+  {
+    num: 37,
+    id: "fertilizer-liner-bag",
+    category: "plastic-liners",
+    name: "Fertilizer Liner Bag",
+    type: "Plastic Liner · Fertilizer Packaging",
+    short: "Polyethylene liners that add a moisture barrier inside fertilizer sacks.",
+    description:
+      "Custom polyethylene liner bags for fertilizer sacks to help reduce moisture ingress and product caking, depending on the selected film thickness and closure.",
+    image: "fertilizer-liner-bag",
+    images: ["fertilizer-liner-bag", "fertilizer-liner-bag-1"],
+    application: "Fertilizer Inner Packaging",
+    material: "LDPE / HDPE",
+    features: [
+      "Moisture Protection Options",
+      "Custom Sack Fit",
+      "Custom Thickness",
+      "Tear-Resistant Film",
+      "Multiple Closure Options",
+      "Bulk Packaging Compatibility"
+    ],
+    finishes: ["Clear", "Natural"],
+    specs: {
+      Material: "LDPE / HDPE",
+      Thickness: "Custom Microns",
+      Printing: "Plain / Custom, Subject to Availability",
+      Colors: "Clear / Natural",
+      Liner_Type: "Fertilizer Liner Bag",
+      Finish: "Plain",
+      Closure: "Open / Tied / Heat Sealed",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Urea",
+      "NPK Fertilizers",
+      "Organic Fertilizers",
+      "Compost",
+      "Soil Conditioners",
+      "Granular Fertilizers"
+    ]
+  },
+  {
+    num: 38,
+    id: "chemical-powder-packaging-bag",
+    category: "paper-bags",
+    name: "Chemical Powder Packaging Bag",
+    type: "Plastic Bag · Chemical Packaging",
+    short: "Sealed polyethylene bags for powdered and granular chemicals.",
+    description:
+      "Custom polyethylene bags for packing industrial powders and granular chemical materials, with film and closure options selected to suit the product and handling requirements.",
+    image: "chemical-powder-packaging-bag",
+    images: ["chemical-powder-packaging-bag"],
+    application: "Chemical Powder Packaging",
+    material: "LDPE / HDPE",
+    features: [
+      "Contamination Protection",
+      "Custom Thickness",
+      "Flexible Dimensions",
+      "Heat Seal Compatible",
+      "Custom Printing Options",
+      "Bulk Packaging Compatibility"
+    ],
+    finishes: ["Clear", "Natural"],
+    specs: {
+      Material: "LDPE / HDPE",
+      Thickness: "Custom Microns",
+      Printing: "Plain / Custom, Subject to Availability",
+      Colors: "Clear / Natural",
+      Bag_Type: "Flat / Gusseted Bag",
+      Finish: "Plain",
+      Closure: "Open / Tied / Heat Sealed",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Industrial Powders",
+      "Chemical Granules",
+      "Pigments",
+      "Detergent Raw Materials",
+      "Additives",
+      "Bulk Ingredients"
+    ]
+  },
+  {
+    num: 39,
+    id: "agro-chemical-pouch",
+    category: "pouches",
+    name: "Agro Chemical Pouch",
+    type: "Plastic Pouch · Agro Packaging",
+    short: "Small-format pouches for agro chemical and crop-care products.",
+    description:
+      "Custom polyethylene pouches for agro chemical products in smaller pack sizes, with seal and print options available depending on the selected film structure.",
+    image: "agro-chemical-pouch",
+    images: ["agro-chemical-pouch"],
+    application: "Agro Chemical Packaging",
+    material: "LDPE / Laminated Film",
+    features: [
+      "Leak-Resistant Seals",
+      "Custom Pouch Sizes",
+      "Custom Printing Options",
+      "Tear Notch Options",
+      "Consistent Seal Quality",
+      "Retail & Bulk Compatibility"
+    ],
+    finishes: ["Clear", "Natural", "Printed"],
+    specs: {
+      Material: "LDPE / Laminated Film",
+      Thickness: "Custom Microns",
+      Printing: "Plain / Custom, Subject to Availability",
+      Colors: "Clear / Natural / Printed",
+      Pouch_Type: "Flat / Stand-Up Pouch",
+      Finish: "Plain / Printed",
+      Closure: "Heat Sealed",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Pesticide Powders",
+      "Fungicides",
+      "Micronutrients",
+      "Seed Treatment Products",
+      "Plant Growth Products",
+      "Crop-Care Packs"
+    ]
+  },
+  {
+    num: 40,
+    id: "fertilizer-woven-sack",
+    category: "woven-bags",
+    name: "Fertilizer Woven Sack",
+    type: "Woven Sack · Fertilizer Packaging",
+    short: "Strong woven sacks for packing and transporting bulk fertilizers.",
+    description:
+      "Custom PP woven sacks for fertilizer packing, with optional lamination and inner liner compatibility to suit moisture and handling requirements.",
+    image: "fertilizer-woven-sack",
+    images: ["fertilizer-woven-sack", "fertilizer-woven-sack-1"],
+    application: "Fertilizer Bulk Packaging",
+    material: "PP Woven / Laminated",
+    features: [
+      "High Load Strength",
+      "Inner Liner Compatible",
+      "Moisture Protection Options",
+      "Custom Printing Options",
+      "Stackable Design",
+      "Custom Sizes"
+    ],
+    finishes: ["Plain", "Laminated", "Printed"],
+    specs: {
+      Material: "PP Woven / Laminated",
+      Capacity: "Custom (e.g. 25 kg / 50 kg)",
+      Printing: "Plain / Custom, Subject to Availability",
+      Colors: "White / Natural / Custom",
+      Bag_Type: "Open Mouth",
+      Finish: "Plain / Laminated",
+      Closure: "Stitched / Heat Cut",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Urea",
+      "NPK Fertilizers",
+      "Organic Fertilizers",
+      "Potash",
+      "Compost",
+      "Granular Fertilizers"
+    ]
+  },
+
+  {
+    num: 41,
+    id: "chemical-drum-liner",
+    category: "plastic-liners",
+    name: "Chemical Drum Liner",
+    type: "Plastic Liner · Industrial Packaging",
+    short: "Polyethylene liners that protect drum contents and keep drums clean.",
+    description:
+      "Custom polyethylene drum liners to help prevent product contamination and reduce drum cleaning, with film thickness and shape selected to suit the drum and the product.",
+    image: "chemical-drum-liner",
+    images: ["chemical-drum-liner"],
+    application: "Drum & Barrel Lining",
+    material: "LDPE / HDPE",
+    features: [
+      "Contamination Protection",
+      "Custom Drum Fit",
+      "Custom Thickness",
+      "Puncture-Resistant Film",
+      "Easy Insertion & Removal",
+      "Reduced Drum Cleaning"
+    ],
+    finishes: ["Clear", "Natural"],
+    specs: {
+      Material: "LDPE / HDPE",
+      Thickness: "Custom Microns",
+      Printing: "Plain",
+      Colors: "Clear / Natural",
+      Liner_Type: "Round Bottom / Flat Bottom Drum Liner",
+      Finish: "Plain",
+      Closure: "Open / Tied",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Industrial Chemicals",
+      "Resins",
+      "Pigments",
+      "Powders",
+      "Additives",
+      "Bulk Ingredients"
+    ]
+  },
+  {
+    num: 42,
+    id: "cement-packaging-bag",
+    category: "paper-bags",
+    name: "Cement Packaging Bag",
+    type: "Woven Bag · Construction Packaging",
+    short: "Strong bags for packing and transporting cement and similar materials.",
+    description:
+      "Custom bags for cement and fine construction powders, built for stacking and transport, with construction and lamination options selected to suit load and moisture requirements.",
+    image: "cement-packaging-bag",
+    images: ["cement-packaging-bag", "cement-packaging-bag-1"],
+    application: "Cement Packaging",
+    material: "PP Woven / Laminated",
+    features: [
+      "High Load Strength",
+      "Stackable Design",
+      "Moisture Protection Options",
+      "Custom Printing Options",
+      "Custom Sizes",
+      "Bulk Handling Compatibility"
+    ],
+    finishes: ["Plain", "Laminated", "Printed"],
+    specs: {
+      Material: "PP Woven / Laminated",
+      Capacity: "Custom (e.g. 25 kg / 50 kg)",
+      Printing: "Plain / Custom, Subject to Availability",
+      Colors: "White / Natural / Custom",
+      Bag_Type: "Open Mouth / Valve",
+      Finish: "Plain / Laminated",
+      Closure: "Stitched / Valve",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Cement",
+      "Fly Ash",
+      "Lime",
+      "Gypsum Powder",
+      "Dry Mix Materials",
+      "Building Powders"
+    ]
+  },
+  {
+    num: 43,
+    id: "putty-plaster-bag",
+    category: "paper-bags",
+    name: "Putty & Plaster Bag",
+    type: "Plastic Bag · Building Materials",
+    short: "Moisture-aware packaging for wall putty, plaster and dry mixes.",
+    description:
+      "Custom bags for wall putty, plaster and dry mix products, with film and lamination options to help protect contents during storage and transport.",
+    image: "putty-plaster-bag",
+    images: ["putty-plaster-bag"],
+    application: "Putty & Plaster Packaging",
+    material: "PP Woven / LDPE Laminated",
+    features: [
+      "Moisture Protection Options",
+      "Custom Sizes",
+      "Custom Printing Options",
+      "Tear-Resistant Material",
+      "Stackable Design",
+      "Brand Display Space"
+    ],
+    finishes: ["Plain", "Laminated", "Printed"],
+    specs: {
+      Material: "PP Woven / LDPE Laminated",
+      Capacity: "Custom (e.g. 5 kg to 40 kg)",
+      Printing: "Plain / Custom, Subject to Availability",
+      Colors: "White / Natural / Custom",
+      Bag_Type: "Open Mouth / Pillow",
+      Finish: "Plain / Laminated / Printed",
+      Closure: "Stitched / Heat Sealed",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Wall Putty",
+      "Plaster",
+      "Tile Adhesive",
+      "Dry Mortar",
+      "Grout",
+      "Skim Coat Products"
+    ]
+  },
+  {
+    num: 44,
+    id: "construction-debris-bag",
+    category: "construction-building-materials",
+    name: "Construction Debris Bag",
+    type: "Woven Bag · Site Packaging",
+    short: "Heavy-duty bags for rubble, sand and site waste handling.",
+    description:
+      "Heavy-duty woven bags for collecting and moving construction debris, sand and aggregates, made to handle rough site conditions depending on the selected fabric weight.",
+    image: "construction-debris-bag",
+    images: ["construction-debris-bag"],
+    application: "Site Debris & Material Handling",
+    material: "PP Woven",
+    features: [
+      "Heavy-Duty Fabric",
+      "Puncture Resistance",
+      "Custom Sizes",
+      "Reusable Design",
+      "Stitched Seams",
+      "Easy Handling"
+    ],
+    finishes: ["Plain", "UV Treated"],
+    specs: {
+      Material: "PP Woven",
+      Capacity: "Custom",
+      Printing: "Plain / Custom, Subject to Availability",
+      Colors: "White / Natural / Custom",
+      Bag_Type: "Open Mouth",
+      Finish: "Plain / UV Treated",
+      Closure: "Open / Tied / Stitched",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Construction Debris",
+      "Sand",
+      "Aggregates",
+      "Rubble",
+      "Demolition Waste",
+      "Site Cleanup"
+    ]
+  },
+  {
+    num: 45,
+    id: "bulk-bag-construction-fibc",
+    category: "construction-building-materials",
+    name: "Bulk Bag for Construction Materials",
+    type: "FIBC · Bulk Packaging",
+    short: "Large-capacity bulk bags for sand, aggregates and building materials.",
+    description:
+      "Custom FIBC bulk bags for moving and storing sand, aggregates and other construction materials, with lifting loops and discharge options chosen to suit the load and handling equipment.",
+    image: "bulk-bag-construction-fibc",
+    images: ["bulk-bag-construction-fibc"],
+    application: "Bulk Construction Material Handling",
+    material: "PP Woven",
+    features: [
+      "High Load Capacity",
+      "Lifting Loop Options",
+      "Reusable Design",
+      "Custom Sizes",
+      "Discharge Spout Options",
+      "UV Treatment Options"
+    ],
+    finishes: ["Plain", "UV Treated", "Printed"],
+    specs: {
+      Material: "PP Woven",
+      Capacity: "Custom (e.g. 500 kg / 1000 kg)",
+      Printing: "Plain / Custom, Subject to Availability",
+      Colors: "White / Natural / Custom",
+      Bag_Type: "Top Open / Spout Top, Flat / Spout Bottom",
+      Finish: "Plain / UV Treated",
+      Closure: "Open / Duffle / Spout",
+      MOQ: "Custom"
+    },
+    applications: [
+      "Sand",
+      "Aggregates",
+      "Cement",
+      "Gravel",
+      "Bricks & Tiles",
+      "Dry Mix Materials"
+    ]
   }
 ];
 
 
+
 const KEY_INDUSTRIES_BY_PRODUCT = {
-  "snack-printed-roll": ["food-beverage", "snacks"],
-  "confectionery-printed-roll": ["food-beverage", "confectionery"],
-  "sachet-printed-roll": ["personal-care", "pharmaceuticals"],
-  "rotogravure-printed-roll": ["food-beverage", "consumer-goods"],
-  "aluminium-foil-laminated-roll": ["food-beverage", "pharmaceuticals"],
-  "coffee-stand-up-pouch": ["food-beverage", "coffee-tea"],
-  "tea-stand-up-pouch": ["food-beverage", "coffee-tea"],
-  "dry-fruits-stand-up-pouch": ["food-beverage", "agriculture"],
-  "snacks-stand-up-pouch": ["food-beverage", "snacks"],
-  "pet-food-stand-up-pouch": ["pet-care"],
-  "pharma-stand-up-pouch": ["pharmaceuticals"],
-  "wafer-center-seal-pouch": ["food-beverage", "confectionery"],
-  "chocolate-center-seal-pouch": ["food-beverage", "confectionery"],
-  "namkeen-center-seal-pouch": ["food-beverage", "snacks"],
+  "snack-printed-roll": ["food", "snacks"],
+  "confectionery-printed-roll": ["food", "confectionery"],
+  "sachet-printed-roll": ["personal-care", "pharmaceutical"],
+  "rotogravure-printed-roll": ["food", "consumer-goods"],
+  "aluminium-foil-laminated-roll": ["food", "pharmaceutical"],
+  "coffee-stand-up-pouch": ["food", "coffee-tea"],
+  "tea-stand-up-pouch": ["food", "coffee-tea"],
+  "dry-fruits-stand-up-pouch": ["food", "agriculture"],
+  "snacks-stand-up-pouch": ["food", "snacks"],
+  "pet-food-stand-up-pouch": ["pet-care", "food"],
+  "pharma-stand-up-pouch": ["pharmaceutical"],
+  "wafer-center-seal-pouch": ["food", "confectionery"],
+  "chocolate-center-seal-pouch": ["food", "confectionery"],
+  "namkeen-center-seal-pouch": ["food", "snacks"],
   "shampoo-three-side-seal": ["personal-care"],
-  "sauce-three-side-seal": ["food-beverage"],
-  "pharma-three-side-seal": ["pharmaceuticals"],
-  "juice-spout-pouch": ["food-beverage"],
+  "sauce-three-side-seal": ["food"],
+  "pharma-three-side-seal": ["pharmaceutical"],
+  "juice-spout-pouch": ["food"],
   "soap-spout-pouch": ["personal-care"],
   "sanitizer-spout-pouch": ["personal-care", "healthcare"],
-  "coffee-zip-lock-pouch": ["food-beverage", "coffee-tea"],
-  "dryfruit-zip-lock-pouch": ["food-beverage", "agriculture"],
-  "frozen-zip-lock-pouch": ["food-beverage"],
-  "three-side-seal-sachet": ["personal-care", "pharmaceuticals"],
-  "pp-woven-rice-bag": ["agriculture", "food-beverage"],
+  "coffee-zip-lock-pouch": ["food", "coffee-tea"],
+  "dryfruit-zip-lock-pouch": ["food", "agriculture"],
+  "frozen-zip-lock-pouch": ["food"],
+  "three-side-seal-sachet": ["food"],
+  "pp-woven-rice-bag": ["agriculture", "food"],
   "bopp-laminated-woven-bag": ["agriculture", "industrial"],
-  "shipping-corrugated-box": ["logistics", "e-commerce"],
+  "shipping-corrugated-box": ["industrial", "e-commerce"],
   "heavy-duty-export-box": ["logistics", "industrial"],
   "printed-mono-carton": ["retail", "consumer-goods"],
-  "pharmaceutical-carton": ["pharmaceuticals", "healthcare"],
+  "pharmaceutical-carton": ["pharmaceutical", "healthcare"],
   "kraft-shopping-bag": ["retail", "food-beverage"],
   "printed-food-paper-bag": ["food-beverage", "retail"],
   "industrial-stretch-film": ["logistics", "industrial"],
-  "shrink-packaging-film": ["logistics", "consumer-goods"],
+  "shrink-packaging-film": ["industrial", "consumer-goods"],
   "industrial-ldpe-liner": ["industrial", "logistics"],
   "woven-sack-inner-liner": ["agriculture", "industrial"],
+  "fertilizer-liner-bag": ["agriculture", "fertilizer", "industrial"],
+  "chemical-powder-packaging-bag": ["industrial", "fertilizer"],
+  "agro-chemical-pouch": ["agriculture", "fertilizer"],
+  "cement-packaging-bag": ["construction", "industrial"],
+  "putty-plaster-bag": ["construction", "industrial"],
+  "construction-debris-bag": ["construction", "industrial"],
+  "fertilizer-woven-sack": ["agriculture", "industrial"],
+  "chemical-drum-liner": ["fertilizer", "industrial"],
+  "bulk-bag-construction-fibc": ["construction", "industrial"],
 };
 
 export const PRODUCTS = [

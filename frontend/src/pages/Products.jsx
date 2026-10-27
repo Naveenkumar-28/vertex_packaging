@@ -2,12 +2,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight, ArrowRight, ShieldCheck, Cog, Sparkles, Truck,
-  FileDown, Download, Layers,
   Send,
 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import { CATEGORIES } from "@/data/categories";
-import { BACKEND_URL } from "@/constants";
 import { generateImageURL } from "@/lib/utils";
 
 const FEATURES = [
@@ -52,17 +50,17 @@ export default function Products() {
           <div className="absolute inset-0 bg-grid opacity-30" />
         </div>
 
-        <div className="container-pad relative grid lg:grid-cols-2 gap-12 items-center py-20">
+        <div className="container-pad relative grid lg:grid-cols-2 min-[450px]:gap-28 sm:gap-32 lg:gap-12 items-center pt-20 pb-20 min-[450px]:pt-40 lg:pt-24">
           {/* LEFT */}
-          <div>
-            <motion.div
+          <div className="order-2">
+            {/* <motion.div
               initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-2 border border-white/10 text-xs uppercase tracking-widest text-white/70 mb-8"
               data-testid="products-hero-badge"
             >
               <Layers className="w-3.5 h-3.5 text-primary" />
               Catalogue 2026 · 6 categories · 60+ SKUs
-            </motion.div>
+            </motion.div> */}
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
@@ -95,7 +93,7 @@ export default function Products() {
           <motion.div
             initial={{ opacity: 0, x: 40, scale: 0.9 }} animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[420px] md:h-[560px]"
+            className="relative h-[420px] md:h-[560px] order-1"
             data-testid="hero-3d-mockup"
           >
             <motion.div
@@ -107,23 +105,25 @@ export default function Products() {
                 <div className="absolute inset-0 rounded-full bg-primary opacity-25 blur-3xl" />
                 <div className="absolute inset-0 rounded-full bg-[#1e3a8a] opacity-20 blur-3xl translate-x-8 translate-y-8" />
                 <img
-                  src="https://images.unsplash.com/photo-1607082352121-fa243f3dde32?auto=format&fit=crop&q=80&w=1200"
-                  alt="packaging roll"
+                  src={generateImageURL("product-main", 1200)}
+                  alt="products_img"
                   className="relative w-full h-full object-cover rounded-2xl shadow-2xl shadow-primary/30 border border-white/10"
                   style={{ transform: "perspective(900px) rotateY(-12deg) rotateX(8deg)" }}
                 />
               </div>
             </motion.div>
             <motion.div
-              animate={{ y: [0, 12, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-8 right-4 glass-strong px-4 py-3 hidden md:block"
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              style={{ willChange: "transform", backfaceVisibility: "hidden" }}
+              className="absolute top-8 right-4 hidden md:block glass-float transform-gpu px-4 py-3"
             >
               <div className="text-[10px] uppercase tracking-widest text-white/50">Rotogravure</div>
-              <div className="text-sm font-bold mt-1">8-colour print</div>
+              <div className="mt-1 text-sm font-bold">8-colour print</div>
             </motion.div>
             <motion.div
               animate={{ y: [0, -10, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-12 left-2 glass-strong px-4 py-3 hidden md:block"
+              className="absolute bottom-12 left-2 glass-float px-4 py-3 hidden md:block"
             >
               <div className="text-[10px] uppercase tracking-widest text-white/50">Barrier</div>
               <div className="text-sm font-bold mt-1 text-primary">High OTR + WVTR</div>
@@ -148,25 +148,33 @@ export default function Products() {
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.07 }}
                 data-testid={`category-card-${c.id}`}
-                className="group relative bg-white/[0.02] border border-white/[0.06] hover:border-primary transition-all duration-300"
+                className="group relative bg-white/[0.02] border border-white/[0.06] hover:border-primary transition-colors duration-300 transform-gpu"
               >
-                <Link
-                  to={`/products/${c.id}`}
-                  data-testid={`category-explore-${c.id}`}
-                  className="cursor-pointer group">
-                  <div className="aspect-[4/3] overflow-hidden relative">
-                    <img src={generateImageURL(c.image, 800)} alt={c.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
+                <Link to={`/products/${c.id}`} data-testid={`category-explore-${c.id}`} className="block cursor-pointer group">
+
+                  <div className="aspect-[4/3] relative bg-[#050816]">
+
+                    <div className="absolute inset-0 overflow-hidden">
+                      <img
+                        src={generateImageURL(c.image, 800)}
+                        alt={c.name}
+                        loading="lazy"
+                        className="block w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+
+                    <div className="absolute inset-x-0 top-0 -bottom-px bg-gradient-to-t from-[#050816] via-transparent to-transparent pointer-events-none" />
                   </div>
+
                   <div className="p-6">
                     <h3 className="display text-xl md:text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{c.name}</h3>
                     <p className="text-sm text-white/55 line-clamp-2 mb-6 min-h-[2.5rem]">{c.short}</p>
-                    <button
+                    <span
 
                       className="inline-flex items-center gap-2 text-sm font-semibold group-hover:text-primary hover:gap-3 transition-all"
                     >
                       Explore <ArrowUpRight className="w-4 h-4" />
-                    </button>
+                    </span>
                   </div>
                 </Link>
               </motion.div>

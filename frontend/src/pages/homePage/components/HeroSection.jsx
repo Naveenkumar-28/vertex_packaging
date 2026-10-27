@@ -6,13 +6,14 @@ import {
 } from "lucide-react";
 import QuickEnquiryForm from "@/components/QuickEnquiryForm";
 import { STATS } from "@/data/site";
+import { generateImageURL } from "@/lib/utils";
 
 export function HeroSection() {
     return (
         <section className="relative min-h-screen pt-[72px] flex items-center overflow-hidden">
             <div className="absolute inset-0">
                 <img
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2400"
+                    src={generateImageURL("main", 1600)}
                     alt="hero_bg"
                     className="w-full h-full object-cover opacity-30"
                 />

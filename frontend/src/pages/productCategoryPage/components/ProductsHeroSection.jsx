@@ -17,12 +17,22 @@ export function ProductsHeroSection({ cat, allProducts }) {
             <div className="container-pad relative grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-24">
                 <div>
                     {/* Breadcrumb */}
-                    <nav className="flex items-center gap-2 text-xs text-white/50 mb-6" data-testid="breadcrumb">
-                        <Link to="/" className="inline-flex items-center gap-1.5 hover:text-white"><HomeIcon className="w-3 h-3" /> Home</Link>
-                        <ChevronRight className="w-3 h-3" />
-                        <Link to="/products" className="hover:text-white">Products</Link>
-                        <ChevronRight className="w-3 h-3" />
-                        <span className="text-primary font-semibold">{cat.name}</span>
+                    <nav className="flex items-center flex-wrap gap-2 text-xs text-white/50 mb-6" data-testid="breadcrumb">
+                        <Link
+                            to="/"
+                            className="inline-flex items-center gap-1.5 leading-none hover:text-white"
+                        >
+                            <HomeIcon className="h-3 w-3 shrink-0" />
+                            <span>Home</span>
+                        </Link>
+                        <div className="flex gap-2 items-center">
+                            <ChevronRight className="w-3 h-3" />
+                            <Link to="/products" className="hover:text-white">Products</Link>
+                        </div>
+                        <div className="flex gap-2 items-center">
+                            <ChevronRight className="w-3 h-3" />
+                            <span className="text-primary font-semibold">{cat.name}</span>
+                        </div>
                     </nav>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}

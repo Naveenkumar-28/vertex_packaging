@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/SectionHeader";
 import { INDUSTRIES } from "@/data/industries";
+import { generateImageURL } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -13,7 +14,7 @@ export function IndustriesSection() {
                     subtitle="Engineered for brands across food, fertilizers, pharmaceuticals, personal care, agriculture, textile, retail and industrial sectors."
                     testid="industries-header"
                 />
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                     {INDUSTRIES.map((ind, i) => (
                         <motion.div
                             key={ind.id}
@@ -21,13 +22,13 @@ export function IndustriesSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: i * 0.07 }}
 
-                            className="group relative aspect-[4/5] overflow-hidden border border-white/[0.06] hover:border-primary/40 transition-colors"
+                            className="group relative aspect-[4/3] overflow-hidden border border-white/[0.06] hover:border-primary/40 transition-colors"
                             data-testid={`home-industry-${ind.id}`}
                         >
                             <Link
                                 to={`/industries/${ind.id}`}
                             >
-                                <img src={ind.image} alt={ind.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-80" />
+                                <img src={generateImageURL(ind.id, 800)} alt={ind.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-80" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/40 to-transparent" />
                                 <div className="absolute inset-0 p-5 md:p-6 flex flex-col justify-end">
                                     <div className="text-xs uppercase tracking-widest text-primary mb-2 font-semibold">0{i + 1}</div>

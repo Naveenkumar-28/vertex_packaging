@@ -302,8 +302,8 @@ export const CATEGORIES =
         "Consumer products",
         "Retail packaging"
       ],
-      "image": "https://images.unsplash.com/photo-1772920908589-d6264e5d987f?auto=format&fit=crop&w=800&q=80",
-      "heroImage": "https://images.unsplash.com/photo-1772920908589-d6264e5d987f?auto=format&fit=crop&w=1800&q=85"
+      "image": "printed-mono-carton",
+      "heroImage": "printed-mono-carton"
     },
     {
       "id": "paper-bags",
@@ -337,8 +337,8 @@ export const CATEGORIES =
         "Gift shops",
         "Food takeaway"
       ],
-      "image": "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=800&q=80",
-      "heroImage": "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1800&q=85"
+      "image": "kraft-shopping-bag",
+      "heroImage": "kraft-shopping-bag"
     },
     {
       "id": "stretch-shrink-films",

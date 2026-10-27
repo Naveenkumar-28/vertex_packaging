@@ -2,15 +2,10 @@ import React, { useMemo, useState, useEffect } from 'react'
 import ProductsFilterSidebar from './ProductsFilterSidebar';
 import ProductsList from './ProductsList';
 import { PRODUCTS } from '@/data/products';
-import { useParams } from 'react-router-dom';
 
 const PER_PAGE = 9;
 
 function ProductsFilterSection({ industry }) {
-
-    const para = useParams();
-
-    console.log(para);
 
     const [apps, setApps] = useState([]);
     const [mats, setMats] = useState([]);
@@ -80,8 +75,6 @@ function ProductsFilterSection({ industry }) {
         setPage(1);
     };
 
-
-
     return (
         <section
             id="industry-products"
@@ -101,7 +94,8 @@ function ProductsFilterSection({ industry }) {
                     using the filters.
                 </p>
             </div>
-            <div className="grid lg:grid-cols-[260px_1fr] gap-8 items-start relative ">
+            <div
+                className="grid lg:grid-cols-[260px_1fr] gap-8 items-start relative ">
 
                 {/* FILTER SIDEBAR */}
                 <ProductsFilterSidebar
@@ -123,7 +117,8 @@ function ProductsFilterSection({ industry }) {
                     resetFilters={resetFilters}
                     setPage={setPage}
                     setSort={setSort}
-                    sort={sort} />
+                    sort={sort}
+                />
             </div>
         </section>
     )

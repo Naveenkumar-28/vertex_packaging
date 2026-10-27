@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import { INDUSTRIES } from "@/data/industries";
+import { generateImageURL } from "@/lib/utils";
 
 export default function Industries() {
   return (
@@ -28,7 +29,7 @@ export default function Industries() {
                 className="h-full flex flex-col">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
-                    src={ind.image}
+                    src={generateImageURL(ind.id, 800)}
                     alt={ind.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

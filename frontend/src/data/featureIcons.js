@@ -2,8 +2,8 @@ import {
     ShieldCheck, Shield, Droplets, Wind, Lock, Check, Layers, Zap, Printer, Palette,
     Ruler, Maximize, Flame, Snowflake, Sparkles, Gem, FlaskConical, Sun, Package,
     PackageOpen, Scissors, Recycle, Tag, Boxes, Weight, Settings, Eye, Container,
-    Truck, Info, Repeat, Globe, Hand, Stamp, Fan, Link2, Thermometer, AppWindow,
-    FileText, Dumbbell, Wrench,
+    Info, Repeat, Globe, Hand, Stamp, Fan, Link2, AppWindow,
+    FileText, Dumbbell,
 } from "lucide-react";
 
 // 1) Exact matches
