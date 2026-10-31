@@ -73,12 +73,12 @@ app.use("/api/auth", authRoutes);
 
 // Routes
 app.use(
-    "/api/status", protectAdmin,
+    "/api/status",
     statusRoutes
 );
 
 app.use(
-    "/api/submissions", protectAdmin,
+    "/api/submissions",
     submissionRoutes
 );
 
