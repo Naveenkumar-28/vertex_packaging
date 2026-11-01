@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from "framer-motion";
 import { Link, useParams } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
@@ -6,6 +6,10 @@ import { generateImageURL } from '@/lib/utils';
 
 function FilterProductCard({ product, index, isIndustries }) {
     const { slug } = useParams()
+
+    const [loadedSrc, setLoadedSrc] = useState(null);
+    const mainSrc = generateImageURL(product.image, 800);
+    const mainLoaded = loadedSrc === mainSrc;
 
     return (
         <motion.article
@@ -26,13 +30,24 @@ function FilterProductCard({ product, index, isIndustries }) {
                 to={isIndustries ? `/industries/${slug}/${product.id}` : `/products/${product.category}/${product.id}`}
                 className="h-full flex flex-col"
             >
-                <div className="aspect-square overflow-hidden bg-[#0a0f25]">
-                    <img
-                        src={generateImageURL(product.image, 800)}
-                        alt={product.name}
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
+                <div
+                    className="relative aspect-square overflow-hidden bg-[#050816] isolate"
+                    style={{ clipPath: "inset(0)" }}
+                >
+                    {!mainLoaded && <div className="absolute inset-0 animate-pulse bg-white/5" />}
+
+                    {/* ONE scaling layer: image + gradient scale together */}
+                    <div className="absolute  inset-0 transform-gpu will-change-transform transition-transform duration-700 group-hover:scale-110">
+                        <img
+                            key={mainSrc}
+                            src={mainSrc}
+                            onLoad={() => setLoadedSrc(mainSrc)}
+                            alt={`${product.name} image`}
+                            loading="lazy"
+                            className={`absolute inset-0 h-full w-full object-cover ${mainLoaded ? "opacity-100" : "opacity-0"}`}
+                        />
+                        <div className="pointer-events-none absolute -inset-1 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
+                    </div>
                 </div>
 
                 <div className="p-5 flex flex-col flex-1">
