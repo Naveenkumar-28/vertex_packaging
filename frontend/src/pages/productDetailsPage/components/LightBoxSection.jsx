@@ -27,7 +27,7 @@ export function LightBoxSection({ lightbox, setLightbox, activeImg, product }) {
             body.style.overflow = prevBody;
             document.removeEventListener("keydown", onKey);
         };
-    }, [lightbox]);
+    }, [lightbox, setLightbox]);
 
     return (
         <AnimatePresence>
