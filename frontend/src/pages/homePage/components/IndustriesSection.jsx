@@ -29,7 +29,8 @@ export function IndustriesSection() {
                                 to={`/industries/${ind.id}`}
                             >
                                 <img src={generateImageURL(ind.id, 800)} alt={ind.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-80" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/40 to-transparent" />
+                                {/* <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/40 to-transparent" /> */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
                                 <div className="absolute inset-0 p-5 md:p-6 flex flex-col justify-end">
                                     <div className="text-xs uppercase tracking-widest text-primary mb-2 font-semibold">0{i + 1}</div>
                                     <h3 className="display text-xl md:text-2xl font-bold">{ind.name}</h3>

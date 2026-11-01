@@ -181,9 +181,7 @@ const PRODUCT_DATA = [
       "Premium stand-up pouch for coffee packaging with excellent barrier protection. Engineered to preserve freshness, aroma and shelf life.",
     image: "coffee-stand-up-pouch",
     images: [
-      "coffee-stand-up-pouch",
-      "coffee-stand-up-pouch-1",
-      "coffee-stand-up-pouch-2",
+      "coffee-stand-up-pouch"
     ],
     application: "Coffee",
     material: "PET / MET PET / PE",
@@ -213,17 +211,7 @@ const PRODUCT_DATA = [
     images: [
       "tea-stand-up-pouch",
       "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
-      "tea-stand-up-pouch-1",
+      "tea-stand-up-pouch-2"
     ],
     application: "Tea",
     material: "BOPP / PE",
@@ -309,7 +297,6 @@ const PRODUCT_DATA = [
     image: "pet-food-stand-up-pouch",
     images: [
       "pet-food-stand-up-pouch",
-      "pet-food-stand-up-pouch-1",
     ],
     application: "Pet Food",
     material: "PET / MET PET / PE",

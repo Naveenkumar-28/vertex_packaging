@@ -5,6 +5,7 @@ import { INDUSTRIES } from "@/data/industries";
 import ProductsFilterSection from "@/components/ProductsFilterSection";
 import { motion } from 'framer-motion'
 import { generateImageURL } from "@/lib/utils";
+import IndustryCategoryImageSection from "./IndustryCategoryImageSection";
 
 const BENEFIT_ICONS = [ShieldCheck, Sparkles, Leaf, Droplets, Recycle, Beaker];
 
@@ -46,7 +47,7 @@ export default function IndustryCategory() {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 pt-8">
-                    <div>
+                    <div className="order-2 lg:order-1">
                         <SectionHeader
                             eyebrow="Industry Solutions"
                             title={industry.name}
@@ -72,13 +73,7 @@ export default function IndustryCategory() {
                         </a>
                     </div>
 
-                    <div className="aspect-[16/10] overflow-hidden border border-white/[0.08]">
-                        <img
-                            src={generateImageURL(industry.id, 1200)}
-                            alt={industry.name}
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
+                    <IndustryCategoryImageSection industry={industry} />
                 </div>
             </section>
 

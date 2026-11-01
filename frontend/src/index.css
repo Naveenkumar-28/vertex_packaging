@@ -51,7 +51,7 @@ h6,
 
 ::selection {
     background: #43a047;
-    color: #050816;
+    color: white;
 }
 
 /* Hide scrollbar but keep functional */
@@ -200,7 +200,7 @@ h6,
 }
 
 .container-pad {
-    max-width: 1400px;
+    max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.5rem;

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {
   ArrowUpRight, ArrowRight, ShieldCheck, Cog, Sparkles, Truck,
   Send,
+  Download,
 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import { CATEGORIES } from "@/data/categories";
@@ -80,12 +81,26 @@ export default function Products() {
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}
               className="flex flex-col sm:flex-row gap-4 mt-10"
             >
-              <Link to="/quote" className="btn-primary" data-testid="hero-request-catalogue-btn">
-                Request Catalogue <Send className="w-4 h-4" />
-              </Link>
-              {/* <Link to="/contact" className="btn-secondary" data-testid="hero-download-brochure-btn">
+              <a
+                href="/catalogue/vertex-packaging-catalogue.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                data-testid="hero-request-catalogue-btn"
+              >
+                Request Catalogue
+                <Send className="w-4 h-4" />
+              </a>
+              <a
+                href="/brochures/vertex-packaging-brochure.pdf"
+                // target="_blank"
+                download="vertex-packaging-brochure.pdf"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                data-testid="hero-download-brochure-btn"
+              >
                 Download Brochure <Download className="w-4 h-4" />
-              </Link> */}
+              </a>
             </motion.div>
           </div>
 

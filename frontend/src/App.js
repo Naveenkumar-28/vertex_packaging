@@ -11,7 +11,6 @@ import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
 import ProductCategory from "@/pages/ProductCategory";
-import ProductDetails from "@/pages/ProductDetails";
 import Industries from "@/pages/Industries";
 // import Infrastructure from "@/pages/Infrastructure";
 import Quality from "@/pages/Quality";
@@ -24,6 +23,7 @@ import NotFound from "@/pages/NotFound";
 import AdminLogin from "@/pages/AdminLogin";
 import ProtectedAdmin from "@/components/ProtectedAdmin";
 import IndustryCategory from "./pages/IndustryCategory";
+import ProductDetailsPage from "@/pages/productDetailsPage/ProductDetailsPage";
 
 
 function App() {
@@ -40,10 +40,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:slug" element={<ProductCategory />} />
-            <Route path="/products/:category/:slug" element={<ProductDetails />} />
+            <Route path="/products/:category/:slug" element={<ProductDetailsPage />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/:slug" element={<IndustryCategory />} />
-            <Route path="/industries/:category/:slug" element={<ProductDetails />} />
+            <Route path="/industries/:category/:slug" element={<ProductDetailsPage />} />
             {/* <Route path="/infrastructure" element={<Infrastructure />} /> */}
             <Route path="/quality" element={<Quality />} />
             <Route path="/gallery" element={<Gallery />} />

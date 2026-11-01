@@ -4,7 +4,7 @@ const sharp = require('sharp');
 
 const src = path.join(__dirname, '../originals/products');
 const out = path.join(__dirname, '../public/images');
-const sizes = [200]; // thumbnail, card, detail page
+const sizes = [1600]; // thumbnail, card, detail page
 
 fs.mkdirSync(out, { recursive: true });
 fs.mkdirSync(path.join(__dirname, '../data'), { recursive: true });

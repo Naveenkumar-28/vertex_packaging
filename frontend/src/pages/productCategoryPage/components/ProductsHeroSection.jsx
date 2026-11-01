@@ -6,6 +6,8 @@ import {
 import { generateImageURL } from "@/lib/utils";
 
 export function ProductsHeroSection({ cat, allProducts }) {
+    console.log({ cat });
+
     return (
         <section className="relative overflow-hidden min-h-[60vh] flex items-center">
             <div className="absolute inset-0">
@@ -36,9 +38,10 @@ export function ProductsHeroSection({ cat, allProducts }) {
                     </nav>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-                        className="display text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight"
+                        className="display lg:max-w-[450px] flex flex-wrap gap-2 text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight"
                     >
-                        {cat.name.split(" ").slice(0, -1).join(" ")}{" "}
+                        {/* {cat.name.split(" ").slice(0, -1).join(" ")}{" "} */}
+                        {cat.name.split(" ").slice(0, -1).map((name) => <span>{name}</span>)}
                         <span className="text-primary">{cat.name.split(" ").slice(-1)}</span>.
                     </motion.h1>
                     <motion.p
